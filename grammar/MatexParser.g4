@@ -31,14 +31,16 @@ divisionExpr:
 
 multiplicationExpr:
     powExpr
-    | fracExpr
-    | fracExpr multiplicationExpr
-    | multiplicationExpr (MUL | CMD_TIMES | CMD_CDOT) powExpr;
+    | multiplicationExpr (MUL | CMD_TIMES | CMD_CDOT) powExpr
+    | multiplicationExpr fracExpr
+    | multiplicationExpr exponentiationExpr
+    | multiplicationExpr atom;
 
 fracExpr: CMD_FRAC L_BRACE expr R_BRACE L_BRACE expr R_BRACE;
 
 powExpr:
     signedAtom
+    | fracExpr
     | exponentiationExpr;
 
 exponentiationExpr:
@@ -58,6 +60,7 @@ localMultiplication: MIXNUMBER;
 
 atom:
     variable
+    | indexedVariable
     | constant
     | number
     | absolute
@@ -65,6 +68,8 @@ atom:
     | L_PAREN expr R_PAREN;
 
 variable: VARIABLE;
+
+indexedVariable: VARIABLE subexpr;
 
 constant:
     PI

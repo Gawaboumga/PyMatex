@@ -43,7 +43,7 @@ class MatexAST(MatexParserListener.MatexParserListener):
         lhs = self.pop()
         self.push(Division(lhs, rhs))
 
-    def exitExponentiationExpr(self, ctx:MatexParser.ExponentiationExprContext):
+    def exitExponentiationExpr(self, ctx: MatexParser.ExponentiationExprContext):
         rhs = self.pop()
         lhs = self.pop()
         self.push(Exponentiation(lhs, rhs))
@@ -104,6 +104,10 @@ class MatexAST(MatexParserListener.MatexParserListener):
         elif funcname.FUNC_ARCTAN():
             self.push(Function(Func.ATAN, expression))
 
+    def exitIndexedVariable(self, ctx: MatexParser.IndexedVariableContext):
+        expression = self.pop()
+        self.push(IndexedVariable(ctx.VARIABLE().getText(), expression))
+
     def exitLocalMultiplication(self, ctx: MatexParser.LocalMultiplicationContext):
         mixed_number = ctx.MIXNUMBER().getText()
         import re
@@ -118,10 +122,7 @@ class MatexAST(MatexParserListener.MatexParserListener):
         self.push(Negate(value))
 
     def exitNumber(self, ctx: MatexParser.NumberContext):
-        number = ctx.NUMBER().getText()
-        if number[0] == '+':
-            number = number[1:]
-        self.push(Constant(number))
+        self.push(Constant(ctx.NUMBER().getText()))
 
     def exitMath(self, ctx: MatexParser.MathContext):
         assert (len(self.__stack) == 1)

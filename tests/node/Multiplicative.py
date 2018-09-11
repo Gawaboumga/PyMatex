@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Constant, Division, Multiplication, Variable
+from node import Addition, Constant, Division, Exponentiation, Func, Function, Multiplication, Variable
 
 
 class MultiplicativeTests(BaseTest.BaseTest):
@@ -70,3 +70,9 @@ class MultiplicativeTests(BaseTest.BaseTest):
     def test_read_mixed_without_times_frac(self):
         ast = self.parse(r'\frac{1}{4} \frac{x}{2}')
         self.assertEqual(ast, Multiplication(Division(Constant('1'), Constant('4')), Division(Variable('x'), Constant('2'))))
+
+    def test_read_atom_without_times(self):
+        ast = self.parse(r'3! (2 + 1) 4^n')
+        self.assertEqual(ast, Multiplication(
+            Multiplication(Function(Func.FACTORIAL, Constant('3')), Addition(Constant('2'), Constant('1'))),
+            Exponentiation(Constant('4'), Variable('n'))))

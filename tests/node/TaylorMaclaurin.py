@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Addition, Constant, Division, Exponentiation, Func, Function, Multiplication, Summation, Variable
+from node import Addition, Constant, Division, Exponentiation, Func, Function, IndexedVariable, Multiplication, Subtraction, Summation, Variable
 
 
 class TaylorMaclaurinTests(BaseTest.BaseTest):
@@ -39,3 +39,14 @@ class TaylorMaclaurinTests(BaseTest.BaseTest):
                                     Exponentiation(Function(Func.FACTORIAL, Variable('n')), Constant('2'))),
                                     two_times_n_plus_one)),
             Exponentiation(Variable('x'), two_times_n_plus_one))))
+
+    def test_read_tan(self):
+        ast = self.parse(r'\sum_{n=1}^{\infty} |B_{2n}| \frac{4^n (4^n - 1)}{(2n)!} x^{2n - 1}')
+        two_times_n = Multiplication(Constant('2'), Variable('n'))
+        four_exponent_n = Exponentiation(Constant('4'), Variable('n'))
+
+        self.assertEqual(ast, Summation(Variable('n'), Constant('1'), Constant('\\infty'), Multiplication(
+            Multiplication(Function(Func.ABS, IndexedVariable('B', two_times_n)), Division(
+                Multiplication(four_exponent_n, Subtraction(four_exponent_n, Constant('1'))),
+                Function(Func.FACTORIAL, Multiplication(Constant('2'), Variable('n')))
+            )), Exponentiation(Variable('x'), Subtraction(two_times_n, Constant('1'))))))

@@ -170,6 +170,15 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#indexedVariable.
+    def enterIndexedVariable(self, ctx:MatexParser.IndexedVariableContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#indexedVariable.
+    def exitIndexedVariable(self, ctx:MatexParser.IndexedVariableContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#constant.
     def enterConstant(self, ctx:MatexParser.ConstantContext):
         pass
