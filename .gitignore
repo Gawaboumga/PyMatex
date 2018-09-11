@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Ignore files
+.idea/
+test.txt
+*.bat
