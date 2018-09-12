@@ -28,3 +28,8 @@ class ExponentiationTests(BaseTest.BaseTest):
     def test_write_complex_exponent(self):
         ast = self.parse('x^{2y + 3}')
         self.assertEqual(str(ast), 'x^{((2 * y) + 3)}')
+
+    def test_read_priority_of_operations(self):
+        ast = self.parse('4a^2')
+
+        self.assertEqual(ast, Multiplication(Constant('4'), Exponentiation(Variable('a'), Constant('2'))))

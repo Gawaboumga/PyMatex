@@ -44,6 +44,13 @@ class MatexAST(MatexParserListener.MatexParserListener):
     def exitExponentiationExpr(self, ctx: MatexParser.ExponentiationExprContext):
         rhs = self.pop()
         lhs = self.pop()
+
+        # Fix the case where 2a^2 is interpreted as (2 * a)^2
+        if isinstance(lhs, Multiplication):
+            if isinstance(lhs.lhs, Constant) and isinstance(lhs.rhs, Variable):
+                self.push(Multiplication(lhs.lhs, Exponentiation(lhs.rhs, rhs)))
+                return
+
         self.push(Exponentiation(lhs, rhs))
 
     def exitFactorial(self, ctx: MatexParser.FactorialContext):

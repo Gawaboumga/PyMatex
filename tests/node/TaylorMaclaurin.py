@@ -64,7 +64,7 @@ class TaylorMaclaurinTests(BaseTest.BaseTest):
 
         first_summation = Summation(n, z, infinity, Multiplication(
             Division(Product(k, z, Subtraction(n, o), Addition(
-                Exponentiation(Multiplication(Constant('4'), k), t),
+                Multiplication(Constant('4'), Exponentiation(k, t)),
                 Exponentiation(a, t))),
                      Function(Func.FACTORIAL, Multiplication(t, n))),
             Exponentiation(Variable('z'), Multiplication(t, n))))
