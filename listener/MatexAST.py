@@ -30,9 +30,7 @@ class MatexAST(MatexParserListener.MatexParserListener):
         self.push(Addition(lhs, rhs))
 
     def exitConstant(self, ctx: MatexParser.ConstantContext):
-        if ctx.PI():
-            self.push(Constant(ctx.PI().getText()))
-        elif ctx.INFINITY():
+        if ctx.INFINITY():
             self.push(Constant(ctx.INFINITY().getText()))
 
     def exitDivisionExpr(self, ctx: MatexParser.DivisionExprContext):
@@ -160,7 +158,10 @@ class MatexAST(MatexParserListener.MatexParserListener):
         self.push(Summation(variable, start_range, end_range, expression))
 
     def exitVariable(self, ctx: MatexParser.VariableContext):
-        self.push(Variable(ctx.VARIABLE().getText()))
+        if ctx.VARIABLE():
+            self.push(Variable(ctx.VARIABLE().getText()))
+        else:
+            self.push(Variable(ctx.GREEKLETTER().getText()))
 
     def pop(self):
         assert (len(self.__stack) >= 1)

@@ -67,13 +67,11 @@ atom:
     | factorial
     | L_PAREN expr R_PAREN;
 
-variable: VARIABLE;
+variable: VARIABLE | GREEKLETTER;
 
 indexedVariable: VARIABLE subexpr;
 
-constant:
-    PI
-    | INFINITY;
+constant: INFINITY;
 
 number: NUMBER;
 

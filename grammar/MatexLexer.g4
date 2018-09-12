@@ -64,7 +64,6 @@ NUMBER: '-'? DIGIT* '.'? DIGIT+ ([eE][-+]? DIGIT+)?;
 VARIABLE: LETTER+;
 MIXNUMBER: NUMBER VARIABLE;
 
-PI: '\\pi';
 INFINITY: '\\infty';
 
 EQ: '=';
@@ -75,6 +74,34 @@ GTE: '\\geq';
 
 BANG: '!';
 
-SYMBOL: '\\' [a-zA-Z]+;
+fragment ALPHA: '\\alpha' | '\\Alpha';
+fragment BETA: '\\beta' | '\\Beta';
+fragment GAMMA: '\\gamma' | '\\Gamma';
+fragment DELTA: '\\delta' | '\\Delta';
+fragment EPSILON: '\\epsilon' | '\\Epsilon';
+fragment ZETA: '\\zeta' | '\\Zeta';
+fragment ETA: '\\eta' | '\\Eta';
+fragment THETA: '\\theta' | '\\Theta';
+fragment IOTA: '\\iota' | '\\Iota';
+fragment KAPPA: '\\kappa' | '\\Kappa';
+fragment LAMBDA: '\\lambda' | '\\Lambda';
+fragment MU: '\\mu' | '\\Mu';
+fragment NU: '\\nu' | '\\Nu';
+fragment XI: '\\xi' | '\\Xi';
+fragment OMICRON: '\\omicron' | '\\Omicron';
+fragment PI: '\\pi' | '\\Pi';
+fragment RHO: '\\rho' | '\\Rho';
+fragment SIGMA: '\\sigma' | '\\Sigma';
+fragment TAU: '\\tau' | '\\Tau';
+fragment UPSILON: '\\upsilon' | '\\Upsilon';
+fragment PHI: '\\phi' | '\\Phi';
+fragment CHI: '\\chi' | '\\Chi';
+fragment PSI: '\\psi' | '\\Psi';
+fragment OMEGA: '\\omega' | '\\Omega';
+
+GREEKLETTER:
+    ALPHA | BETA | GAMMA | DELTA | EPSILON | ZETA | ETA |
+    THETA | IOTA | KAPPA | LAMBDA | MU | NU | XI |  OMICRON |
+    PI | RHO | SIGMA | TAU | UPSILON | PHI | CHI | PSI | OMEGA;
 
 WS: [ \t\r\n]+ -> skip;

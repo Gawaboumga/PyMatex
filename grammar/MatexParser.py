@@ -7,7 +7,7 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3>")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3=")
         buf.write("\u00f6\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
@@ -32,16 +32,16 @@ def serializedATN():
         buf.write("\3\34\3\35\3\35\3\35\3\35\3\35\3\36\3\36\3\36\3\36\3\36")
         buf.write("\3\37\3\37\3\37\2\6\16\20\22\24 \2\4\6\b\n\f\16\20\22")
         buf.write("\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<\2\7\4\2\6\6")
-        buf.write(",,\4\2\5\5*+\3\2\65\66\3\2\25)\3\2\67;\2\u00f0\2>\3\2")
-        buf.write("\2\2\4@\3\2\2\2\6G\3\2\2\2\bI\3\2\2\2\nM\3\2\2\2\fQ\3")
-        buf.write("\2\2\2\16T\3\2\2\2\20_\3\2\2\2\22j\3\2\2\2\24u\3\2\2\2")
-        buf.write("\26\u0086\3\2\2\2\30\u0091\3\2\2\2\32\u009e\3\2\2\2\34")
-        buf.write("\u00a4\3\2\2\2\36\u00a6\3\2\2\2 \u00a9\3\2\2\2\"\u00b5")
+        buf.write(",,\4\2\5\5*+\4\2\63\63<<\3\2\25)\3\2\66:\2\u00f0\2>\3")
+        buf.write("\2\2\2\4@\3\2\2\2\6G\3\2\2\2\bI\3\2\2\2\nM\3\2\2\2\fQ")
+        buf.write("\3\2\2\2\16T\3\2\2\2\20_\3\2\2\2\22j\3\2\2\2\24u\3\2\2")
+        buf.write("\2\26\u0086\3\2\2\2\30\u0091\3\2\2\2\32\u009e\3\2\2\2")
+        buf.write("\34\u00a4\3\2\2\2\36\u00a6\3\2\2\2 \u00a9\3\2\2\2\"\u00b5")
         buf.write("\3\2\2\2$\u00b7\3\2\2\2&\u00b9\3\2\2\2(\u00bc\3\2\2\2")
         buf.write("*\u00be\3\2\2\2,\u00c0\3\2\2\2.\u00cf\3\2\2\2\60\u00db")
         buf.write("\3\2\2\2\62\u00dd\3\2\2\2\64\u00df\3\2\2\2\66\u00e4\3")
         buf.write("\2\2\28\u00e9\3\2\2\2:\u00ee\3\2\2\2<\u00f3\3\2\2\2>?")
-        buf.write("\5\6\4\2?\3\3\2\2\2@A\5\6\4\2AB\7\67\2\2BC\5\6\4\2C\5")
+        buf.write("\5\6\4\2?\3\3\2\2\2@A\5\6\4\2AB\7\66\2\2BC\5\6\4\2C\5")
         buf.write("\3\2\2\2DH\5\b\5\2EH\5\n\6\2FH\5\16\b\2GD\3\2\2\2GE\3")
         buf.write("\2\2\2GF\3\2\2\2H\7\3\2\2\2IJ\7\23\2\2JK\5\f\7\2KL\5\6")
         buf.write("\4\2L\t\3\2\2\2MN\7\24\2\2NO\5\f\7\2OP\5\6\4\2P\13\3\2")
@@ -81,15 +81,15 @@ def serializedATN():
         buf.write("\7\b\2\2\u00b4\u00b6\3\2\2\2\u00b5\u00ab\3\2\2\2\u00b5")
         buf.write("\u00ac\3\2\2\2\u00b5\u00ad\3\2\2\2\u00b5\u00ae\3\2\2\2")
         buf.write("\u00b5\u00af\3\2\2\2\u00b5\u00b0\3\2\2\2\u00b5\u00b1\3")
-        buf.write("\2\2\2\u00b6#\3\2\2\2\u00b7\u00b8\7\63\2\2\u00b8%\3\2")
-        buf.write("\2\2\u00b9\u00ba\7\63\2\2\u00ba\u00bb\5\64\33\2\u00bb")
-        buf.write("\'\3\2\2\2\u00bc\u00bd\t\4\2\2\u00bd)\3\2\2\2\u00be\u00bf")
+        buf.write("\2\2\2\u00b6#\3\2\2\2\u00b7\u00b8\t\4\2\2\u00b8%\3\2\2")
+        buf.write("\2\u00b9\u00ba\7\63\2\2\u00ba\u00bb\5\64\33\2\u00bb\'")
+        buf.write("\3\2\2\2\u00bc\u00bd\7\65\2\2\u00bd)\3\2\2\2\u00be\u00bf")
         buf.write("\7\62\2\2\u00bf+\3\2\2\2\u00c0\u00c1\7\17\2\2\u00c1\u00c2")
         buf.write("\5\6\4\2\u00c2\u00c3\7\17\2\2\u00c3-\3\2\2\2\u00c4\u00c5")
         buf.write("\7\7\2\2\u00c5\u00c6\5\6\4\2\u00c6\u00c7\7\b\2\2\u00c7")
-        buf.write("\u00c8\7<\2\2\u00c8\u00d0\3\2\2\2\u00c9\u00ca\5*\26\2")
-        buf.write("\u00ca\u00cb\7<\2\2\u00cb\u00d0\3\2\2\2\u00cc\u00cd\5")
-        buf.write("$\23\2\u00cd\u00ce\7<\2\2\u00ce\u00d0\3\2\2\2\u00cf\u00c4")
+        buf.write("\u00c8\7;\2\2\u00c8\u00d0\3\2\2\2\u00c9\u00ca\5*\26\2")
+        buf.write("\u00ca\u00cb\7;\2\2\u00cb\u00d0\3\2\2\2\u00cc\u00cd\5")
+        buf.write("$\23\2\u00cd\u00ce\7;\2\2\u00ce\u00d0\3\2\2\2\u00cf\u00c4")
         buf.write("\3\2\2\2\u00cf\u00c9\3\2\2\2\u00cf\u00cc\3\2\2\2\u00d0")
         buf.write("/\3\2\2\2\u00d1\u00d2\5\62\32\2\u00d2\u00d3\7\t\2\2\u00d3")
         buf.write("\u00d4\5\6\4\2\u00d4\u00d5\7\n\2\2\u00d5\u00dc\3\2\2\2")
@@ -129,8 +129,8 @@ class MatexParser ( Parser ):
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "'\\times'", "'\\cdot'", "'\\div'", "'\\frac'", "'_'", 
                      "'^'", "':'", "'\\'", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'\\pi'", "'\\infty'", "'='", "'<'", "'\\leq'", "'>'", 
-                     "'\\geq'", "'!'" ]
+                     "'\\infty'", "'='", "'<'", "'\\leq'", "'>'", "'\\geq'", 
+                     "'!'" ]
 
     symbolicNames = [ "<INVALID>", "PLUS", "MINUS", "MUL", "DIV", "L_PAREN", 
                       "R_PAREN", "L_BRACE", "R_BRACE", "L_BRACKET", "R_BRACKET", 
@@ -142,9 +142,9 @@ class MatexParser ( Parser ):
                       "FUNC_COSH", "FUNC_TANH", "FUNC_ARCSINH", "FUNC_ARCCOSH", 
                       "FUNC_ARCTANH", "FUNC_SQRT", "CMD_TIMES", "CMD_CDOT", 
                       "CMD_DIV", "CMD_FRAC", "UNDERSCORE", "CARET", "COLON", 
-                      "BACKSLASH", "NUMBER", "VARIABLE", "MIXNUMBER", "PI", 
-                      "INFINITY", "EQ", "LT", "LTE", "GT", "GTE", "BANG", 
-                      "SYMBOL", "WS" ]
+                      "BACKSLASH", "NUMBER", "VARIABLE", "MIXNUMBER", "INFINITY", 
+                      "EQ", "LT", "LTE", "GT", "GTE", "BANG", "GREEKLETTER", 
+                      "WS" ]
 
     RULE_math = 0
     RULE_equality = 1
@@ -236,16 +236,15 @@ class MatexParser ( Parser ):
     NUMBER=48
     VARIABLE=49
     MIXNUMBER=50
-    PI=51
-    INFINITY=52
-    EQ=53
-    LT=54
-    LTE=55
-    GT=56
-    GTE=57
-    BANG=58
-    SYMBOL=59
-    WS=60
+    INFINITY=51
+    EQ=52
+    LT=53
+    LTE=54
+    GT=55
+    GTE=56
+    BANG=57
+    GREEKLETTER=58
+    WS=59
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -395,7 +394,7 @@ class MatexParser ( Parser ):
                 self.state = 67
                 self.productExpr()
                 pass
-            elif token in [MatexParser.MINUS, MatexParser.L_PAREN, MatexParser.BAR, MatexParser.FUNC_LOG, MatexParser.FUNC_LN, MatexParser.FUNC_SIN, MatexParser.FUNC_COS, MatexParser.FUNC_TAN, MatexParser.FUNC_CSC, MatexParser.FUNC_SEC, MatexParser.FUNC_COT, MatexParser.FUNC_ARCSIN, MatexParser.FUNC_ARCCOS, MatexParser.FUNC_ARCTAN, MatexParser.FUNC_ARCCSC, MatexParser.FUNC_ARCSEC, MatexParser.FUNC_ARCCOT, MatexParser.FUNC_SINH, MatexParser.FUNC_COSH, MatexParser.FUNC_TANH, MatexParser.FUNC_ARCSINH, MatexParser.FUNC_ARCCOSH, MatexParser.FUNC_ARCTANH, MatexParser.FUNC_SQRT, MatexParser.CMD_FRAC, MatexParser.NUMBER, MatexParser.VARIABLE, MatexParser.MIXNUMBER, MatexParser.PI, MatexParser.INFINITY]:
+            elif token in [MatexParser.MINUS, MatexParser.L_PAREN, MatexParser.BAR, MatexParser.FUNC_LOG, MatexParser.FUNC_LN, MatexParser.FUNC_SIN, MatexParser.FUNC_COS, MatexParser.FUNC_TAN, MatexParser.FUNC_CSC, MatexParser.FUNC_SEC, MatexParser.FUNC_COT, MatexParser.FUNC_ARCSIN, MatexParser.FUNC_ARCCOS, MatexParser.FUNC_ARCTAN, MatexParser.FUNC_ARCCSC, MatexParser.FUNC_ARCSEC, MatexParser.FUNC_ARCCOT, MatexParser.FUNC_SINH, MatexParser.FUNC_COSH, MatexParser.FUNC_TANH, MatexParser.FUNC_ARCSINH, MatexParser.FUNC_ARCCOSH, MatexParser.FUNC_ARCTANH, MatexParser.FUNC_SQRT, MatexParser.CMD_FRAC, MatexParser.NUMBER, MatexParser.VARIABLE, MatexParser.MIXNUMBER, MatexParser.INFINITY, MatexParser.GREEKLETTER]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 68
                 self.subtractionExpr(0)
@@ -1200,7 +1199,7 @@ class MatexParser ( Parser ):
                 self.state = 160
                 self.func()
                 pass
-            elif token in [MatexParser.L_PAREN, MatexParser.BAR, MatexParser.NUMBER, MatexParser.VARIABLE, MatexParser.PI, MatexParser.INFINITY]:
+            elif token in [MatexParser.L_PAREN, MatexParser.BAR, MatexParser.NUMBER, MatexParser.VARIABLE, MatexParser.INFINITY, MatexParser.GREEKLETTER]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 161
                 self.atom()
@@ -1426,6 +1425,9 @@ class MatexParser ( Parser ):
         def VARIABLE(self):
             return self.getToken(MatexParser.VARIABLE, 0)
 
+        def GREEKLETTER(self):
+            return self.getToken(MatexParser.GREEKLETTER, 0)
+
         def getRuleIndex(self):
             return MatexParser.RULE_variable
 
@@ -1444,10 +1446,16 @@ class MatexParser ( Parser ):
 
         localctx = MatexParser.VariableContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_variable)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 181
-            self.match(MatexParser.VARIABLE)
+            _la = self._input.LA(1)
+            if not(_la==MatexParser.VARIABLE or _la==MatexParser.GREEKLETTER):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1507,9 +1515,6 @@ class MatexParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def PI(self):
-            return self.getToken(MatexParser.PI, 0)
-
         def INFINITY(self):
             return self.getToken(MatexParser.INFINITY, 0)
 
@@ -1531,16 +1536,10 @@ class MatexParser ( Parser ):
 
         localctx = MatexParser.ConstantContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_constant)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 186
-            _la = self._input.LA(1)
-            if not(_la==MatexParser.PI or _la==MatexParser.INFINITY):
-                self._errHandler.recoverInline(self)
-            else:
-                self._errHandler.reportMatch(self)
-                self.consume()
+            self.match(MatexParser.INFINITY)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1705,7 +1704,7 @@ class MatexParser ( Parser ):
                 self.state = 200
                 self.match(MatexParser.BANG)
                 pass
-            elif token in [MatexParser.VARIABLE]:
+            elif token in [MatexParser.VARIABLE, MatexParser.GREEKLETTER]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 202
                 self.variable()

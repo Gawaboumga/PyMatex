@@ -3,7 +3,7 @@ from node.Variable import Variable
 
 class IndexedVariable(Variable):
 
-    def __init__(self, variable: str, index: str):
+    def __init__(self, variable: str, index):
         super().__init__(variable)
 
         self.index = index

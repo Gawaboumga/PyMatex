@@ -20,11 +20,3 @@ class ConstantTests(BaseTest.BaseTest):
     def test_write_negative_number(self):
         ast = self.parse('-3')
         self.assertEqual(str(ast), '(-3)')
-
-    def test_read_special_constant(self):
-        ast = self.parse('\pi')
-        self.assertEqual(ast, Constant('\pi'))
-
-    def test_write_special_constant(self):
-        ast = self.parse('\pi')
-        self.assertEqual(str(ast), '\pi')

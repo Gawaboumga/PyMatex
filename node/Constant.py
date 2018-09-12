@@ -8,9 +8,7 @@ class Constant:
 
         self.value = None
 
-        if constant == '\\pi':
-            self.value = math.pi
-        elif constant == '\\infty':
+        if constant == '\\infty':
             self.value = math.inf
         else:
             _ = float(constant)
@@ -20,8 +18,6 @@ class Constant:
         return self.value == other.value
 
     def __str__(self):
-        if self.value == math.pi:
-            return '\pi'
         if self.value == math.inf:
             return '\\infty'
 
