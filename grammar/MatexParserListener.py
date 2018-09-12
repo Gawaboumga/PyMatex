@@ -26,6 +26,15 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#megaExpr.
+    def enterMegaExpr(self, ctx:MatexParser.MegaExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#megaExpr.
+    def exitMegaExpr(self, ctx:MatexParser.MegaExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#expr.
     def enterExpr(self, ctx:MatexParser.ExprContext):
         pass
@@ -50,6 +59,15 @@ class MatexParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by MatexParser#productExpr.
     def exitProductExpr(self, ctx:MatexParser.ProductExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#tailExpr.
+    def enterTailExpr(self, ctx:MatexParser.TailExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#tailExpr.
+    def exitTailExpr(self, ctx:MatexParser.TailExprContext):
         pass
 
 

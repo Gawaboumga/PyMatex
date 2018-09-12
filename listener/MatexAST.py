@@ -126,6 +126,20 @@ class MatexAST(MatexParserListener.MatexParserListener):
         assert (len(self.__stack) == 1)
         self.__head = self.__stack[0]
 
+    def exitMegaExpr(self, ctx: MatexParser.MegaExprContext):
+        if ctx.getChildCount() < 2:
+            return
+
+        rhs = self.pop()
+        lhs = self.pop()
+
+        if ctx.PLUS():
+            self.push(Addition(lhs, rhs))
+        elif ctx.MUL():
+            self.push(Multiplication(lhs, rhs))
+        elif ctx.MINUS():
+            self.push(Subtraction(lhs, rhs))
+
     def exitMultiplicationExpr(self, ctx: MatexParser.MultiplicationExprContext):
         if ctx.getChildCount() < 2:
             return

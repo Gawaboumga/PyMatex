@@ -7,13 +7,26 @@ math: expr;
 equality:
     expr EQ expr;
 
-expr: 
+megaExpr:
     summationExpr
     | productExpr
-    | subtractionExpr;
+    | megaExpr PLUS summationExpr
+    | megaExpr PLUS productExpr
+    | megaExpr MINUS summationExpr
+    | megaExpr MINUS productExpr
+    | megaExpr MUL summationExpr
+    | megaExpr MUL productExpr;
 
-summationExpr: FUNC_SUM funcParams expr;
-productExpr: FUNC_PROD funcParams expr;
+expr:
+    subtractionExpr
+    | megaExpr;
+
+summationExpr: FUNC_SUM funcParams tailExpr;
+productExpr: FUNC_PROD funcParams tailExpr;
+
+tailExpr:
+    expr
+    | L_BRACE expr R_BRACE;
 
 funcParams: subeq supexpr;
 
