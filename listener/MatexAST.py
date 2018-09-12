@@ -133,7 +133,9 @@ class MatexAST(MatexParserListener.MatexParserListener):
         rhs = self.pop()
         lhs = self.pop()
 
-        if ctx.PLUS():
+        if ctx.variable():
+            self.push(Multiplication(lhs, rhs))
+        elif ctx.PLUS():
             self.push(Addition(lhs, rhs))
         elif ctx.MUL():
             self.push(Multiplication(lhs, rhs))

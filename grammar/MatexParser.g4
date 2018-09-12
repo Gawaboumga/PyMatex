@@ -8,8 +8,8 @@ equality:
     expr EQ expr;
 
 megaExpr:
-    summationExpr
-    | productExpr
+    (variable MUL?)? summationExpr
+    | (variable MUL?)? productExpr
     | megaExpr PLUS summationExpr
     | megaExpr PLUS productExpr
     | megaExpr MINUS summationExpr
@@ -78,6 +78,7 @@ atom:
     | number
     | absolute
     | factorial
+    | L_BRACKET expr R_BRACKET
     | L_PAREN expr R_PAREN;
 
 variable: VARIABLE | GREEKLETTER;

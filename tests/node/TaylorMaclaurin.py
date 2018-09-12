@@ -50,3 +50,30 @@ class TaylorMaclaurinTests(BaseTest.BaseTest):
                 Multiplication(four_exponent_n, Subtraction(four_exponent_n, Constant('1'))),
                 Function(Func.FACTORIAL, Multiplication(Constant('2'), Variable('n')))
             )), Exponentiation(Variable('x'), Subtraction(two_times_n, Constant('1'))))))
+
+    def test_read_exponent_alpha_arcsin(self):
+        ast = self.parse(r'\sum_{n=0}^{\infty }{\frac {\prod _{k=0}^{n-1}(4k^{2}+\alpha ^{2})}{(2n)!}z^{2n}}+\sum _{n=0}^{\infty }{\frac {\alpha \prod _{k=0}^{n-1}[(2k+1)^{2}+\alpha ^{2}]}{(2n+1)!}z^{2n+1}}')
+
+        a = Variable('\\alpha')
+        k = Variable('k')
+        n = Variable('n')
+        o = Constant('1')
+        t = Constant('2')
+        z = Constant('0')
+        infinity = Constant('\\infty')
+
+        first_summation = Summation(n, z, infinity, Multiplication(
+            Division(Product(k, z, Subtraction(n, o), Addition(
+                Exponentiation(Multiplication(Constant('4'), k), t),
+                Exponentiation(a, t))),
+                     Function(Func.FACTORIAL, Multiplication(t, n))),
+            Exponentiation(Variable('z'), Multiplication(t, n))))
+
+        second_summation = Summation(n, z, infinity, Multiplication(
+            Division(Multiplication(a, Product(k, z, Subtraction(n, o), Addition(
+                Exponentiation(Addition(Multiplication(t, k), o), t),
+                Exponentiation(a, t)))),
+                     Function(Func.FACTORIAL, Addition(Multiplication(t, n), o))),
+            Exponentiation(Variable('z'), Addition(Multiplication(t, n), o))))
+
+        self.assertEqual(ast, Addition(first_summation, second_summation))
