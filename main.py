@@ -2,6 +2,7 @@ import sys
 from antlr4 import *
 from antlr4.tree.Trees import Trees
 from grammar import MatexLexer, MatexParser
+from listener import MatexAST
 
 
 def main(argv):
@@ -11,6 +12,11 @@ def main(argv):
     parser = MatexParser.MatexParser(stream)
     tree = parser.math()
     print(Trees.toStringTree(tree, None, parser))
+
+    ast = MatexAST.MatexAST()
+    walker = ParseTreeWalker()
+    walker.walk(ast, tree)
+    print(str(ast))
 
 
 if __name__ == '__main__':

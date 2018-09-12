@@ -59,7 +59,7 @@ BACKSLASH: '\\';
 
 fragment LETTER: [a-zA-Z];
 fragment DIGIT: [0-9];
-NUMBER: '-'? DIGIT* '.'? DIGIT+ ([eE][-+]? DIGIT+)?;
+NUMBER: DIGIT* '.'? DIGIT+ ([eE][-+]? DIGIT+)?;
 
 VARIABLE: LETTER+;
 MIXNUMBER: NUMBER VARIABLE;

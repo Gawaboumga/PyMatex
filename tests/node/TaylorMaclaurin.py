@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Addition, Constant, Division, Exponentiation, Func, Function, IndexedVariable, Multiplication, Subtraction, Summation, Variable
+from node import *
 
 
 class TaylorMaclaurinTests(BaseTest.BaseTest):
@@ -14,7 +14,7 @@ class TaylorMaclaurinTests(BaseTest.BaseTest):
     def test_read_logarithm(self):
         ast = self.parse(r'\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} x^{n}')
         self.assertEqual(ast, Summation(Variable('n'), Constant('1'), Constant('\\infty'), Multiplication(
-            Division(Exponentiation(Constant('-1'), Addition(Variable('n'), Constant('1'))), Variable('n')),
+            Division(Exponentiation(Negate(Constant('1')), Addition(Variable('n'), Constant('1'))), Variable('n')),
             Exponentiation(Variable('x'), Variable('n')))))
 
     def test_read_geometric(self):
@@ -26,7 +26,7 @@ class TaylorMaclaurinTests(BaseTest.BaseTest):
         ast = self.parse(r'\sum_{n=0}^{\infty} \frac{(-1)^n}{(2n + 1)!} x^{2n + 1}')
         two_times_n_plus_one = Addition(Multiplication(Constant('2'), Variable('n')), Constant('1'))
         self.assertEqual(ast, Summation(Variable('n'), Constant('0'), Constant('\\infty'), Multiplication(
-            Division(Exponentiation(Constant('-1'), Variable('n')), Function(Func.FACTORIAL, two_times_n_plus_one)),
+            Division(Exponentiation(Negate(Constant('1')), Variable('n')), Function(Func.FACTORIAL, two_times_n_plus_one)),
             Exponentiation(Variable('x'), two_times_n_plus_one))))
 
     def test_read_arcsin(self):

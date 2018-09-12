@@ -58,3 +58,7 @@ class AdditiveTests(BaseTest.BaseTest):
     def test_read_subtraction_of_negate_variable(self):
         ast = self.parse('x - -y')
         self.assertEqual(ast, Subtraction(Variable('x'), Negate(Variable('y'))))
+
+    def test_read_substraction_of_constant_and_variable(self):
+        ast = self.parse('n-1')
+        self.assertEqual(ast, Subtraction(Variable('n'), Constant('1')))
