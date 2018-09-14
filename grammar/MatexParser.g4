@@ -8,19 +8,22 @@ equality:
     expr EQ expr;
 
 megaExpr:
-    (variable MUL?)? summationExpr
-    | (variable MUL?)? productExpr
-    | megaExpr PLUS summationExpr
-    | megaExpr PLUS productExpr
-    | megaExpr MINUS summationExpr
-    | megaExpr MINUS productExpr
-    | megaExpr MUL summationExpr
-    | megaExpr MUL productExpr;
+    (variable MUL?)? specialExpr
+    | megaExpr PLUS specialExpr
+    | megaExpr MINUS specialExpr
+    | megaExpr MUL specialExpr;
+
+specialExpr:
+    integralExpr
+    | summationExpr
+    | productExpr;
 
 expr:
     subtractionExpr
     | megaExpr;
 
+integralExpr: FUNC_INT subexpr supexpr L_BRACE expr DERIVATIVE R_BRACE
+              | FUNC_INT subexpr supexpr expr DERIVATIVE;
 summationExpr: FUNC_SUM funcParams tailExpr;
 productExpr: FUNC_PROD funcParams tailExpr;
 

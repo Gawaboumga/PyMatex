@@ -60,6 +60,7 @@ BACKSLASH: '\\';
 fragment LETTER: [a-zA-Z];
 fragment DIGIT: [0-9];
 NUMBER: DIGIT* '.'? DIGIT+ ([eE][-+]? DIGIT+)?;
+DERIVATIVE: 'd' LETTER;
 
 VARIABLE: LETTER+;
 MIXNUMBER: NUMBER VARIABLE;

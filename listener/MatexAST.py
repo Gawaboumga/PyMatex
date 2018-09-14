@@ -113,6 +113,17 @@ class MatexAST(MatexParserListener.MatexParserListener):
         expression = self.pop()
         self.push(IndexedVariable(ctx.VARIABLE().getText(), expression))
 
+    def exitIntegralExpr(self, ctx: MatexParser.IntegralExprContext):
+        expression = self.pop()
+        end_range = self.pop()
+        start_range = self.pop()
+
+        variable = None
+        if ctx.DERIVATIVE():
+            variable = Variable(ctx.DERIVATIVE().getText()[1:])
+
+        self.push(Integral(variable, start_range, end_range, expression))
+
     def exitLocalMultiplication(self, ctx: MatexParser.LocalMultiplicationContext):
         mixed_number = ctx.MIXNUMBER().getText()
         import re

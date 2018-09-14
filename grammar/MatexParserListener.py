@@ -35,12 +35,30 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#specialExpr.
+    def enterSpecialExpr(self, ctx:MatexParser.SpecialExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#specialExpr.
+    def exitSpecialExpr(self, ctx:MatexParser.SpecialExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#expr.
     def enterExpr(self, ctx:MatexParser.ExprContext):
         pass
 
     # Exit a parse tree produced by MatexParser#expr.
     def exitExpr(self, ctx:MatexParser.ExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#integralExpr.
+    def enterIntegralExpr(self, ctx:MatexParser.IntegralExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#integralExpr.
+    def exitIntegralExpr(self, ctx:MatexParser.IntegralExprContext):
         pass
 
 

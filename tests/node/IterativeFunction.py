@@ -1,9 +1,9 @@
 from tests import BaseTest
 
-from node import Addition, Constant, Multiplication, Product, Subtraction, Summation, Variable
+from node import Addition, Constant, Integral, Multiplication, Product, Subtraction, Summation, Variable
 
 
-class SummationTests(BaseTest.BaseTest):
+class IterativeFunctionTests(BaseTest.BaseTest):
 
     def test_read_simple_summation(self):
         ast = self.parse(r'\sum_{i=0}^{\infty} (i + 1)')
@@ -46,3 +46,16 @@ class SummationTests(BaseTest.BaseTest):
 
         summation = Summation(Variable('i'), Constant('0'), Constant('\\infty'), Variable('i'))
         self.assertEqual(ast, Multiplication(Multiplication(summation, summation), summation))
+
+    def test_read_integral(self):
+        ast = self.parse(r'\int_{a}^{b} 3x dx')
+
+        summation = Integral(Variable('x'), Variable('a'), Variable('b'), Multiplication(Constant('3'), Variable('x')))
+        self.assertEqual(ast, summation)
+
+    def test_read_nested_integral(self):
+        ast = self.parse(r'\int_{a}^{b} \int_{c}^{d} 3x y dy dx')
+
+        internal = Integral(Variable('y'), Variable('c'), Variable('d'), Multiplication(Multiplication(Constant('3'), Variable('x')), Variable('y')))
+        outer = Integral(Variable('x'), Variable('a'), Variable('b'), internal)
+        self.assertEqual(ast, outer)
