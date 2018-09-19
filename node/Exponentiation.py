@@ -1,4 +1,5 @@
-from .BinaryOperator import BinaryOperator
+from listener import MatexASTVisitor
+from node.BinaryOperator import BinaryOperator
 
 
 class Exponentiation(BinaryOperator):
@@ -8,3 +9,6 @@ class Exponentiation(BinaryOperator):
 
     def __str__(self):
         return '{}^{{{}}}'.format(self.lhs, self.rhs)
+
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_exponentiation(self)

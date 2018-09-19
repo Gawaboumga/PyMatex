@@ -1,4 +1,5 @@
 from enum import Enum, auto
+from node.Node import Node
 
 
 class IterativeType(Enum):
@@ -7,7 +8,7 @@ class IterativeType(Enum):
     SUM = auto()
 
 
-class IterativeFunction:
+class IterativeFunction(Node):
 
     def __init__(self, iterative_type: IterativeType, variable, start_range, end_range, expression):
         super().__init__()

@@ -1,4 +1,5 @@
-from .IterativeFunction import *
+from listener import MatexASTVisitor
+from node.IterativeFunction import IterativeFunction, IterativeType
 
 
 class Integral(IterativeFunction):
@@ -8,3 +9,6 @@ class Integral(IterativeFunction):
 
     def __str__(self):
         return '\\int_{{{}}}^{{{}}}{{{} d{}}}'.format(self.start_range, self.end_range, self.expression, self.variable)
+
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_integral(self)

@@ -1,5 +1,7 @@
+from node.Node import Node
 
-class BinaryOperator:
+
+class BinaryOperator(Node):
 
     def __init__(self, lhs, rhs, symbol, operator):
         super().__init__()

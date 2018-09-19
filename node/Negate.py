@@ -1,5 +1,8 @@
+from listener import MatexASTVisitor
+from node.Node import Node
 
-class Negate:
+
+class Negate(Node):
 
     def __init__(self, node):
         super().__init__()
@@ -11,3 +14,6 @@ class Negate:
 
     def __str__(self):
         return '-({})'.format(self.node)
+
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_negate(self)

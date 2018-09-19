@@ -1,7 +1,9 @@
 import math
+from listener import MatexASTVisitor
+from node.Node import Node
 
 
-class Constant:
+class Constant(Node):
 
     def __init__(self, constant: str):
         super().__init__()
@@ -25,3 +27,6 @@ class Constant:
             return '({})'.format(self.value)
         else:
             return self.value
+
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_constant(self)

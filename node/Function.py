@@ -1,4 +1,6 @@
 from enum import Enum, auto
+from listener import MatexASTVisitor
+from node.Node import Node
 
 
 class Func(Enum):
@@ -27,7 +29,7 @@ class Func(Enum):
     TANH = auto()
 
 
-class Function:
+class Function(Node):
     def __init__(self, func: Func, expression):
         super().__init__()
 
@@ -87,4 +89,6 @@ class Function:
         else:
             return 'UNDEFINED FUNCTION'
 
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_function(self)
 

@@ -1,5 +1,6 @@
 from grammar import MatexParserListener
 from grammar.MatexParser import MatexParser
+from listener.MatexASTVisitor import MatexASTVisitor
 from node import *
 
 
@@ -17,6 +18,10 @@ class MatexAST(MatexParserListener.MatexParserListener):
     def __str__(self):
         assert (self.__head is not None)
         return str(self.__head)
+
+    def accept(self, visitor: MatexASTVisitor):
+        assert (self.__head is not None)
+        return self.__head.accept(visitor)
 
     def exitAbsolute(self, ctx: MatexParser.AbsoluteContext):
         self.push(Function(Func.ABS, self.pop()))

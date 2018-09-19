@@ -1,4 +1,5 @@
-from .IterativeFunction import *
+from listener import MatexASTVisitor
+from node.IterativeFunction import IterativeFunction, IterativeType
 
 
 class Summation(IterativeFunction):
@@ -9,3 +10,6 @@ class Summation(IterativeFunction):
     def __str__(self):
         return '\\sum_{{{}={}}}^{{{}}}{{{}}}'.format(self.variable, self.start_range, self.end_range,
                                                      self.expression)
+
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_summation(self)

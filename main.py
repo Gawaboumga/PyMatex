@@ -13,7 +13,7 @@ def main(argv):
     tree = parser.math()
     print(Trees.toStringTree(tree, None, parser))
 
-    ast = MatexAST.MatexAST()
+    ast = MatexAST()
     walker = ParseTreeWalker()
     walker.walk(ast, tree)
     print(str(ast))

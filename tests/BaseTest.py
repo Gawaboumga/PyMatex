@@ -11,7 +11,7 @@ class BaseTest(unittest.TestCase):
         stream = CommonTokenStream(lexer)
         parser = MatexParser.MatexParser(stream)
         tree = parser.math()
-        ast = MatexAST.MatexAST()
+        ast = MatexAST()
         walker = ParseTreeWalker()
         walker.walk(ast, tree)
         return ast

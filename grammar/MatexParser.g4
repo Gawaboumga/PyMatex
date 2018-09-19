@@ -2,7 +2,7 @@ parser grammar MatexParser;
 
 options {tokenVocab = MatexLexer;}
 
-math: expr;
+math: expr EOF;
 
 equality:
     expr EQ expr;

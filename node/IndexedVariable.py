@@ -1,3 +1,4 @@
+from listener import MatexASTVisitor
 from node.Variable import Variable
 
 
@@ -13,3 +14,6 @@ class IndexedVariable(Variable):
 
     def __str__(self):
         return '{}_{{{}}}'.format(self.variable, self.index)
+
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_indexed_variable(self)

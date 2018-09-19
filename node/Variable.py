@@ -1,5 +1,8 @@
+from listener import MatexASTVisitor
+from node.Node import Node
 
-class Variable:
+
+class Variable(Node):
 
     def __init__(self, variable: str):
         super().__init__()
@@ -11,3 +14,6 @@ class Variable:
 
     def __str__(self):
         return self.variable
+
+    def accept(self, visitor: MatexASTVisitor):
+        return visitor.visit_variable(self)
