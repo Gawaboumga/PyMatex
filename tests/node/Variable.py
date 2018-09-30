@@ -1,17 +1,17 @@
 from tests import BaseTest
 
-from node import Negate, Variable
+from node import Multiplication, Negate, Variable
 
 
 class VariableTests(BaseTest.BaseTest):
 
     def test_read_variable(self):
         ast = self.parse('xyz')
-        self.assertEqual(ast, Variable('xyz'))
+        self.assertEqual(ast, Multiplication(Multiplication(Variable('x'), Variable('y')), Variable('z')))
 
     def test_write_variable(self):
         ast = self.parse('xyz')
-        self.assertEqual(str(ast), 'xyz')
+        self.assertEqual(str(ast), '((x * y) * z)')
 
     def test_read_negative_variable(self):
         ast = self.parse('-x')

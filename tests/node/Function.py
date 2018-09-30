@@ -35,6 +35,9 @@ class FunctionTests(BaseTest.BaseTest):
         ast = self.parse('(2 * x)!')
         self.assertEqual(ast, Function(Func.FACTORIAL, Multiplication(Constant('2'), Variable('x'))))
 
+        ast = self.parse('4 * x!')
+        self.assertEqual(ast, Multiplication(Constant('4'), Function(Func.FACTORIAL, Variable('x'))))
+
     def test_write_factorial(self):
         ast = self.parse('x!')
         self.assertEqual(str(ast), '(x)!')
