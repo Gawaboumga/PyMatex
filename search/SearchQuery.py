@@ -18,25 +18,16 @@ class SearchQuery:
                 pk = int(tokens[0])
                 latex = tokens[1].strip()
 
-                ast = self.parse(latex)
+                ast = self.__parse(latex)
 
                 visitor = IndexCreatorVisitor(self.data, pk)
                 ast.accept(visitor)
 
                 self.number_of_different_nodes[pk] = visitor.get_number_of_nodes_of_different_nodes()
 
-    def parse(self, content: str):
-        lexer = MatexLexer.MatexLexer(InputStream(content))
-        stream = CommonTokenStream(lexer)
-        parser = MatexParser.MatexParser(stream)
-        tree = parser.math()
-        ast = MatexAST()
-        walker = ParseTreeWalker()
-        walker.walk(ast, tree)
-        return ast
 
     def search(self, content: str):
-        ast = self.parse(content)
+        ast = self.__parse(content)
 
         visitor = IndexSearchVisitor(self.data)
         ast.accept(visitor)
@@ -48,3 +39,6 @@ class SearchQuery:
 
         sorted_result = sorted(results.items(), key=operator.itemgetter(1), reverse=True)
         return sorted_result
+
+    def __parse(self, content: str):
+        return MatexAST.parse(content)

@@ -18,3 +18,14 @@ class SearchQueryTests(BaseTest.BaseTest):
         results = s.search(r'(ky+o) * (uy^{2} + vy + n)')
 
         self.assertListEqual(list(map(lambda x: x[0], results)), [1, 2])
+
+    def test_remove(self):
+        s = SearchQuery(path='tests/search/resources/search-content-simple-tests.txt')
+        results = s.search(r'(ky+o) * (uy^{2} + vy + n)')
+
+        self.assertListEqual(list(map(lambda x: x[0], results)), [1, 2])
+
+        s.remove(1)
+
+        results = s.search(r'(ky+o) * (uy^{2} + vy + n)')
+        self.assertListEqual(list(map(lambda x: x[0], results)), [2])

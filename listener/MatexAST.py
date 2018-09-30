@@ -1,6 +1,7 @@
-from grammar import MatexParserListener
+from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
+from grammar import MatexLexer, MatexParserListener
 from grammar.MatexParser import MatexParser
-from listener.MatexASTVisitor import MatexASTVisitor
+from listener import MatexASTVisitor
 from node import *
 
 
@@ -22,6 +23,17 @@ class MatexAST(MatexParserListener.MatexParserListener):
     def accept(self, visitor: MatexASTVisitor):
         assert (self.__head is not None)
         return self.__head.accept(visitor)
+
+    @staticmethod
+    def parse(latex: str):
+        lexer = MatexLexer.MatexLexer(InputStream(latex))
+        stream = CommonTokenStream(lexer)
+        parser = MatexParser(stream)
+        tree = parser.math()
+        ast = MatexAST()
+        walker = ParseTreeWalker()
+        walker.walk(ast, tree)
+        return ast
 
     def exitAbsolute(self, ctx: MatexParser.AbsoluteContext):
         self.push(Function(Func.ABS, self.pop()))
