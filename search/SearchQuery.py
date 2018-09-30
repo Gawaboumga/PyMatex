@@ -25,6 +25,15 @@ class SearchQuery:
 
                 self.number_of_different_nodes[pk] = visitor.get_number_of_nodes_of_different_nodes()
 
+    def add(self, pk: int, latex: str):
+        ast = self.__parse(latex)
+
+        visitor = IndexCreatorVisitor(self.data, pk)
+        ast.accept(visitor)
+
+    def remove(self, pk: int):
+        self.number_of_different_nodes.pop(pk)
+        self.__internal_remove(self.data, pk)
 
     def search(self, content: str):
         ast = self.__parse(content)
@@ -39,6 +48,17 @@ class SearchQuery:
 
         sorted_result = sorted(results.items(), key=operator.itemgetter(1), reverse=True)
         return sorted_result
+
+    def __internal_remove(self, data, pk: int):
+        if isinstance(data, dict):
+            for k, v in data.items():
+                if isinstance(v, dict) or isinstance(v, set):
+                    self.__internal_remove(v, pk)
+                else:
+                    if v == pk:
+                        del data[k]
+        elif isinstance(data, set):
+            data.remove(pk)
 
     def __parse(self, content: str):
         return MatexAST.parse(content)
