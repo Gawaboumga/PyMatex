@@ -131,12 +131,23 @@ class MatexAST(MatexParserListener.MatexParserListener):
 
     def exitLocalMultiplication(self, ctx: MatexParser.LocalMultiplicationContext):
         mixed_number = ctx.MIXNUMBER().getText()
+        last = None
+        variables = None
         import re
         for it in re.finditer(r'[-+]?\d*\.?\d+([eE][-+]?\d+)?', mixed_number):
             span = it.span(0)
             number = mixed_number[span[0]:span[1]]
-            variable = mixed_number[span[1]:]
-            self.push(Multiplication(Constant(number), Variable(variable)))
+            last = Constant(number)
+            variables = mixed_number[span[1]:]
+
+        if variables is None:
+            variables = mixed_number
+        for variable in variables:
+            if last is None:
+                last = Variable(variable)
+            else:
+                last = Multiplication(last, Variable(variable))
+        self.push(last)
 
     def exitNegateAtom(self, ctx: MatexParser.NegateAtomContext):
         value = self.pop()
@@ -171,6 +182,7 @@ class MatexAST(MatexParserListener.MatexParserListener):
 
         rhs = self.pop()
         lhs = self.pop()
+
         self.push(Multiplication(lhs, rhs))
 
     def exitProductExpr(self, ctx: MatexParser.ProductExprContext):

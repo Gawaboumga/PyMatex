@@ -5,13 +5,15 @@ from node.Node import Node
 
 class Constant(Node):
 
+    value: str
+
     def __init__(self, constant: str):
         super().__init__()
 
         self.value = None
 
         if constant == '\\infty':
-            self.value = math.inf
+            self.value = constant
         else:
             _ = float(constant)
             self.value = constant
@@ -20,9 +22,6 @@ class Constant(Node):
         return self.value == other.value
 
     def __str__(self):
-        if self.value == math.inf:
-            return '\\infty'
-
         if self.value[0] == '-':
             return '({})'.format(self.value)
         else:

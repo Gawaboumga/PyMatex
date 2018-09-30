@@ -8,6 +8,7 @@ from node.IndexedVariable import *
 from node.Integral import *
 from node.Multiplication import *
 from node.Negate import *
+from node.Node import *
 from node.Product import *
 from node.Subtraction import *
 from node.Summation import *
