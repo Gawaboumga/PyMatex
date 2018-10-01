@@ -1,4 +1,4 @@
-from node import *
+from pymatex.node import *
 
 
 class MatexASTVisitor:

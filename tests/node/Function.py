@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Addition, Constant, Func, Function, Multiplication, Variable
+from pymatex.node import Addition, Constant, Func, Function, Multiplication, Variable
 
 
 class FunctionTests(BaseTest.BaseTest):

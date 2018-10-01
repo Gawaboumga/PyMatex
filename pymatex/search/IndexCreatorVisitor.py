@@ -1,29 +1,28 @@
-from listener import MatexASTVisitor
-from node import *
+from pymatex.listener import MatexASTVisitor
+from pymatex.node import *
 
 
-class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
+class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
 
-    def __init__(self, data: dict):
+    def __init__(self, data: dict, pk: int):
         self.data = data
-        self.results = {}
-        self.seen_constants = {}
-        self.seen_variables = {}
+        self.pk = pk
+        self.nodes_seen = {}
 
-    def get_results(self):
-        return self.results
+    def get_number_of_nodes_of_different_nodes(self):
+        return len(self.nodes_seen)
 
     def visit_addition(self, addition_node: Addition):
         depth_lhs = addition_node.lhs.accept(self)
         depth_rhs = addition_node.rhs.accept(self)
 
         node_depth = max(depth_lhs, depth_rhs) + 1
-        self.search(node_depth, NodeType.ADDITION)
+        self.add(node_depth, NodeType.ADDITION)
         return node_depth
 
     def visit_constant(self, constant_node: Constant):
         node_depth = 0
-        self.search_constant(node_depth, NodeType.CONSTANT, constant_node.value)
+        self.add(node_depth, NodeType.CONSTANT, constant_node.value)
         return node_depth
 
     def visit_division(self, division_node: Division):
@@ -31,7 +30,7 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         depth_rhs = division_node.rhs.accept(self)
 
         node_depth = max(depth_lhs, depth_rhs) + 1
-        self.search(node_depth, NodeType.DIVISION)
+        self.add(node_depth, NodeType.DIVISION)
         return node_depth
 
     def visit_exponentiation(self, exponentiation_node: Exponentiation):
@@ -39,21 +38,21 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         depth_exponent = exponentiation_node.rhs.accept(self)
 
         node_depth = max(depth_expr, depth_exponent) + 1
-        self.search(node_depth, NodeType.EXPONENTIATION)
+        self.add(node_depth, NodeType.EXPONENTIATION)
         return node_depth
 
     def visit_function(self, function_node: Function):
         depth = function_node.expression.accept(self)
 
         node_depth = depth + 1
-        self.search(node_depth, NodeType.FUNCTION)
+        self.add(node_depth, NodeType.FUNCTION)
         return node_depth
 
     def visit_indexed_variable(self, indexed_variable_node: IndexedVariable):
         depth = indexed_variable_node.index.accept(self)
 
         node_depth = depth + 1
-        self.search_variable(node_depth, NodeType.INDEXEDVARIABLE, indexed_variable_node.variable)
+        self.add(node_depth, NodeType.INDEXEDVARIABLE, indexed_variable_node.variable)
         return node_depth
 
     def visit_integral(self, integral_node: Integral):
@@ -63,7 +62,7 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         depth_expression = integral_node.expression.accept(self)
 
         node_depth = depth_expression + 1
-        self.search(node_depth, NodeType.SUMMATION)
+        self.add(node_depth, NodeType.SUMMATION)
         return node_depth
 
     def visit_multiplication(self, multiplication_node: Multiplication):
@@ -71,13 +70,13 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         depth_rhs = multiplication_node.rhs.accept(self)
 
         node_depth = max(depth_lhs, depth_rhs) + 1
-        self.search(node_depth, NodeType.MULTIPLICATION)
+        self.add(node_depth, NodeType.MULTIPLICATION)
         return node_depth
 
     def visit_negate(self, negate_node: Negate):
         depth = negate_node.node.accept(self)
 
-        self.search(depth + 1, NodeType.NEGATE)
+        self.add(depth + 1, NodeType.NEGATE)
         return depth
 
     def visit_product(self, product_node: Product):
@@ -87,7 +86,7 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         depth_expression = product_node.expression.accept(self)
 
         node_depth = depth_expression + 1
-        self.search(node_depth, NodeType.SUMMATION)
+        self.add(node_depth, NodeType.SUMMATION)
         return node_depth
 
     def visit_subtraction(self, subtraction_node: Subtraction):
@@ -95,7 +94,7 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         depth_rhs = subtraction_node.rhs.accept(self)
 
         node_depth = max(depth_lhs, depth_rhs) + 1
-        self.search(node_depth, NodeType.SUBTRACTION)
+        self.add(node_depth, NodeType.SUBTRACTION)
         return node_depth
 
     def visit_summation(self, summation_node: Summation):
@@ -105,56 +104,32 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         depth_expression = summation_node.expression.accept(self)
 
         node_depth = depth_expression + 1
-        self.search(node_depth, NodeType.SUMMATION)
+        self.add(node_depth, NodeType.SUMMATION)
         return node_depth
 
     def visit_variable(self, variable_node: Variable):
         node_depth = 0
-        self.search_variable(node_depth, NodeType.VARIABLE, variable_node.variable)
+        self.add(node_depth, NodeType.VARIABLE, variable_node.variable)
         return node_depth
 
-    def search(self, node_depth: int, node_type: NodeType):
-        nodes = self.data.get(node_depth, None)
-        if nodes is None:
-            return
-
-        objects = nodes.get(node_type, None)
-        if objects:
-            self.__add(objects, 100)
-
-    def search_constant(self, node_depth: int, node_type: NodeType, external_data: str):
-        nodes = self.data.get(node_depth, None)
-        if nodes is None:
-            return
-
-        objects = nodes.get(node_type, None)
-        if objects is None:
-            return
-
-        associated = objects.get(external_data, None)
-        if associated:
-            self.__add(associated, 100)
+    def add(self, node_depth: int, node_type: NodeType, external_data=None):
+        nodes = self.data.get(node_depth, dict())
+        if external_data is None:
+            objects = nodes.get(node_type, set())
+            objects.add(self.pk)
         else:
-            for mathematical_objects in objects.values():
-                self.__add(mathematical_objects, 70)
+            objects = nodes.get(node_type, dict())
+            associated = objects.get(external_data, set())
+            associated.add(self.pk)
+            objects[external_data] = associated
+        nodes[node_type] = objects
+        self.data[node_depth] = nodes
 
-    def search_variable(self, node_depth: int, node_type: NodeType, external_data: str):
-        nodes = self.data.get(node_depth, None)
-        if nodes is None:
-            return
-
-        objects = nodes.get(node_type, None)
-        if objects is None:
-            return
-
-        associated = objects.get(external_data, None)
-        if associated:
-            self.__add(associated, 100)
+        nodes_depth = self.nodes_seen.get(node_depth, set())
+        if nodes_depth is None:
+            nodes_depth.add(node_type)
         else:
-            for mathematical_objects in objects.values():
-                self.__add(mathematical_objects, 70)
+            if node_type not in nodes_depth:
+                nodes_depth.add(node_type)
 
-    def __add(self, items, value):
-        for item in items:
-            new_value = self.results.get(item, 0) + value
-            self.results[item] = new_value
+        self.nodes_seen[node_depth] = nodes_depth

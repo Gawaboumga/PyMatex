@@ -1,6 +1,6 @@
 from tests import BaseTest
-from listener import MatexASTVisitor
-from node import *
+from pymatex.listener import MatexASTVisitor
+from pymatex.node import *
 
 
 class TestVisitor(MatexASTVisitor.MatexASTVisitor):

@@ -1,4 +1,4 @@
-from listener import MatexASTVisitor
+from pymatex.listener import MatexASTVisitor
 from enum import Enum, auto
 
 

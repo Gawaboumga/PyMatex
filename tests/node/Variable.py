@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Multiplication, Negate, Variable
+from pymatex.node import Multiplication, Negate, Variable
 
 
 class VariableTests(BaseTest.BaseTest):

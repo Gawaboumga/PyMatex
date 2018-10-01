@@ -1,6 +1,6 @@
 from enum import Enum, auto
-from listener import MatexASTVisitor
-from node.Node import Node
+from pymatex.listener import MatexASTVisitor
+from pymatex.node.Node import Node
 
 
 class Func(Enum):

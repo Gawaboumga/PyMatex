@@ -1,6 +1,6 @@
 from tests import BaseTest
-from node import NodeType
-from search import IndexCreatorVisitor
+from pymatex.node import NodeType
+from pymatex.search import IndexCreatorVisitor
 
 
 class IndexCreatorVisitorTests(BaseTest.BaseTest):

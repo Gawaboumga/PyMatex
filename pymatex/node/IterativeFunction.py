@@ -1,5 +1,5 @@
 from enum import Enum, auto
-from node.Node import Node
+from pymatex.node.Node import Node
 
 
 class IterativeType(Enum):

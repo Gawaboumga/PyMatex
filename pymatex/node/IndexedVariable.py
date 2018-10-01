@@ -1,5 +1,5 @@
-from listener import MatexASTVisitor
-from node.Variable import Variable
+from pymatex.listener import MatexASTVisitor
+from pymatex.node.Variable import Variable
 
 
 class IndexedVariable(Variable):

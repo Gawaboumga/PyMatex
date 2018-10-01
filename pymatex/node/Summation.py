@@ -1,5 +1,5 @@
-from listener import MatexASTVisitor
-from node.IterativeFunction import IterativeFunction, IterativeType
+from pymatex.listener import MatexASTVisitor
+from pymatex.node.IterativeFunction import IterativeFunction, IterativeType
 
 
 class Summation(IterativeFunction):

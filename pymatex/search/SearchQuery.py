@@ -1,7 +1,7 @@
-from search import IndexCreatorVisitor, IndexSearchVisitor
 from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
-from listener import MatexAST
-from grammar import MatexLexer, MatexParser
+from pymatex.search import IndexCreatorVisitor, IndexSearchVisitor
+from pymatex.listener import MatexAST
+from pymatex.grammar import MatexLexer, MatexParser
 import operator
 
 

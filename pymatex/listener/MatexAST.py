@@ -1,8 +1,8 @@
 from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
-from grammar import MatexLexer, MatexParserListener
-from grammar.MatexParser import MatexParser
-from listener import MatexASTVisitor
-from node import *
+from pymatex.grammar import MatexLexer, MatexParserListener
+from pymatex.grammar.MatexParser import MatexParser
+from pymatex.listener import MatexASTVisitor
+from pymatex.node import *
 
 
 class MatexAST(MatexParserListener.MatexParserListener):

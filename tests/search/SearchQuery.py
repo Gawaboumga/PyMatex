@@ -1,5 +1,5 @@
 from tests import BaseTest
-from search import SearchQuery
+from pymatex.search import SearchQuery
 
 
 class SearchQueryTests(BaseTest.BaseTest):

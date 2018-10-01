@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Addition, Constant, Integral, Multiplication, Product, Subtraction, Summation, Variable
+from pymatex.node import Addition, Constant, Integral, Multiplication, Product, Subtraction, Summation, Variable
 
 
 class IterativeFunctionTests(BaseTest.BaseTest):

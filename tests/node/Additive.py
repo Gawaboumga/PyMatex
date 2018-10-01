@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Addition, Constant, Negate, Subtraction, Variable
+from pymatex.node import Addition, Constant, Negate, Subtraction, Variable
 
 
 class AdditiveTests(BaseTest.BaseTest):

@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import Constant, Negate
+from pymatex.node import Constant, Negate
 
 
 class ConstantTests(BaseTest.BaseTest):

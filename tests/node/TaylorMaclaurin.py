@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from node import *
+from pymatex.node import *
 
 
 class TaylorMaclaurinTests(BaseTest.BaseTest):

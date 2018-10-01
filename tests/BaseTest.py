@@ -1,4 +1,4 @@
-from listener import MatexAST
+from pymatex.listener import MatexAST
 import unittest
 
 

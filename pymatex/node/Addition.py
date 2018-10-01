@@ -1,5 +1,5 @@
-from listener import MatexASTVisitor
-from node.BinaryOperator import BinaryOperator
+from pymatex.listener import MatexASTVisitor
+from pymatex.node.BinaryOperator import BinaryOperator
 
 
 class Addition(BinaryOperator):
