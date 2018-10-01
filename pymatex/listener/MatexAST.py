@@ -1,11 +1,10 @@
 from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
-from pymatex.grammar import MatexLexer, MatexParserListener
-from pymatex.grammar.MatexParser import MatexParser
+from pymatex.grammar import MatexLexer, MatexParser, MatexParserListener
 from pymatex.listener import MatexASTVisitor
 from pymatex.node import *
 
 
-class MatexAST(MatexParserListener.MatexParserListener):
+class MatexAST(MatexParserListener):
 
     def __init__(self):
         super().__init__()
@@ -26,7 +25,7 @@ class MatexAST(MatexParserListener.MatexParserListener):
 
     @staticmethod
     def parse(latex: str):
-        lexer = MatexLexer.MatexLexer(InputStream(latex))
+        lexer = MatexLexer(InputStream(latex))
         stream = CommonTokenStream(lexer)
         parser = MatexParser(stream)
         tree = parser.math()
