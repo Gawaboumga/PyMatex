@@ -1,15 +1,15 @@
 import sys
 from antlr4 import *
 from antlr4.tree.Trees import Trees
-from grammar import MatexLexer, MatexParser
-from listener import MatexAST
+from pymatex.grammar import MatexLexer, MatexParser
+from pymatex.listener import MatexAST
 
 
 def main(argv):
     input = FileStream(argv[1])
-    lexer = MatexLexer.MatexLexer(input)
+    lexer = MatexLexer(input)
     stream = CommonTokenStream(lexer)
-    parser = MatexParser.MatexParser(stream)
+    parser = MatexParser(stream)
     tree = parser.math()
     print(Trees.toStringTree(tree, None, parser))
 

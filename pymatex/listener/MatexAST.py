@@ -141,18 +141,23 @@ class MatexAST(MatexParserListener):
         self.push(Integral(variable, start_range, end_range, expression))
 
     def exitLocalMultiplication(self, ctx: MatexParser.LocalMultiplicationContext):
-        mixed_number = ctx.MIXNUMBER().getText()
         last = None
         variables = None
-        import re
-        for it in re.finditer(r'[-+]?\d*\.?\d+([eE][-+]?\d+)?', mixed_number):
-            span = it.span(0)
-            number = mixed_number[span[0]:span[1]]
-            last = Constant(number)
-            variables = mixed_number[span[1]:]
 
-        if variables is None:
-            variables = mixed_number
+        if ctx.MIXNUMBER():
+            mixed_number = ctx.MIXNUMBER().getText()
+
+            import re
+            for it in re.finditer(r'[-+]?\d*\.?\d+([eE][-+]?\d+)?', mixed_number):
+                span = it.span(0)
+                number = mixed_number[span[0]:span[1]]
+                last = Constant(number)
+                variables = mixed_number[span[1]:]
+        elif ctx.WORD():
+            variables = ctx.WORD().getText()
+        else:
+            variables = ctx.DERIVATIVE().getText()
+
         for variable in variables:
             if last is None:
                 last = Variable(variable)

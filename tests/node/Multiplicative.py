@@ -64,6 +64,10 @@ class MultiplicativeTests(BaseTest.BaseTest):
         ast = self.parse('3xy')
         self.assertEqual(ast, Multiplication(Multiplication(Constant('3'), Variable('x')), Variable('y')))
 
+    def test_derivative_like(self):
+        ast = self.parse('dx')
+        self.assertEqual(ast, Multiplication(Variable('d'), Variable('x')))
+
     def test_read_mixed_with_frac(self):
         ast = self.parse(r'\frac{1}{2} * \frac{3}{4} * \frac{5}{6}')
         self.assertEqual(ast, Multiplication(

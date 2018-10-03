@@ -72,7 +72,7 @@ signedAtom:
 
 negateAtom: MINUS signedAtom;
 
-localMultiplication: MIXNUMBER;
+localMultiplication: MIXNUMBER | WORD | DERIVATIVE;
 
 atom:
     variable
