@@ -31,6 +31,8 @@ class SearchQuery:
         visitor = IndexCreatorVisitor(self.data, pk)
         ast.accept(visitor)
 
+        self.number_of_different_nodes[pk] = visitor.get_number_of_nodes_of_different_nodes()
+
     def remove(self, pk: int):
         self.number_of_different_nodes.pop(pk)
         self.__internal_remove(self.data, pk)
