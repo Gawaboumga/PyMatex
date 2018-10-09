@@ -1,4 +1,5 @@
 from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
+from pymatex.error import ExceptionErrorListener
 from pymatex.grammar import MatexLexer, MatexParser, MatexParserListener
 from pymatex.listener import MatexASTVisitor
 from pymatex.node import *
@@ -24,11 +25,16 @@ class MatexAST(MatexParserListener):
         return self.__head.accept(visitor)
 
     @staticmethod
-    def parse(latex: str):
+    def get_tree(latex: str):
         lexer = MatexLexer(InputStream(latex))
         stream = CommonTokenStream(lexer)
         parser = MatexParser(stream)
-        tree = parser.math()
+        parser._listeners = [ExceptionErrorListener()]
+        return parser.math()
+
+    @staticmethod
+    def parse(latex: str):
+        tree = MatexAST.get_tree(latex)
         ast = MatexAST()
         walker = ParseTreeWalker()
         walker.walk(ast, tree)
