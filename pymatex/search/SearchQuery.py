@@ -60,7 +60,7 @@ class SearchQuery:
                     if v == pk:
                         del data[k]
         elif isinstance(data, set):
-            data.remove(pk)
+            data.discard(pk)
 
     def __parse(self, content: str):
         return MatexAST.parse(content)

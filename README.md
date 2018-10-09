@@ -1,2 +1,3 @@
 # PyMatex
-Parser for only mathematical expression of latex
+
+Parser which allows to parse mathematical expressions written in LaTeX.
