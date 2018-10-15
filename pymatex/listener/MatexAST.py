@@ -189,14 +189,23 @@ class MatexAST(MatexParserListener):
         rhs = self.pop()
         lhs = self.pop()
 
-        if ctx.variable():
-            self.push(Multiplication(lhs, rhs))
-        elif ctx.PLUS():
+        if ctx.PLUS():
             self.push(Addition(lhs, rhs))
         elif ctx.MUL():
             self.push(Multiplication(lhs, rhs))
         elif ctx.MINUS():
             self.push(Subtraction(lhs, rhs))
+        else:
+            self.push(Multiplication(lhs, rhs))
+
+    def exitImplicitMultiplicationExpr(self, ctx: MatexParser.ImplicitMultiplicationExprContext):
+        if ctx.getChildCount() < 2:
+            return
+
+        rhs = self.pop()
+        lhs = self.pop()
+
+        self.push(Multiplication(lhs, rhs))
 
     def exitMultiplicationExpr(self, ctx: MatexParser.MultiplicationExprContext):
         if ctx.getChildCount() < 2:

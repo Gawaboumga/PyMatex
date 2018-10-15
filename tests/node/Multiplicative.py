@@ -74,6 +74,10 @@ class MultiplicativeTests(BaseTest.BaseTest):
             Multiplication(Division(Constant('1'), Constant('2')), Division(Constant('3'), Constant('4'))),
             Division(Constant('5'), Constant('6'))))
 
+    def test_read_variable_multiplication_without_times(self):
+        ast = self.parse(r'x y')
+        self.assertEqual(ast, Multiplication(Variable('x'), Variable('y')))
+
     def test_read_mixed_without_times_frac(self):
         ast = self.parse(r'\frac{1}{4} \frac{x}{2}')
         self.assertEqual(ast, Multiplication(Division(Constant('1'), Constant('4')), Division(Variable('x'), Constant('2'))))

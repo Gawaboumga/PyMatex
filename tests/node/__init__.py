@@ -8,3 +8,5 @@ from tests.node.Function import *
 from tests.node.Multiplicative import *
 from tests.node.TaylorMaclaurin import *
 from tests.node.Variable import *
+
+from tests.node.Other import *

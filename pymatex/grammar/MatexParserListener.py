@@ -98,6 +98,15 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#implicitMultiplicationExpr.
+    def enterImplicitMultiplicationExpr(self, ctx:MatexParser.ImplicitMultiplicationExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#implicitMultiplicationExpr.
+    def exitImplicitMultiplicationExpr(self, ctx:MatexParser.ImplicitMultiplicationExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#subtractionExpr.
     def enterSubtractionExpr(self, ctx:MatexParser.SubtractionExprContext):
         pass

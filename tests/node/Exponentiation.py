@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from pymatex.node import Addition, Constant, Exponentiation, Multiplication, Variable
+from pymatex.node import Addition, Constant, Division, Exponentiation, Multiplication, Subtraction, Variable
 
 
 class ExponentiationTests(BaseTest.BaseTest):
@@ -33,3 +33,8 @@ class ExponentiationTests(BaseTest.BaseTest):
         ast = self.parse('4a^2')
 
         self.assertEqual(ast, Multiplication(Constant('4'), Exponentiation(Variable('a'), Constant('2'))))
+
+    def test_read_priority_of_operations_two(self):
+        ast = self.parse(r'\frac{1}{1 - 2^{1-s}}')
+        one = Constant('1')
+        self.assertEqual(ast, Division(one, Subtraction(one, Exponentiation(Constant('2'), Subtraction(one, Variable('s'))))))

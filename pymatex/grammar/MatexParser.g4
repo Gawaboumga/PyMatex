@@ -8,7 +8,8 @@ equality:
     expr EQ expr;
 
 megaExpr:
-    (variable MUL?)? specialExpr
+    (subtractionExpr MUL?)? specialExpr
+    | (implicitMultiplicationExpr MUL?) specialExpr
     | megaExpr PLUS specialExpr
     | megaExpr MINUS specialExpr
     | megaExpr MUL specialExpr;
@@ -20,6 +21,7 @@ specialExpr:
 
 expr:
     subtractionExpr
+    | implicitMultiplicationExpr
     | megaExpr;
 
 integralExpr: FUNC_INT subexpr supexpr L_BRACE expr DERIVATIVE R_BRACE
@@ -32,6 +34,10 @@ tailExpr:
     | L_BRACE expr R_BRACE;
 
 funcParams: subeq supexpr;
+
+implicitMultiplicationExpr:
+    subtractionExpr subtractionExpr
+    | implicitMultiplicationExpr subtractionExpr;
 
 subtractionExpr:
     additionExpr
@@ -47,10 +53,7 @@ divisionExpr:
 
 multiplicationExpr:
     powExpr
-    | multiplicationExpr (MUL | CMD_TIMES | CMD_CDOT) powExpr
-    | multiplicationExpr fracExpr
-    | multiplicationExpr exponentiationExpr
-    | multiplicationExpr atom;
+    | multiplicationExpr (MUL | CMD_TIMES | CMD_CDOT) powExpr;
 
 fracExpr: CMD_FRAC L_BRACE expr R_BRACE L_BRACE expr R_BRACE;
 
