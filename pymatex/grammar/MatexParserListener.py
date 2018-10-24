@@ -17,15 +17,6 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MatexParser#equality.
-    def enterEquality(self, ctx:MatexParser.EqualityContext):
-        pass
-
-    # Exit a parse tree produced by MatexParser#equality.
-    def exitEquality(self, ctx:MatexParser.EqualityContext):
-        pass
-
-
     # Enter a parse tree produced by MatexParser#megaExpr.
     def enterMegaExpr(self, ctx:MatexParser.MegaExprContext):
         pass
@@ -278,6 +269,33 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#bracedExpr.
+    def enterBracedExpr(self, ctx:MatexParser.BracedExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#bracedExpr.
+    def exitBracedExpr(self, ctx:MatexParser.BracedExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#brackExpr.
+    def enterBrackExpr(self, ctx:MatexParser.BrackExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#brackExpr.
+    def exitBrackExpr(self, ctx:MatexParser.BrackExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#parenExpr.
+    def enterParenExpr(self, ctx:MatexParser.ParenExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#parenExpr.
+    def exitParenExpr(self, ctx:MatexParser.ParenExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#subexpr.
     def enterSubexpr(self, ctx:MatexParser.SubexprContext):
         pass
@@ -305,12 +323,12 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MatexParser#supeq.
-    def enterSupeq(self, ctx:MatexParser.SupeqContext):
+    # Enter a parse tree produced by MatexParser#equality.
+    def enterEquality(self, ctx:MatexParser.EqualityContext):
         pass
 
-    # Exit a parse tree produced by MatexParser#supeq.
-    def exitSupeq(self, ctx:MatexParser.SupeqContext):
+    # Exit a parse tree produced by MatexParser#equality.
+    def exitEquality(self, ctx:MatexParser.EqualityContext):
         pass
 
 

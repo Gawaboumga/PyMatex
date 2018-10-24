@@ -19,3 +19,19 @@ class OtherTests(BaseTest.BaseTest):
         ast = self.parse(r'x y \sum_{n=1}^{\infty} n')
         n = Variable('n')
         self.assertEqual(ast, Multiplication(Multiplication(Variable('x'), Variable('y')), Summation(n, Constant('1'), Constant('\\infty'), n)))
+
+    def test_read_multiplication_of_function(self):
+        ast = self.parse(r'1/(n + 1/2) \sum_{k=1}^{n-1} \zeta(2k) \zeta(2n - 2k)')
+        one = Constant('1')
+        two = Constant('2')
+        k = Variable('k')
+        n = Variable('n')
+        two_k = Multiplication(two, k)
+        self.assertEqual(ast, Multiplication(Division(one, Addition(n, Division(one, two))),
+                                             Summation(k, one, Subtraction(n, one),
+                                                       Multiplication(Function(Func.ZETA, two_k), Function(Func.ZETA,
+                                                                                                           Subtraction(
+                                                                                                               Multiplication(
+                                                                                                                   two,
+                                                                                                                   n),
+                                                                                                               two_k))))))

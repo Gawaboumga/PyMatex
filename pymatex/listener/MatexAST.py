@@ -87,6 +87,18 @@ class MatexAST(MatexParserListener):
     def exitFunc(self, ctx: MatexParser.FuncContext):
         funcname: MatexParser.FuncnameContext = ctx.funcname()
 
+        if funcname is None:
+            greek_letter = ctx.GREEKFUNCTIONPAREN()
+            if greek_letter is None:
+                greek_letter = ctx.GREEKFUNCTIONBRACE()
+
+            letter = greek_letter.getText()[:-1]
+            expression = self.pop()
+
+            if letter == r'\zeta':
+                self.push(Function(Func.ZETA, expression))
+            return
+
         expression = self.pop()
         if funcname.FUNC_ARCCOS():
             self.push(Function(Func.ACOS, expression))

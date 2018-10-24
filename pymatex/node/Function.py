@@ -27,6 +27,7 @@ class Func(Enum):
     SQRT = auto()
     TAN = auto()
     TANH = auto()
+    ZETA = auto()
 
 
 class Function(Node):
@@ -86,6 +87,8 @@ class Function(Node):
             return '\\tan{{{}}}'.format(self.expression)
         elif self.func == Func.TANH:
             return '\\tanh{{{}}}'.format(self.expression)
+        elif self.func == Func.ZETA:
+            return '\\zeta{{{}}}'.format(self.expression)
         else:
             return 'UNDEFINED FUNCTION'
 

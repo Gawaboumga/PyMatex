@@ -4,9 +4,6 @@ options {tokenVocab = MatexLexer;}
 
 math: expr EOF;
 
-equality:
-    expr EQ expr;
-
 megaExpr:
     (subtractionExpr MUL?)? specialExpr
     | (implicitMultiplicationExpr MUL?) specialExpr
@@ -31,7 +28,7 @@ productExpr: FUNC_PROD funcParams tailExpr;
 
 tailExpr:
     expr
-    | L_BRACE expr R_BRACE;
+    | bracedExpr;
 
 funcParams: subeq supexpr;
 
@@ -55,7 +52,7 @@ multiplicationExpr:
     powExpr
     | multiplicationExpr (MUL | CMD_TIMES | CMD_CDOT) powExpr;
 
-fracExpr: CMD_FRAC L_BRACE expr R_BRACE L_BRACE expr R_BRACE;
+fracExpr: CMD_FRAC bracedExpr bracedExpr;
 
 powExpr:
     signedAtom
@@ -84,8 +81,8 @@ atom:
     | number
     | absolute
     | factorial
-    | L_BRACKET expr R_BRACKET
-    | L_PAREN expr R_PAREN;
+    | brackExpr
+    | parenExpr;
 
 variable: VARIABLE | GREEKLETTER;
 
@@ -98,13 +95,15 @@ number: NUMBER;
 absolute: BAR expr BAR;
 
 factorial:
-    L_PAREN expr R_PAREN BANG
+    parenExpr BANG
     | number BANG
     | variable BANG;
 
 func:
-    funcname L_BRACE expr R_BRACE
-    | funcname L_PAREN expr R_PAREN;
+    funcname bracedExpr
+    | funcname parenExpr
+    | GREEKFUNCTIONBRACE expr R_BRACE
+    | GREEKFUNCTIONPAREN expr R_PAREN;
 
 funcname:
     FUNC_LOG | FUNC_LN | FUNC_SQRT
@@ -115,10 +114,15 @@ funcname:
     | FUNC_SINH | FUNC_COSH | FUNC_TANH
     | FUNC_ARCSINH | FUNC_ARCCOSH | FUNC_ARCTANH;
 
-subexpr: UNDERSCORE L_BRACE expr R_BRACE;
-supexpr: CARET L_BRACE expr R_BRACE;
+bracedExpr: L_BRACE expr R_BRACE;
+brackExpr: L_BRACKET expr R_BRACKET;
+parenExpr: L_PAREN expr R_PAREN;
+
+subexpr: UNDERSCORE bracedExpr;
+supexpr: CARET bracedExpr;
 subeq: UNDERSCORE L_BRACE equality R_BRACE;
-supeq: CARET L_BRACE equality R_BRACE;
+
+equality: variable EQ expr;
 
 relop:
     EQ

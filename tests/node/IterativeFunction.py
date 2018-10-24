@@ -1,6 +1,6 @@
 from tests import BaseTest
 
-from pymatex.node import Addition, Constant, Integral, Multiplication, Product, Subtraction, Summation, Variable
+from pymatex.node import *
 
 
 class IterativeFunctionTests(BaseTest.BaseTest):
@@ -59,3 +59,9 @@ class IterativeFunctionTests(BaseTest.BaseTest):
         internal = Integral(Variable('y'), Variable('c'), Variable('d'), Multiplication(Multiplication(Constant('3'), Variable('x')), Variable('y')))
         outer = Integral(Variable('x'), Variable('a'), Variable('b'), internal)
         self.assertEqual(ast, outer)
+
+    def test_read_function_call_zeta(self):
+        ast = self.parse(r'\sum_{n=0}^{\infty} \zeta(2n) x^{2n}')
+        two_n = Multiplication(Constant('2'), Variable('n'))
+        self.assertEqual(ast, Summation(Variable('n'), Constant('0'), Constant('\\infty'), Multiplication(Function(Func.ZETA, two_n), Exponentiation(Variable('x'), two_n))))
+

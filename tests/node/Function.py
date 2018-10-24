@@ -49,3 +49,7 @@ class FunctionTests(BaseTest.BaseTest):
     def test_write_absolute(self):
         ast = self.parse('|x + 3|')
         self.assertEqual(str(ast), '|(x + 3)|')
+
+    def test_read_zeta(self):
+        ast = self.parse(r'\zeta(x)')
+        self.assertEqual(ast, Function(Func.ZETA, Variable('x')))
