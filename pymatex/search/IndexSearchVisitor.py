@@ -9,6 +9,7 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         self.results = {}
         self.seen_constants = {}
         self.seen_variables = {}
+        self.bound_variables = set()
 
     def get_results(self):
         return self.results
@@ -60,7 +61,9 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         integral_node.variable.accept(self)
         integral_node.start_range.accept(self)
         integral_node.end_range.accept(self)
+        self.add_bound_variable(integral_node.variable)
         depth_expression = integral_node.expression.accept(self)
+        self.remove_bound_variable(integral_node.variable)
 
         node_depth = depth_expression + 1
         self.search(node_depth, NodeType.SUMMATION)
@@ -84,7 +87,9 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         product_node.variable.accept(self)
         product_node.start_range.accept(self)
         product_node.end_range.accept(self)
+        self.add_bound_variable(product_node.variable)
         depth_expression = product_node.expression.accept(self)
+        self.remove_bound_variable(product_node.variable)
 
         node_depth = depth_expression + 1
         self.search(node_depth, NodeType.SUMMATION)
@@ -102,7 +107,9 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         summation_node.variable.accept(self)
         summation_node.start_range.accept(self)
         summation_node.end_range.accept(self)
+        self.add_bound_variable(summation_node.variable)
         depth_expression = summation_node.expression.accept(self)
+        self.remove_bound_variable(summation_node.variable)
 
         node_depth = depth_expression + 1
         self.search(node_depth, NodeType.SUMMATION)
@@ -110,7 +117,10 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
 
     def visit_variable(self, variable_node: Variable):
         node_depth = 0
-        self.search_variable(node_depth, NodeType.VARIABLE, variable_node.variable)
+        if str(variable_node.variable) in self.bound_variables:
+            self.search_bound_variable(node_depth, NodeType.BOUNDVARIABLE, variable_node.variable)
+        else:
+            self.search_free_variable(node_depth, NodeType.VARIABLE, variable_node.variable)
         return node_depth
 
     def search(self, node_depth: int, node_type: NodeType):
@@ -138,7 +148,29 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
             for mathematical_objects in objects.values():
                 self.__add(mathematical_objects, 70)
 
-    def search_variable(self, node_depth: int, node_type: NodeType, external_data: str):
+    def search_bound_variable(self, node_depth: int, node_type: NodeType, external_data: str):
+        nodes = self.data.get(node_depth, None)
+        if nodes is None:
+            return
+
+        objects = nodes.get(node_type, None)
+        if objects is None:
+            return
+
+        associated = objects.get(external_data, None)
+        if associated:
+            self.__add(associated, 100)
+        else:
+            for mathematical_objects in objects.values():
+                self.__add(mathematical_objects, 70)
+
+        free_variables = nodes.get(node_type, None)
+        if objects is None:
+            return
+        for mathematical_objects in free_variables.values():
+            self.__add(mathematical_objects, 30)
+
+    def search_free_variable(self, node_depth: int, node_type: NodeType, external_data: str):
         nodes = self.data.get(node_depth, None)
         if nodes is None:
             return
@@ -158,3 +190,9 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         for item in items:
             new_value = self.results.get(item, 0) + value
             self.results[item] = new_value
+
+    def add_bound_variable(self, variable: Variable):
+        self.bound_variables.add(str(variable))
+
+    def remove_bound_variable(self, variable: Variable):
+        self.bound_variables.remove(str(variable))

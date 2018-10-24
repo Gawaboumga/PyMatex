@@ -4,6 +4,7 @@ from enum import Enum, auto
 
 class NodeType(Enum):
     ADDITION = auto()
+    BOUNDVARIABLE = auto()
     CONSTANT = auto()
     DIVISION = auto()
     EXPONENTIATION = auto()

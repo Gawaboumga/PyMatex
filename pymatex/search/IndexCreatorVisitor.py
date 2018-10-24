@@ -8,6 +8,7 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         self.data = data
         self.pk = pk
         self.nodes_seen = {}
+        self.bound_variables = set()
 
     def get_number_of_nodes_of_different_nodes(self):
         return len(self.nodes_seen)
@@ -59,7 +60,9 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         integral_node.variable.accept(self)
         integral_node.start_range.accept(self)
         integral_node.end_range.accept(self)
+        self.add_bound_variable(integral_node.variable)
         depth_expression = integral_node.expression.accept(self)
+        self.remove_bound_variable(integral_node.variable)
 
         node_depth = depth_expression + 1
         self.add(node_depth, NodeType.SUMMATION)
@@ -83,7 +86,9 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         product_node.variable.accept(self)
         product_node.start_range.accept(self)
         product_node.end_range.accept(self)
+        self.add_bound_variable(product_node.variable)
         depth_expression = product_node.expression.accept(self)
+        self.remove_bound_variable(product_node.variable)
 
         node_depth = depth_expression + 1
         self.add(node_depth, NodeType.SUMMATION)
@@ -101,7 +106,9 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         summation_node.variable.accept(self)
         summation_node.start_range.accept(self)
         summation_node.end_range.accept(self)
+        self.add_bound_variable(summation_node.variable)
         depth_expression = summation_node.expression.accept(self)
+        self.remove_bound_variable(summation_node.variable)
 
         node_depth = depth_expression + 1
         self.add(node_depth, NodeType.SUMMATION)
@@ -109,7 +116,10 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
 
     def visit_variable(self, variable_node: Variable):
         node_depth = 0
-        self.add(node_depth, NodeType.VARIABLE, variable_node.variable)
+        if str(variable_node.variable) in self.bound_variables:
+            self.add(node_depth, NodeType.BOUNDVARIABLE, variable_node.variable)
+        else:
+            self.add(node_depth, NodeType.VARIABLE, variable_node.variable)
         return node_depth
 
     def add(self, node_depth: int, node_type: NodeType, external_data=None):
@@ -133,3 +143,9 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
                 nodes_depth.add(node_type)
 
         self.nodes_seen[node_depth] = nodes_depth
+
+    def add_bound_variable(self, variable: Variable):
+        self.bound_variables.add(str(variable))
+
+    def remove_bound_variable(self, variable: Variable):
+        self.bound_variables.remove(str(variable))
