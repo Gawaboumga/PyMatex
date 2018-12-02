@@ -108,8 +108,8 @@ binomial: FUNC_BINOMIAL bracedExpr bracedExpr;
 func:
     funcname bracedMultiExpr
     | funcname parenMultiExpr
-    | GREEKFUNCTIONBRACE multiExpr R_BRACE
-    | GREEKFUNCTIONPAREN multiExpr R_PAREN;
+    | (LETTERFUNCTIONBRACE | GREEKFUNCTIONBRACE) multiExpr R_BRACE
+    | (LETTERFUNCTIONPAREN | GREEKFUNCTIONPAREN) multiExpr R_PAREN;
 
 funcname:
     FUNC_LOG | FUNC_LN | FUNC_SQRT

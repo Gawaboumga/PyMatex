@@ -102,13 +102,27 @@ class MatexAST(MatexParserListener):
             greek_letter = ctx.GREEKFUNCTIONPAREN()
             if greek_letter is None:
                 greek_letter = ctx.GREEKFUNCTIONBRACE()
+            if greek_letter is None:
+                greek_letter = ctx.LETTERFUNCTIONBRACE()
+            if greek_letter is None:
+                greek_letter = ctx.LETTERFUNCTIONPAREN()
 
             letter = greek_letter.getText()[:-1]
-            expression = self.pop()
+
+            arguments = ctx.bracedMultiExpr()
+            if not arguments:
+                arguments = ctx.parenMultiExpr()
+            if not arguments:
+                arguments = ctx.multiExpr()
+
+            expressions = []
+            for _ in range((arguments.getChildCount() + 1) // 2):
+                expressions.insert(0, self.pop())
 
             if letter == r'\zeta':
-                self.push(Function(Func.ZETA, expression))
-            return
+                return self.push(Function(Func.ZETA, *expressions))
+
+            return self.push(Function(letter, *expressions))
 
         argument_0 = self.pop()
         if funcname.FUNC_ARCCOS():

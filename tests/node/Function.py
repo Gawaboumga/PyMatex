@@ -81,3 +81,7 @@ class FunctionTests(BaseTest.BaseTest):
 
         ast = self.parse('arcdn(u, m)')
         self.assertEqual(ast, Function(Func.AEDELTAAMPLITUDE, Variable('u'), Variable('m')))
+
+    def test_read_neville_theta_function(self):
+        ast = self.parse(r'\theta_{c}(z, m)')
+        self.assertEqual(ast, Function(r'\theta_{c}', Variable('z'), Variable('m')))

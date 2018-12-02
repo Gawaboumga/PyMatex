@@ -121,7 +121,11 @@ class Function(Node):
         elif self.func == Func.ZETA:
             return '\\zeta{{{}}}'.format(self.argument(0))
         else:
-            return 'UNDEFINED FUNCTION'
+            result = r'{}({}'.format(self.func, self.argument(0))
+            for i in range(1, self.number_of_arguments()):
+                result += ', {}'.format(self.argument(i))
+            result += ')'
+            return result
 
     def accept(self, visitor: MatexASTVisitor):
         return visitor.visit_function(self)

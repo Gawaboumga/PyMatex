@@ -35,3 +35,19 @@ class OtherTests(BaseTest.BaseTest):
                                                                                                                    two,
                                                                                                                    n),
                                                                                                                two_k))))))
+
+    def test_read_neville_theta_function(self):
+        ast = self.parse(r'\frac{\sqrt{2\pi} q(m)^{1/4}}{m^{1/4} \sqrt{K(m)}} \sum_{k=0}^{\infty} (q(m))^{k (k+1)} \cos{\frac{(2k+1)\pi z}{2 K(m)}}')
+        one = Constant('1')
+        two = Constant('2')
+        k = Variable('k')
+        m = Variable('m')
+        pi = Variable('\\pi')
+        one_fourth = Division(one, Constant('4'))
+
+        first_division = Division(Multiplication(Function(Func.SQRT, Multiplication(two, pi)), Exponentiation(Function('q', m), one_fourth)),
+                                  Multiplication(Exponentiation(m, one_fourth), Function(Func.SQRT, Function('K', m))))
+        q_m_exponent = Exponentiation(Function('q', m), Multiplication(k, Addition(k, one)))
+        cos_thing = Function(Func.COS, Division(Multiplication(Multiplication(Addition(Multiplication(two, k), one), pi), Variable('z')), Multiplication(two, Function('K', m))))
+        summation = Summation(k, Constant('0'), Constant('\\infty'), Multiplication(q_m_exponent, cos_thing))
+        self.assertEqual(ast, Multiplication(first_division, summation))
