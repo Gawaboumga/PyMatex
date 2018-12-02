@@ -50,6 +50,14 @@ class FunctionTests(BaseTest.BaseTest):
         ast = self.parse('|x + 3|')
         self.assertEqual(str(ast), '|(x + 3)|')
 
+    def test_read_integer_division(self):
+        ast = self.parse('n|m')
+        self.assertEqual(ast, Function(Func.EXACTDIVISION, Variable('n'), Variable('m')))
+
+    def test_read_n_choose_k(self):
+        ast = self.parse(r'\binom{x}{y}')
+        self.assertEqual(ast, Function(Func.BINOMIAL, Variable('x'), Variable('y')))
+
     def test_read_zeta(self):
         ast = self.parse(r'\zeta(x)')
         self.assertEqual(ast, Function(Func.ZETA, Variable('x')))

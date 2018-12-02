@@ -242,12 +242,30 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#exactDivision.
+    def enterExactDivision(self, ctx:MatexParser.ExactDivisionContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#exactDivision.
+    def exitExactDivision(self, ctx:MatexParser.ExactDivisionContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#factorial.
     def enterFactorial(self, ctx:MatexParser.FactorialContext):
         pass
 
     # Exit a parse tree produced by MatexParser#factorial.
     def exitFactorial(self, ctx:MatexParser.FactorialContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#binomial.
+    def enterBinomial(self, ctx:MatexParser.BinomialContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#binomial.
+    def exitBinomial(self, ctx:MatexParser.BinomialContext):
         pass
 
 

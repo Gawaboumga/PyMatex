@@ -17,6 +17,7 @@ class Func(Enum):
     ASINH = auto()
     ATAN = auto()
     ATANH = auto()
+    BINOMIAL = auto()
     COS = auto()
     COSH = auto()
     COT = auto()
@@ -24,6 +25,7 @@ class Func(Enum):
     ECOS = auto()
     EDELTAAMPLITUDE = auto()
     ESIN = auto()
+    EXACTDIVISION = auto()
     FACTORIAL = auto()
     LN = auto()
     LOG = auto()
@@ -80,6 +82,8 @@ class Function(Node):
             return '\\arctan{{{}}}'.format(self.argument(0))
         elif self.func == Func.ATANH:
             return '\\arctanh{{{}}}'.format(self.argument(0))
+        elif self.func == Func.BINOMIAL:
+            return '\\binom{{{}}}{{{}}}'.format(self.argument(0), self.argument(1))
         elif self.func == Func.COS:
             return '\\cos{{{}}}'.format(self.argument(0))
         elif self.func == Func.COSH:
@@ -94,6 +98,8 @@ class Function(Node):
             return '\\dn{{{}}}'.format(self.argument(0), self.argument(1))
         elif self.func == Func.ESIN:
             return '\\sn{{{}}}'.format(self.argument(0), self.argument(1))
+        elif self.func == Func.EXACTDIVISION:
+            return '{}|{}'.format(self.argument(0), self.argument(1))
         elif self.func == Func.FACTORIAL:
             return '({})!'.format(self.argument(0))
         elif self.func == Func.LN:

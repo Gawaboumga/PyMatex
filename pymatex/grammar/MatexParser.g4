@@ -80,7 +80,9 @@ atom:
     | constant
     | number
     | absolute
+    | exactDivision
     | factorial
+    | binomial
     | brackExpr
     | parenExpr;
 
@@ -94,16 +96,20 @@ number: NUMBER;
 
 absolute: BAR expr BAR;
 
+exactDivision: VARIABLE BAR VARIABLE;
+
 factorial:
     parenExpr BANG
     | number BANG
     | variable BANG;
 
+binomial: FUNC_BINOMIAL bracedExpr bracedExpr;
+
 func:
     funcname bracedMultiExpr
     | funcname parenMultiExpr
-    | GREEKFUNCTIONBRACE expr R_BRACE
-    | GREEKFUNCTIONPAREN expr R_PAREN;
+    | GREEKFUNCTIONBRACE multiExpr R_BRACE
+    | GREEKFUNCTIONPAREN multiExpr R_PAREN;
 
 funcname:
     FUNC_LOG | FUNC_LN | FUNC_SQRT

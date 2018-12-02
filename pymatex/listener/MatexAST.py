@@ -51,6 +51,14 @@ class MatexAST(MatexParserListener):
         lhs = self.pop()
         self.push(Addition(lhs, rhs))
 
+    def exitBinomial(self, ctx: MatexParser.BinomialContext):
+        if ctx.getChildCount() < 2:
+            return
+
+        rhs = self.pop()
+        lhs = self.pop()
+        self.push(Function(Func.BINOMIAL, lhs, rhs))
+
     def exitConstant(self, ctx: MatexParser.ConstantContext):
         if ctx.INFINITY():
             self.push(Constant(ctx.INFINITY().getText()))
@@ -62,6 +70,9 @@ class MatexAST(MatexParserListener):
         rhs = self.pop()
         lhs = self.pop()
         self.push(Division(lhs, rhs))
+
+    def exitExactDivision(self, ctx: MatexParser.ExactDivisionContext):
+        self.push(Function(Func.EXACTDIVISION, Variable(ctx.VARIABLE(0).getText()), Variable(ctx.VARIABLE(1).getText())))
 
     def exitExponentiationExpr(self, ctx: MatexParser.ExponentiationExprContext):
         rhs = self.pop()

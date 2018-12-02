@@ -7,151 +7,158 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3F")
-        buf.write("\u0159\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3G")
+        buf.write("\u0167\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
         buf.write("\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36")
         buf.write("\4\37\t\37\4 \t \4!\t!\4\"\t\"\4#\t#\4$\t$\4%\t%\4&\t")
-        buf.write("&\4\'\t\'\4(\t(\4)\t)\3\2\3\2\3\2\3\3\3\3\3\3\5\3Y\n\3")
-        buf.write("\5\3[\n\3\3\3\3\3\3\3\5\3`\n\3\3\3\3\3\5\3d\n\3\3\3\3")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3o\n\3\f\3\16\3r\13\3")
-        buf.write("\3\4\3\4\3\4\5\4w\n\4\3\5\3\5\3\5\5\5|\n\5\3\6\3\6\3\6")
-        buf.write("\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6\u008c")
-        buf.write("\n\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t\3\t\5\t\u0098")
-        buf.write("\n\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\7\13\u00a3")
-        buf.write("\n\13\f\13\16\13\u00a6\13\13\3\f\3\f\3\f\3\f\3\f\3\f\7")
-        buf.write("\f\u00ae\n\f\f\f\16\f\u00b1\13\f\3\r\3\r\3\r\3\r\3\r\3")
-        buf.write("\r\7\r\u00b9\n\r\f\r\16\r\u00bc\13\r\3\16\3\16\3\16\3")
-        buf.write("\16\3\16\3\16\7\16\u00c4\n\16\f\16\16\16\u00c7\13\16\3")
-        buf.write("\17\3\17\3\17\3\17\3\17\3\17\7\17\u00cf\n\17\f\17\16\17")
-        buf.write("\u00d2\13\17\3\20\3\20\3\20\3\20\3\21\3\21\3\21\5\21\u00db")
-        buf.write("\n\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22")
-        buf.write("\3\22\5\22\u00e8\n\22\3\23\3\23\3\23\3\23\5\23\u00ee\n")
-        buf.write("\23\3\24\3\24\3\24\3\25\3\25\3\26\3\26\3\26\3\26\3\26")
-        buf.write("\3\26\3\26\3\26\5\26\u00fd\n\26\3\27\3\27\3\30\3\30\3")
-        buf.write("\30\3\31\3\31\3\32\3\32\3\33\3\33\3\33\3\33\3\34\3\34")
-        buf.write("\3\34\3\34\3\34\3\34\3\34\3\34\3\34\5\34\u0115\n\34\3")
-        buf.write("\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35")
-        buf.write("\3\35\3\35\3\35\5\35\u0125\n\35\3\36\3\36\3\37\3\37\3")
-        buf.write("\37\3\37\3 \3 \3 \3 \3!\3!\3!\3!\3!\3!\7!\u0137\n!\f!")
-        buf.write("\16!\u013a\13!\3\"\3\"\3\"\3\"\3#\3#\3#\3#\3$\3$\3$\3")
-        buf.write("$\3%\3%\3%\3&\3&\3&\3\'\3\'\3\'\3\'\3\'\3(\3(\3(\3(\3")
-        buf.write(")\3)\3)\2\t\4\24\26\30\32\34@*\2\4\6\b\n\f\16\20\22\24")
-        buf.write("\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNP\2\b")
-        buf.write("\4\2\6\6\65\65\4\2\5\5\63\64\4\288:;\4\299CC\3\2\30\62")
-        buf.write("\3\2=A\2\u0156\2R\3\2\2\2\4c\3\2\2\2\6v\3\2\2\2\b{\3\2")
-        buf.write("\2\2\n\u008b\3\2\2\2\f\u008d\3\2\2\2\16\u0091\3\2\2\2")
-        buf.write("\20\u0097\3\2\2\2\22\u0099\3\2\2\2\24\u009c\3\2\2\2\26")
-        buf.write("\u00a7\3\2\2\2\30\u00b2\3\2\2\2\32\u00bd\3\2\2\2\34\u00c8")
-        buf.write("\3\2\2\2\36\u00d3\3\2\2\2 \u00da\3\2\2\2\"\u00e7\3\2\2")
-        buf.write("\2$\u00ed\3\2\2\2&\u00ef\3\2\2\2(\u00f2\3\2\2\2*\u00fc")
-        buf.write("\3\2\2\2,\u00fe\3\2\2\2.\u0100\3\2\2\2\60\u0103\3\2\2")
-        buf.write("\2\62\u0105\3\2\2\2\64\u0107\3\2\2\2\66\u0114\3\2\2\2")
-        buf.write("8\u0124\3\2\2\2:\u0126\3\2\2\2<\u0128\3\2\2\2>\u012c\3")
-        buf.write("\2\2\2@\u0130\3\2\2\2B\u013b\3\2\2\2D\u013f\3\2\2\2F\u0143")
-        buf.write("\3\2\2\2H\u0147\3\2\2\2J\u014a\3\2\2\2L\u014d\3\2\2\2")
-        buf.write("N\u0152\3\2\2\2P\u0156\3\2\2\2RS\5\b\5\2ST\7\2\2\3T\3")
-        buf.write("\3\2\2\2UZ\b\3\1\2VX\5\26\f\2WY\7\5\2\2XW\3\2\2\2XY\3")
-        buf.write("\2\2\2Y[\3\2\2\2ZV\3\2\2\2Z[\3\2\2\2[\\\3\2\2\2\\d\5\6")
-        buf.write("\4\2]_\5\24\13\2^`\7\5\2\2_^\3\2\2\2_`\3\2\2\2`a\3\2\2")
-        buf.write("\2ab\5\6\4\2bd\3\2\2\2cU\3\2\2\2c]\3\2\2\2dp\3\2\2\2e")
-        buf.write("f\f\5\2\2fg\7\3\2\2go\5\6\4\2hi\f\4\2\2ij\7\4\2\2jo\5")
-        buf.write("\6\4\2kl\f\3\2\2lm\7\5\2\2mo\5\6\4\2ne\3\2\2\2nh\3\2\2")
-        buf.write("\2nk\3\2\2\2or\3\2\2\2pn\3\2\2\2pq\3\2\2\2q\5\3\2\2\2")
-        buf.write("rp\3\2\2\2sw\5\n\6\2tw\5\f\7\2uw\5\16\b\2vs\3\2\2\2vt")
-        buf.write("\3\2\2\2vu\3\2\2\2w\7\3\2\2\2x|\5\26\f\2y|\5\24\13\2z")
-        buf.write("|\5\4\3\2{x\3\2\2\2{y\3\2\2\2{z\3\2\2\2|\t\3\2\2\2}~\7")
-        buf.write("\25\2\2~\177\5H%\2\177\u0080\5J&\2\u0080\u0081\7\t\2\2")
-        buf.write("\u0081\u0082\5\b\5\2\u0082\u0083\78\2\2\u0083\u0084\7")
-        buf.write("\n\2\2\u0084\u008c\3\2\2\2\u0085\u0086\7\25\2\2\u0086")
-        buf.write("\u0087\5H%\2\u0087\u0088\5J&\2\u0088\u0089\5\b\5\2\u0089")
-        buf.write("\u008a\78\2\2\u008a\u008c\3\2\2\2\u008b}\3\2\2\2\u008b")
-        buf.write("\u0085\3\2\2\2\u008c\13\3\2\2\2\u008d\u008e\7\26\2\2\u008e")
-        buf.write("\u008f\5\22\n\2\u008f\u0090\5\20\t\2\u0090\r\3\2\2\2\u0091")
-        buf.write("\u0092\7\27\2\2\u0092\u0093\5\22\n\2\u0093\u0094\5\20")
-        buf.write("\t\2\u0094\17\3\2\2\2\u0095\u0098\5\b\5\2\u0096\u0098")
-        buf.write("\5B\"\2\u0097\u0095\3\2\2\2\u0097\u0096\3\2\2\2\u0098")
-        buf.write("\21\3\2\2\2\u0099\u009a\5L\'\2\u009a\u009b\5J&\2\u009b")
-        buf.write("\23\3\2\2\2\u009c\u009d\b\13\1\2\u009d\u009e\5\26\f\2")
-        buf.write("\u009e\u009f\5\26\f\2\u009f\u00a4\3\2\2\2\u00a0\u00a1")
-        buf.write("\f\3\2\2\u00a1\u00a3\5\26\f\2\u00a2\u00a0\3\2\2\2\u00a3")
-        buf.write("\u00a6\3\2\2\2\u00a4\u00a2\3\2\2\2\u00a4\u00a5\3\2\2\2")
-        buf.write("\u00a5\25\3\2\2\2\u00a6\u00a4\3\2\2\2\u00a7\u00a8\b\f")
-        buf.write("\1\2\u00a8\u00a9\5\30\r\2\u00a9\u00af\3\2\2\2\u00aa\u00ab")
-        buf.write("\f\3\2\2\u00ab\u00ac\7\4\2\2\u00ac\u00ae\5\30\r\2\u00ad")
-        buf.write("\u00aa\3\2\2\2\u00ae\u00b1\3\2\2\2\u00af\u00ad\3\2\2\2")
-        buf.write("\u00af\u00b0\3\2\2\2\u00b0\27\3\2\2\2\u00b1\u00af\3\2")
-        buf.write("\2\2\u00b2\u00b3\b\r\1\2\u00b3\u00b4\5\32\16\2\u00b4\u00ba")
-        buf.write("\3\2\2\2\u00b5\u00b6\f\3\2\2\u00b6\u00b7\7\3\2\2\u00b7")
-        buf.write("\u00b9\5\32\16\2\u00b8\u00b5\3\2\2\2\u00b9\u00bc\3\2\2")
-        buf.write("\2\u00ba\u00b8\3\2\2\2\u00ba\u00bb\3\2\2\2\u00bb\31\3")
-        buf.write("\2\2\2\u00bc\u00ba\3\2\2\2\u00bd\u00be\b\16\1\2\u00be")
-        buf.write("\u00bf\5\34\17\2\u00bf\u00c5\3\2\2\2\u00c0\u00c1\f\3\2")
-        buf.write("\2\u00c1\u00c2\t\2\2\2\u00c2\u00c4\5\34\17\2\u00c3\u00c0")
-        buf.write("\3\2\2\2\u00c4\u00c7\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c5")
-        buf.write("\u00c6\3\2\2\2\u00c6\33\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c8")
-        buf.write("\u00c9\b\17\1\2\u00c9\u00ca\5 \21\2\u00ca\u00d0\3\2\2")
-        buf.write("\2\u00cb\u00cc\f\3\2\2\u00cc\u00cd\t\3\2\2\u00cd\u00cf")
-        buf.write("\5 \21\2\u00ce\u00cb\3\2\2\2\u00cf\u00d2\3\2\2\2\u00d0")
-        buf.write("\u00ce\3\2\2\2\u00d0\u00d1\3\2\2\2\u00d1\35\3\2\2\2\u00d2")
-        buf.write("\u00d0\3\2\2\2\u00d3\u00d4\7\66\2\2\u00d4\u00d5\5B\"\2")
-        buf.write("\u00d5\u00d6\5B\"\2\u00d6\37\3\2\2\2\u00d7\u00db\5$\23")
-        buf.write("\2\u00d8\u00db\5\36\20\2\u00d9\u00db\5\"\22\2\u00da\u00d7")
-        buf.write("\3\2\2\2\u00da\u00d8\3\2\2\2\u00da\u00d9\3\2\2\2\u00db")
-        buf.write("!\3\2\2\2\u00dc\u00dd\5$\23\2\u00dd\u00de\7\21\2\2\u00de")
-        buf.write("\u00df\5\62\32\2\u00df\u00e8\3\2\2\2\u00e0\u00e1\5$\23")
-        buf.write("\2\u00e1\u00e2\7\21\2\2\u00e2\u00e3\5,\27\2\u00e3\u00e8")
-        buf.write("\3\2\2\2\u00e4\u00e5\5$\23\2\u00e5\u00e6\5J&\2\u00e6\u00e8")
-        buf.write("\3\2\2\2\u00e7\u00dc\3\2\2\2\u00e7\u00e0\3\2\2\2\u00e7")
-        buf.write("\u00e4\3\2\2\2\u00e8#\3\2\2\2\u00e9\u00ee\5&\24\2\u00ea")
-        buf.write("\u00ee\5(\25\2\u00eb\u00ee\58\35\2\u00ec\u00ee\5*\26\2")
-        buf.write("\u00ed\u00e9\3\2\2\2\u00ed\u00ea\3\2\2\2\u00ed\u00eb\3")
-        buf.write("\2\2\2\u00ed\u00ec\3\2\2\2\u00ee%\3\2\2\2\u00ef\u00f0")
-        buf.write("\7\4\2\2\u00f0\u00f1\5$\23\2\u00f1\'\3\2\2\2\u00f2\u00f3")
-        buf.write("\t\4\2\2\u00f3)\3\2\2\2\u00f4\u00fd\5,\27\2\u00f5\u00fd")
-        buf.write("\5.\30\2\u00f6\u00fd\5\60\31\2\u00f7\u00fd\5\62\32\2\u00f8")
-        buf.write("\u00fd\5\64\33\2\u00f9\u00fd\5\66\34\2\u00fa\u00fd\5D")
-        buf.write("#\2\u00fb\u00fd\5F$\2\u00fc\u00f4\3\2\2\2\u00fc\u00f5")
-        buf.write("\3\2\2\2\u00fc\u00f6\3\2\2\2\u00fc\u00f7\3\2\2\2\u00fc")
-        buf.write("\u00f8\3\2\2\2\u00fc\u00f9\3\2\2\2\u00fc\u00fa\3\2\2\2")
-        buf.write("\u00fc\u00fb\3\2\2\2\u00fd+\3\2\2\2\u00fe\u00ff\t\5\2")
-        buf.write("\2\u00ff-\3\2\2\2\u0100\u0101\79\2\2\u0101\u0102\5H%\2")
-        buf.write("\u0102/\3\2\2\2\u0103\u0104\7<\2\2\u0104\61\3\2\2\2\u0105")
-        buf.write("\u0106\7\67\2\2\u0106\63\3\2\2\2\u0107\u0108\7\17\2\2")
-        buf.write("\u0108\u0109\5\b\5\2\u0109\u010a\7\17\2\2\u010a\65\3\2")
-        buf.write("\2\2\u010b\u010c\5F$\2\u010c\u010d\7B\2\2\u010d\u0115")
-        buf.write("\3\2\2\2\u010e\u010f\5\62\32\2\u010f\u0110\7B\2\2\u0110")
-        buf.write("\u0115\3\2\2\2\u0111\u0112\5,\27\2\u0112\u0113\7B\2\2")
-        buf.write("\u0113\u0115\3\2\2\2\u0114\u010b\3\2\2\2\u0114\u010e\3")
-        buf.write("\2\2\2\u0114\u0111\3\2\2\2\u0115\67\3\2\2\2\u0116\u0117")
-        buf.write("\5:\36\2\u0117\u0118\5<\37\2\u0118\u0125\3\2\2\2\u0119")
-        buf.write("\u011a\5:\36\2\u011a\u011b\5> \2\u011b\u0125\3\2\2\2\u011c")
-        buf.write("\u011d\7D\2\2\u011d\u011e\5\b\5\2\u011e\u011f\7\n\2\2")
-        buf.write("\u011f\u0125\3\2\2\2\u0120\u0121\7E\2\2\u0121\u0122\5")
-        buf.write("\b\5\2\u0122\u0123\7\b\2\2\u0123\u0125\3\2\2\2\u0124\u0116")
-        buf.write("\3\2\2\2\u0124\u0119\3\2\2\2\u0124\u011c\3\2\2\2\u0124")
-        buf.write("\u0120\3\2\2\2\u01259\3\2\2\2\u0126\u0127\t\6\2\2\u0127")
-        buf.write(";\3\2\2\2\u0128\u0129\7\t\2\2\u0129\u012a\5@!\2\u012a")
-        buf.write("\u012b\7\n\2\2\u012b=\3\2\2\2\u012c\u012d\7\7\2\2\u012d")
-        buf.write("\u012e\5@!\2\u012e\u012f\7\b\2\2\u012f?\3\2\2\2\u0130")
-        buf.write("\u0131\b!\1\2\u0131\u0132\5\b\5\2\u0132\u0138\3\2\2\2")
-        buf.write("\u0133\u0134\f\3\2\2\u0134\u0135\7\r\2\2\u0135\u0137\5")
-        buf.write("\b\5\2\u0136\u0133\3\2\2\2\u0137\u013a\3\2\2\2\u0138\u0136")
-        buf.write("\3\2\2\2\u0138\u0139\3\2\2\2\u0139A\3\2\2\2\u013a\u0138")
-        buf.write("\3\2\2\2\u013b\u013c\7\t\2\2\u013c\u013d\5\b\5\2\u013d")
-        buf.write("\u013e\7\n\2\2\u013eC\3\2\2\2\u013f\u0140\7\13\2\2\u0140")
-        buf.write("\u0141\5\b\5\2\u0141\u0142\7\f\2\2\u0142E\3\2\2\2\u0143")
-        buf.write("\u0144\7\7\2\2\u0144\u0145\5\b\5\2\u0145\u0146\7\b\2\2")
-        buf.write("\u0146G\3\2\2\2\u0147\u0148\7\20\2\2\u0148\u0149\5B\"")
-        buf.write("\2\u0149I\3\2\2\2\u014a\u014b\7\21\2\2\u014b\u014c\5B")
-        buf.write("\"\2\u014cK\3\2\2\2\u014d\u014e\7\20\2\2\u014e\u014f\7")
-        buf.write("\t\2\2\u014f\u0150\5N(\2\u0150\u0151\7\n\2\2\u0151M\3")
-        buf.write("\2\2\2\u0152\u0153\5,\27\2\u0153\u0154\7=\2\2\u0154\u0155")
-        buf.write("\5\b\5\2\u0155O\3\2\2\2\u0156\u0157\t\7\2\2\u0157Q\3\2")
-        buf.write("\2\2\30XZ_cnpv{\u008b\u0097\u00a4\u00af\u00ba\u00c5\u00d0")
-        buf.write("\u00da\u00e7\u00ed\u00fc\u0114\u0124\u0138")
+        buf.write("&\4\'\t\'\4(\t(\4)\t)\4*\t*\4+\t+\3\2\3\2\3\2\3\3\3\3")
+        buf.write("\3\3\5\3]\n\3\5\3_\n\3\3\3\3\3\3\3\5\3d\n\3\3\3\3\3\5")
+        buf.write("\3h\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3s\n\3\f")
+        buf.write("\3\16\3v\13\3\3\4\3\4\3\4\5\4{\n\4\3\5\3\5\3\5\5\5\u0080")
+        buf.write("\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3")
+        buf.write("\6\3\6\5\6\u0090\n\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\3")
+        buf.write("\t\3\t\5\t\u009c\n\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3")
+        buf.write("\13\3\13\7\13\u00a7\n\13\f\13\16\13\u00aa\13\13\3\f\3")
+        buf.write("\f\3\f\3\f\3\f\3\f\7\f\u00b2\n\f\f\f\16\f\u00b5\13\f\3")
+        buf.write("\r\3\r\3\r\3\r\3\r\3\r\7\r\u00bd\n\r\f\r\16\r\u00c0\13")
+        buf.write("\r\3\16\3\16\3\16\3\16\3\16\3\16\7\16\u00c8\n\16\f\16")
+        buf.write("\16\16\u00cb\13\16\3\17\3\17\3\17\3\17\3\17\3\17\7\17")
+        buf.write("\u00d3\n\17\f\17\16\17\u00d6\13\17\3\20\3\20\3\20\3\20")
+        buf.write("\3\21\3\21\3\21\5\21\u00df\n\21\3\22\3\22\3\22\3\22\3")
+        buf.write("\22\3\22\3\22\3\22\3\22\3\22\3\22\5\22\u00ec\n\22\3\23")
+        buf.write("\3\23\3\23\3\23\5\23\u00f2\n\23\3\24\3\24\3\24\3\25\3")
+        buf.write("\25\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26")
+        buf.write("\5\26\u0103\n\26\3\27\3\27\3\30\3\30\3\30\3\31\3\31\3")
+        buf.write("\32\3\32\3\33\3\33\3\33\3\33\3\34\3\34\3\34\3\34\3\35")
+        buf.write("\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\5\35\u011f\n")
+        buf.write("\35\3\36\3\36\3\36\3\36\3\37\3\37\3\37\3\37\3\37\3\37")
+        buf.write("\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\5\37\u0133\n")
+        buf.write("\37\3 \3 \3!\3!\3!\3!\3\"\3\"\3\"\3\"\3#\3#\3#\3#\3#\3")
+        buf.write("#\7#\u0145\n#\f#\16#\u0148\13#\3$\3$\3$\3$\3%\3%\3%\3")
+        buf.write("%\3&\3&\3&\3&\3\'\3\'\3\'\3(\3(\3(\3)\3)\3)\3)\3)\3*\3")
+        buf.write("*\3*\3*\3+\3+\3+\2\t\4\24\26\30\32\34D,\2\4\6\b\n\f\16")
+        buf.write("\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<>@BDF")
+        buf.write("HJLNPRT\2\b\4\2\6\6\66\66\4\2\5\5\64\65\4\299;<\4\2::")
+        buf.write("DD\3\2\30\62\3\2>B\2\u0164\2V\3\2\2\2\4g\3\2\2\2\6z\3")
+        buf.write("\2\2\2\b\177\3\2\2\2\n\u008f\3\2\2\2\f\u0091\3\2\2\2\16")
+        buf.write("\u0095\3\2\2\2\20\u009b\3\2\2\2\22\u009d\3\2\2\2\24\u00a0")
+        buf.write("\3\2\2\2\26\u00ab\3\2\2\2\30\u00b6\3\2\2\2\32\u00c1\3")
+        buf.write("\2\2\2\34\u00cc\3\2\2\2\36\u00d7\3\2\2\2 \u00de\3\2\2")
+        buf.write("\2\"\u00eb\3\2\2\2$\u00f1\3\2\2\2&\u00f3\3\2\2\2(\u00f6")
+        buf.write("\3\2\2\2*\u0102\3\2\2\2,\u0104\3\2\2\2.\u0106\3\2\2\2")
+        buf.write("\60\u0109\3\2\2\2\62\u010b\3\2\2\2\64\u010d\3\2\2\2\66")
+        buf.write("\u0111\3\2\2\28\u011e\3\2\2\2:\u0120\3\2\2\2<\u0132\3")
+        buf.write("\2\2\2>\u0134\3\2\2\2@\u0136\3\2\2\2B\u013a\3\2\2\2D\u013e")
+        buf.write("\3\2\2\2F\u0149\3\2\2\2H\u014d\3\2\2\2J\u0151\3\2\2\2")
+        buf.write("L\u0155\3\2\2\2N\u0158\3\2\2\2P\u015b\3\2\2\2R\u0160\3")
+        buf.write("\2\2\2T\u0164\3\2\2\2VW\5\b\5\2WX\7\2\2\3X\3\3\2\2\2Y")
+        buf.write("^\b\3\1\2Z\\\5\26\f\2[]\7\5\2\2\\[\3\2\2\2\\]\3\2\2\2")
+        buf.write("]_\3\2\2\2^Z\3\2\2\2^_\3\2\2\2_`\3\2\2\2`h\5\6\4\2ac\5")
+        buf.write("\24\13\2bd\7\5\2\2cb\3\2\2\2cd\3\2\2\2de\3\2\2\2ef\5\6")
+        buf.write("\4\2fh\3\2\2\2gY\3\2\2\2ga\3\2\2\2ht\3\2\2\2ij\f\5\2\2")
+        buf.write("jk\7\3\2\2ks\5\6\4\2lm\f\4\2\2mn\7\4\2\2ns\5\6\4\2op\f")
+        buf.write("\3\2\2pq\7\5\2\2qs\5\6\4\2ri\3\2\2\2rl\3\2\2\2ro\3\2\2")
+        buf.write("\2sv\3\2\2\2tr\3\2\2\2tu\3\2\2\2u\5\3\2\2\2vt\3\2\2\2")
+        buf.write("w{\5\n\6\2x{\5\f\7\2y{\5\16\b\2zw\3\2\2\2zx\3\2\2\2zy")
+        buf.write("\3\2\2\2{\7\3\2\2\2|\u0080\5\26\f\2}\u0080\5\24\13\2~")
+        buf.write("\u0080\5\4\3\2\177|\3\2\2\2\177}\3\2\2\2\177~\3\2\2\2")
+        buf.write("\u0080\t\3\2\2\2\u0081\u0082\7\25\2\2\u0082\u0083\5L\'")
+        buf.write("\2\u0083\u0084\5N(\2\u0084\u0085\7\t\2\2\u0085\u0086\5")
+        buf.write("\b\5\2\u0086\u0087\79\2\2\u0087\u0088\7\n\2\2\u0088\u0090")
+        buf.write("\3\2\2\2\u0089\u008a\7\25\2\2\u008a\u008b\5L\'\2\u008b")
+        buf.write("\u008c\5N(\2\u008c\u008d\5\b\5\2\u008d\u008e\79\2\2\u008e")
+        buf.write("\u0090\3\2\2\2\u008f\u0081\3\2\2\2\u008f\u0089\3\2\2\2")
+        buf.write("\u0090\13\3\2\2\2\u0091\u0092\7\26\2\2\u0092\u0093\5\22")
+        buf.write("\n\2\u0093\u0094\5\20\t\2\u0094\r\3\2\2\2\u0095\u0096")
+        buf.write("\7\27\2\2\u0096\u0097\5\22\n\2\u0097\u0098\5\20\t\2\u0098")
+        buf.write("\17\3\2\2\2\u0099\u009c\5\b\5\2\u009a\u009c\5F$\2\u009b")
+        buf.write("\u0099\3\2\2\2\u009b\u009a\3\2\2\2\u009c\21\3\2\2\2\u009d")
+        buf.write("\u009e\5P)\2\u009e\u009f\5N(\2\u009f\23\3\2\2\2\u00a0")
+        buf.write("\u00a1\b\13\1\2\u00a1\u00a2\5\26\f\2\u00a2\u00a3\5\26")
+        buf.write("\f\2\u00a3\u00a8\3\2\2\2\u00a4\u00a5\f\3\2\2\u00a5\u00a7")
+        buf.write("\5\26\f\2\u00a6\u00a4\3\2\2\2\u00a7\u00aa\3\2\2\2\u00a8")
+        buf.write("\u00a6\3\2\2\2\u00a8\u00a9\3\2\2\2\u00a9\25\3\2\2\2\u00aa")
+        buf.write("\u00a8\3\2\2\2\u00ab\u00ac\b\f\1\2\u00ac\u00ad\5\30\r")
+        buf.write("\2\u00ad\u00b3\3\2\2\2\u00ae\u00af\f\3\2\2\u00af\u00b0")
+        buf.write("\7\4\2\2\u00b0\u00b2\5\30\r\2\u00b1\u00ae\3\2\2\2\u00b2")
+        buf.write("\u00b5\3\2\2\2\u00b3\u00b1\3\2\2\2\u00b3\u00b4\3\2\2\2")
+        buf.write("\u00b4\27\3\2\2\2\u00b5\u00b3\3\2\2\2\u00b6\u00b7\b\r")
+        buf.write("\1\2\u00b7\u00b8\5\32\16\2\u00b8\u00be\3\2\2\2\u00b9\u00ba")
+        buf.write("\f\3\2\2\u00ba\u00bb\7\3\2\2\u00bb\u00bd\5\32\16\2\u00bc")
+        buf.write("\u00b9\3\2\2\2\u00bd\u00c0\3\2\2\2\u00be\u00bc\3\2\2\2")
+        buf.write("\u00be\u00bf\3\2\2\2\u00bf\31\3\2\2\2\u00c0\u00be\3\2")
+        buf.write("\2\2\u00c1\u00c2\b\16\1\2\u00c2\u00c3\5\34\17\2\u00c3")
+        buf.write("\u00c9\3\2\2\2\u00c4\u00c5\f\3\2\2\u00c5\u00c6\t\2\2\2")
+        buf.write("\u00c6\u00c8\5\34\17\2\u00c7\u00c4\3\2\2\2\u00c8\u00cb")
+        buf.write("\3\2\2\2\u00c9\u00c7\3\2\2\2\u00c9\u00ca\3\2\2\2\u00ca")
+        buf.write("\33\3\2\2\2\u00cb\u00c9\3\2\2\2\u00cc\u00cd\b\17\1\2\u00cd")
+        buf.write("\u00ce\5 \21\2\u00ce\u00d4\3\2\2\2\u00cf\u00d0\f\3\2\2")
+        buf.write("\u00d0\u00d1\t\3\2\2\u00d1\u00d3\5 \21\2\u00d2\u00cf\3")
+        buf.write("\2\2\2\u00d3\u00d6\3\2\2\2\u00d4\u00d2\3\2\2\2\u00d4\u00d5")
+        buf.write("\3\2\2\2\u00d5\35\3\2\2\2\u00d6\u00d4\3\2\2\2\u00d7\u00d8")
+        buf.write("\7\67\2\2\u00d8\u00d9\5F$\2\u00d9\u00da\5F$\2\u00da\37")
+        buf.write("\3\2\2\2\u00db\u00df\5$\23\2\u00dc\u00df\5\36\20\2\u00dd")
+        buf.write("\u00df\5\"\22\2\u00de\u00db\3\2\2\2\u00de\u00dc\3\2\2")
+        buf.write("\2\u00de\u00dd\3\2\2\2\u00df!\3\2\2\2\u00e0\u00e1\5$\23")
+        buf.write("\2\u00e1\u00e2\7\21\2\2\u00e2\u00e3\5\62\32\2\u00e3\u00ec")
+        buf.write("\3\2\2\2\u00e4\u00e5\5$\23\2\u00e5\u00e6\7\21\2\2\u00e6")
+        buf.write("\u00e7\5,\27\2\u00e7\u00ec\3\2\2\2\u00e8\u00e9\5$\23\2")
+        buf.write("\u00e9\u00ea\5N(\2\u00ea\u00ec\3\2\2\2\u00eb\u00e0\3\2")
+        buf.write("\2\2\u00eb\u00e4\3\2\2\2\u00eb\u00e8\3\2\2\2\u00ec#\3")
+        buf.write("\2\2\2\u00ed\u00f2\5&\24\2\u00ee\u00f2\5(\25\2\u00ef\u00f2")
+        buf.write("\5<\37\2\u00f0\u00f2\5*\26\2\u00f1\u00ed\3\2\2\2\u00f1")
+        buf.write("\u00ee\3\2\2\2\u00f1\u00ef\3\2\2\2\u00f1\u00f0\3\2\2\2")
+        buf.write("\u00f2%\3\2\2\2\u00f3\u00f4\7\4\2\2\u00f4\u00f5\5$\23")
+        buf.write("\2\u00f5\'\3\2\2\2\u00f6\u00f7\t\4\2\2\u00f7)\3\2\2\2")
+        buf.write("\u00f8\u0103\5,\27\2\u00f9\u0103\5.\30\2\u00fa\u0103\5")
+        buf.write("\60\31\2\u00fb\u0103\5\62\32\2\u00fc\u0103\5\64\33\2\u00fd")
+        buf.write("\u0103\5\66\34\2\u00fe\u0103\58\35\2\u00ff\u0103\5:\36")
+        buf.write("\2\u0100\u0103\5H%\2\u0101\u0103\5J&\2\u0102\u00f8\3\2")
+        buf.write("\2\2\u0102\u00f9\3\2\2\2\u0102\u00fa\3\2\2\2\u0102\u00fb")
+        buf.write("\3\2\2\2\u0102\u00fc\3\2\2\2\u0102\u00fd\3\2\2\2\u0102")
+        buf.write("\u00fe\3\2\2\2\u0102\u00ff\3\2\2\2\u0102\u0100\3\2\2\2")
+        buf.write("\u0102\u0101\3\2\2\2\u0103+\3\2\2\2\u0104\u0105\t\5\2")
+        buf.write("\2\u0105-\3\2\2\2\u0106\u0107\7:\2\2\u0107\u0108\5L\'")
+        buf.write("\2\u0108/\3\2\2\2\u0109\u010a\7=\2\2\u010a\61\3\2\2\2")
+        buf.write("\u010b\u010c\78\2\2\u010c\63\3\2\2\2\u010d\u010e\7\17")
+        buf.write("\2\2\u010e\u010f\5\b\5\2\u010f\u0110\7\17\2\2\u0110\65")
+        buf.write("\3\2\2\2\u0111\u0112\7:\2\2\u0112\u0113\7\17\2\2\u0113")
+        buf.write("\u0114\7:\2\2\u0114\67\3\2\2\2\u0115\u0116\5J&\2\u0116")
+        buf.write("\u0117\7C\2\2\u0117\u011f\3\2\2\2\u0118\u0119\5\62\32")
+        buf.write("\2\u0119\u011a\7C\2\2\u011a\u011f\3\2\2\2\u011b\u011c")
+        buf.write("\5,\27\2\u011c\u011d\7C\2\2\u011d\u011f\3\2\2\2\u011e")
+        buf.write("\u0115\3\2\2\2\u011e\u0118\3\2\2\2\u011e\u011b\3\2\2\2")
+        buf.write("\u011f9\3\2\2\2\u0120\u0121\7\63\2\2\u0121\u0122\5F$\2")
+        buf.write("\u0122\u0123\5F$\2\u0123;\3\2\2\2\u0124\u0125\5> \2\u0125")
+        buf.write("\u0126\5@!\2\u0126\u0133\3\2\2\2\u0127\u0128\5> \2\u0128")
+        buf.write("\u0129\5B\"\2\u0129\u0133\3\2\2\2\u012a\u012b\7E\2\2\u012b")
+        buf.write("\u012c\5D#\2\u012c\u012d\7\n\2\2\u012d\u0133\3\2\2\2\u012e")
+        buf.write("\u012f\7F\2\2\u012f\u0130\5D#\2\u0130\u0131\7\b\2\2\u0131")
+        buf.write("\u0133\3\2\2\2\u0132\u0124\3\2\2\2\u0132\u0127\3\2\2\2")
+        buf.write("\u0132\u012a\3\2\2\2\u0132\u012e\3\2\2\2\u0133=\3\2\2")
+        buf.write("\2\u0134\u0135\t\6\2\2\u0135?\3\2\2\2\u0136\u0137\7\t")
+        buf.write("\2\2\u0137\u0138\5D#\2\u0138\u0139\7\n\2\2\u0139A\3\2")
+        buf.write("\2\2\u013a\u013b\7\7\2\2\u013b\u013c\5D#\2\u013c\u013d")
+        buf.write("\7\b\2\2\u013dC\3\2\2\2\u013e\u013f\b#\1\2\u013f\u0140")
+        buf.write("\5\b\5\2\u0140\u0146\3\2\2\2\u0141\u0142\f\3\2\2\u0142")
+        buf.write("\u0143\7\r\2\2\u0143\u0145\5\b\5\2\u0144\u0141\3\2\2\2")
+        buf.write("\u0145\u0148\3\2\2\2\u0146\u0144\3\2\2\2\u0146\u0147\3")
+        buf.write("\2\2\2\u0147E\3\2\2\2\u0148\u0146\3\2\2\2\u0149\u014a")
+        buf.write("\7\t\2\2\u014a\u014b\5\b\5\2\u014b\u014c\7\n\2\2\u014c")
+        buf.write("G\3\2\2\2\u014d\u014e\7\13\2\2\u014e\u014f\5\b\5\2\u014f")
+        buf.write("\u0150\7\f\2\2\u0150I\3\2\2\2\u0151\u0152\7\7\2\2\u0152")
+        buf.write("\u0153\5\b\5\2\u0153\u0154\7\b\2\2\u0154K\3\2\2\2\u0155")
+        buf.write("\u0156\7\20\2\2\u0156\u0157\5F$\2\u0157M\3\2\2\2\u0158")
+        buf.write("\u0159\7\21\2\2\u0159\u015a\5F$\2\u015aO\3\2\2\2\u015b")
+        buf.write("\u015c\7\20\2\2\u015c\u015d\7\t\2\2\u015d\u015e\5R*\2")
+        buf.write("\u015e\u015f\7\n\2\2\u015fQ\3\2\2\2\u0160\u0161\5,\27")
+        buf.write("\2\u0161\u0162\7>\2\2\u0162\u0163\5\b\5\2\u0163S\3\2\2")
+        buf.write("\2\u0164\u0165\t\7\2\2\u0165U\3\2\2\2\30\\^cgrtz\177\u008f")
+        buf.write("\u009b\u00a8\u00b3\u00be\u00c9\u00d4\u00de\u00eb\u00f1")
+        buf.write("\u0102\u011e\u0132\u0146")
         return buf.getvalue()
 
 
@@ -175,10 +182,10 @@ class MatexParser ( Parser ):
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'\\times'", "'\\cdot'", "'\\div'", "'\\frac'", "<INVALID>", 
+                     "<INVALID>", "'\\times'", "'\\cdot'", "'\\div'", "'\\frac'", 
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                     "'\\infty'", "'='", "'<'", "'\\leq'", "'>'", "'\\geq'", 
-                     "'!'" ]
+                     "<INVALID>", "'\\infty'", "'='", "'<'", "'\\leq'", 
+                     "'>'", "'\\geq'", "'!'" ]
 
     symbolicNames = [ "<INVALID>", "PLUS", "MINUS", "MUL", "DIV", "L_PAREN", 
                       "R_PAREN", "L_BRACE", "R_BRACE", "L_BRACKET", "R_BRACKET", 
@@ -191,10 +198,11 @@ class MatexParser ( Parser ):
                       "FUNC_ARCSINH", "FUNC_ARCCOSH", "FUNC_ARCTANH", "FUNC_ECOS", 
                       "FUNC_ESIN", "FUNC_EDELTAAMPLITUDE", "FUNC_ARCECOS", 
                       "FUNC_ARCESIN", "FUNC_ARCEDELTAAMPLITUDE", "FUNC_SQRT", 
-                      "CMD_TIMES", "CMD_CDOT", "CMD_DIV", "CMD_FRAC", "NUMBER", 
-                      "DERIVATIVE", "VARIABLE", "MIXNUMBER", "WORD", "INFINITY", 
-                      "EQ", "LT", "LTE", "GT", "GTE", "BANG", "GREEKLETTER", 
-                      "GREEKFUNCTIONBRACE", "GREEKFUNCTIONPAREN", "WS" ]
+                      "FUNC_BINOMIAL", "CMD_TIMES", "CMD_CDOT", "CMD_DIV", 
+                      "CMD_FRAC", "NUMBER", "DERIVATIVE", "VARIABLE", "MIXNUMBER", 
+                      "WORD", "INFINITY", "EQ", "LT", "LTE", "GT", "GTE", 
+                      "BANG", "GREEKLETTER", "GREEKFUNCTIONBRACE", "GREEKFUNCTIONPAREN", 
+                      "WS" ]
 
     RULE_math = 0
     RULE_megaExpr = 1
@@ -222,20 +230,22 @@ class MatexParser ( Parser ):
     RULE_constant = 23
     RULE_number = 24
     RULE_absolute = 25
-    RULE_factorial = 26
-    RULE_func = 27
-    RULE_funcname = 28
-    RULE_bracedMultiExpr = 29
-    RULE_parenMultiExpr = 30
-    RULE_multiExpr = 31
-    RULE_bracedExpr = 32
-    RULE_brackExpr = 33
-    RULE_parenExpr = 34
-    RULE_subexpr = 35
-    RULE_supexpr = 36
-    RULE_subeq = 37
-    RULE_equality = 38
-    RULE_relop = 39
+    RULE_exactDivision = 26
+    RULE_factorial = 27
+    RULE_binomial = 28
+    RULE_func = 29
+    RULE_funcname = 30
+    RULE_bracedMultiExpr = 31
+    RULE_parenMultiExpr = 32
+    RULE_multiExpr = 33
+    RULE_bracedExpr = 34
+    RULE_brackExpr = 35
+    RULE_parenExpr = 36
+    RULE_subexpr = 37
+    RULE_supexpr = 38
+    RULE_subeq = 39
+    RULE_equality = 40
+    RULE_relop = 41
 
     ruleNames =  [ "math", "megaExpr", "specialExpr", "expr", "integralExpr", 
                    "summationExpr", "productExpr", "tailExpr", "funcParams", 
@@ -243,10 +253,10 @@ class MatexParser ( Parser ):
                    "divisionExpr", "multiplicationExpr", "fracExpr", "powExpr", 
                    "exponentiationExpr", "signedAtom", "negateAtom", "localMultiplication", 
                    "atom", "variable", "indexedVariable", "constant", "number", 
-                   "absolute", "factorial", "func", "funcname", "bracedMultiExpr", 
-                   "parenMultiExpr", "multiExpr", "bracedExpr", "brackExpr", 
-                   "parenExpr", "subexpr", "supexpr", "subeq", "equality", 
-                   "relop" ]
+                   "absolute", "exactDivision", "factorial", "binomial", 
+                   "func", "funcname", "bracedMultiExpr", "parenMultiExpr", 
+                   "multiExpr", "bracedExpr", "brackExpr", "parenExpr", 
+                   "subexpr", "supexpr", "subeq", "equality", "relop" ]
 
     EOF = Token.EOF
     PLUS=1
@@ -297,26 +307,27 @@ class MatexParser ( Parser ):
     FUNC_ARCESIN=46
     FUNC_ARCEDELTAAMPLITUDE=47
     FUNC_SQRT=48
-    CMD_TIMES=49
-    CMD_CDOT=50
-    CMD_DIV=51
-    CMD_FRAC=52
-    NUMBER=53
-    DERIVATIVE=54
-    VARIABLE=55
-    MIXNUMBER=56
-    WORD=57
-    INFINITY=58
-    EQ=59
-    LT=60
-    LTE=61
-    GT=62
-    GTE=63
-    BANG=64
-    GREEKLETTER=65
-    GREEKFUNCTIONBRACE=66
-    GREEKFUNCTIONPAREN=67
-    WS=68
+    FUNC_BINOMIAL=49
+    CMD_TIMES=50
+    CMD_CDOT=51
+    CMD_DIV=52
+    CMD_FRAC=53
+    NUMBER=54
+    DERIVATIVE=55
+    VARIABLE=56
+    MIXNUMBER=57
+    WORD=58
+    INFINITY=59
+    EQ=60
+    LT=61
+    LTE=62
+    GT=63
+    GTE=64
+    BANG=65
+    GREEKLETTER=66
+    GREEKFUNCTIONBRACE=67
+    GREEKFUNCTIONPAREN=68
+    WS=69
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -359,9 +370,9 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_math)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 80
+            self.state = 84
             self.expr()
-            self.state = 81
+            self.state = 85
             self.match(MatexParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -425,48 +436,48 @@ class MatexParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 97
+            self.state = 101
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
-                self.state = 88
+                self.state = 92
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MatexParser.MINUS) | (1 << MatexParser.L_PAREN) | (1 << MatexParser.L_BRACKET) | (1 << MatexParser.BAR) | (1 << MatexParser.FUNC_LOG) | (1 << MatexParser.FUNC_LN) | (1 << MatexParser.FUNC_SIN) | (1 << MatexParser.FUNC_COS) | (1 << MatexParser.FUNC_TAN) | (1 << MatexParser.FUNC_CSC) | (1 << MatexParser.FUNC_SEC) | (1 << MatexParser.FUNC_COT) | (1 << MatexParser.FUNC_ARCSIN) | (1 << MatexParser.FUNC_ARCCOS) | (1 << MatexParser.FUNC_ARCTAN) | (1 << MatexParser.FUNC_ARCCSC) | (1 << MatexParser.FUNC_ARCSEC) | (1 << MatexParser.FUNC_ARCCOT) | (1 << MatexParser.FUNC_SINH) | (1 << MatexParser.FUNC_COSH) | (1 << MatexParser.FUNC_TANH) | (1 << MatexParser.FUNC_ARCSINH) | (1 << MatexParser.FUNC_ARCCOSH) | (1 << MatexParser.FUNC_ARCTANH) | (1 << MatexParser.FUNC_ECOS) | (1 << MatexParser.FUNC_ESIN) | (1 << MatexParser.FUNC_EDELTAAMPLITUDE) | (1 << MatexParser.FUNC_ARCECOS) | (1 << MatexParser.FUNC_ARCESIN) | (1 << MatexParser.FUNC_ARCEDELTAAMPLITUDE) | (1 << MatexParser.FUNC_SQRT) | (1 << MatexParser.CMD_FRAC) | (1 << MatexParser.NUMBER) | (1 << MatexParser.DERIVATIVE) | (1 << MatexParser.VARIABLE) | (1 << MatexParser.MIXNUMBER) | (1 << MatexParser.WORD) | (1 << MatexParser.INFINITY))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (MatexParser.GREEKLETTER - 65)) | (1 << (MatexParser.GREEKFUNCTIONBRACE - 65)) | (1 << (MatexParser.GREEKFUNCTIONPAREN - 65)))) != 0):
-                    self.state = 84
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MatexParser.MINUS) | (1 << MatexParser.L_PAREN) | (1 << MatexParser.L_BRACKET) | (1 << MatexParser.BAR) | (1 << MatexParser.FUNC_LOG) | (1 << MatexParser.FUNC_LN) | (1 << MatexParser.FUNC_SIN) | (1 << MatexParser.FUNC_COS) | (1 << MatexParser.FUNC_TAN) | (1 << MatexParser.FUNC_CSC) | (1 << MatexParser.FUNC_SEC) | (1 << MatexParser.FUNC_COT) | (1 << MatexParser.FUNC_ARCSIN) | (1 << MatexParser.FUNC_ARCCOS) | (1 << MatexParser.FUNC_ARCTAN) | (1 << MatexParser.FUNC_ARCCSC) | (1 << MatexParser.FUNC_ARCSEC) | (1 << MatexParser.FUNC_ARCCOT) | (1 << MatexParser.FUNC_SINH) | (1 << MatexParser.FUNC_COSH) | (1 << MatexParser.FUNC_TANH) | (1 << MatexParser.FUNC_ARCSINH) | (1 << MatexParser.FUNC_ARCCOSH) | (1 << MatexParser.FUNC_ARCTANH) | (1 << MatexParser.FUNC_ECOS) | (1 << MatexParser.FUNC_ESIN) | (1 << MatexParser.FUNC_EDELTAAMPLITUDE) | (1 << MatexParser.FUNC_ARCECOS) | (1 << MatexParser.FUNC_ARCESIN) | (1 << MatexParser.FUNC_ARCEDELTAAMPLITUDE) | (1 << MatexParser.FUNC_SQRT) | (1 << MatexParser.FUNC_BINOMIAL) | (1 << MatexParser.CMD_FRAC) | (1 << MatexParser.NUMBER) | (1 << MatexParser.DERIVATIVE) | (1 << MatexParser.VARIABLE) | (1 << MatexParser.MIXNUMBER) | (1 << MatexParser.WORD) | (1 << MatexParser.INFINITY))) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (MatexParser.GREEKLETTER - 66)) | (1 << (MatexParser.GREEKFUNCTIONBRACE - 66)) | (1 << (MatexParser.GREEKFUNCTIONPAREN - 66)))) != 0):
+                    self.state = 88
                     self.subtractionExpr(0)
-                    self.state = 86
+                    self.state = 90
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==MatexParser.MUL:
-                        self.state = 85
+                        self.state = 89
                         self.match(MatexParser.MUL)
 
 
 
 
-                self.state = 90
+                self.state = 94
                 self.specialExpr()
                 pass
 
             elif la_ == 2:
-                self.state = 91
+                self.state = 95
                 self.implicitMultiplicationExpr(0)
-                self.state = 93
+                self.state = 97
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==MatexParser.MUL:
-                    self.state = 92
+                    self.state = 96
                     self.match(MatexParser.MUL)
 
 
-                self.state = 95
+                self.state = 99
                 self.specialExpr()
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 110
+            self.state = 114
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -474,50 +485,50 @@ class MatexParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 108
+                    self.state = 112
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
                     if la_ == 1:
                         localctx = MatexParser.MegaExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_megaExpr)
-                        self.state = 99
+                        self.state = 103
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 100
+                        self.state = 104
                         self.match(MatexParser.PLUS)
-                        self.state = 101
+                        self.state = 105
                         self.specialExpr()
                         pass
 
                     elif la_ == 2:
                         localctx = MatexParser.MegaExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_megaExpr)
-                        self.state = 102
+                        self.state = 106
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 103
+                        self.state = 107
                         self.match(MatexParser.MINUS)
-                        self.state = 104
+                        self.state = 108
                         self.specialExpr()
                         pass
 
                     elif la_ == 3:
                         localctx = MatexParser.MegaExprContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_megaExpr)
-                        self.state = 105
+                        self.state = 109
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                        self.state = 106
+                        self.state = 110
                         self.match(MatexParser.MUL)
-                        self.state = 107
+                        self.state = 111
                         self.specialExpr()
                         pass
 
              
-                self.state = 112
+                self.state = 116
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
 
@@ -566,22 +577,22 @@ class MatexParser ( Parser ):
         localctx = MatexParser.SpecialExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_specialExpr)
         try:
-            self.state = 116
+            self.state = 120
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [MatexParser.FUNC_INT]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 113
+                self.state = 117
                 self.integralExpr()
                 pass
             elif token in [MatexParser.FUNC_SUM]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 114
+                self.state = 118
                 self.summationExpr()
                 pass
             elif token in [MatexParser.FUNC_PROD]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 115
+                self.state = 119
                 self.productExpr()
                 pass
             else:
@@ -632,24 +643,24 @@ class MatexParser ( Parser ):
         localctx = MatexParser.ExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_expr)
         try:
-            self.state = 121
+            self.state = 125
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 118
+                self.state = 122
                 self.subtractionExpr(0)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 119
+                self.state = 123
                 self.implicitMultiplicationExpr(0)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 120
+                self.state = 124
                 self.megaExpr(0)
                 pass
 
@@ -711,38 +722,38 @@ class MatexParser ( Parser ):
         localctx = MatexParser.IntegralExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_integralExpr)
         try:
-            self.state = 137
+            self.state = 141
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 123
-                self.match(MatexParser.FUNC_INT)
-                self.state = 124
-                self.subexpr()
-                self.state = 125
-                self.supexpr()
-                self.state = 126
-                self.match(MatexParser.L_BRACE)
                 self.state = 127
-                self.expr()
+                self.match(MatexParser.FUNC_INT)
                 self.state = 128
-                self.match(MatexParser.DERIVATIVE)
+                self.subexpr()
                 self.state = 129
+                self.supexpr()
+                self.state = 130
+                self.match(MatexParser.L_BRACE)
+                self.state = 131
+                self.expr()
+                self.state = 132
+                self.match(MatexParser.DERIVATIVE)
+                self.state = 133
                 self.match(MatexParser.R_BRACE)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 131
-                self.match(MatexParser.FUNC_INT)
-                self.state = 132
-                self.subexpr()
-                self.state = 133
-                self.supexpr()
-                self.state = 134
-                self.expr()
                 self.state = 135
+                self.match(MatexParser.FUNC_INT)
+                self.state = 136
+                self.subexpr()
+                self.state = 137
+                self.supexpr()
+                self.state = 138
+                self.expr()
+                self.state = 139
                 self.match(MatexParser.DERIVATIVE)
                 pass
 
@@ -792,11 +803,11 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_summationExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 139
+            self.state = 143
             self.match(MatexParser.FUNC_SUM)
-            self.state = 140
+            self.state = 144
             self.funcParams()
-            self.state = 141
+            self.state = 145
             self.tailExpr()
         except RecognitionException as re:
             localctx.exception = re
@@ -843,11 +854,11 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_productExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 143
+            self.state = 147
             self.match(MatexParser.FUNC_PROD)
-            self.state = 144
+            self.state = 148
             self.funcParams()
-            self.state = 145
+            self.state = 149
             self.tailExpr()
         except RecognitionException as re:
             localctx.exception = re
@@ -890,17 +901,17 @@ class MatexParser ( Parser ):
         localctx = MatexParser.TailExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_tailExpr)
         try:
-            self.state = 149
+            self.state = 153
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [MatexParser.MINUS, MatexParser.L_PAREN, MatexParser.L_BRACKET, MatexParser.BAR, MatexParser.FUNC_INT, MatexParser.FUNC_SUM, MatexParser.FUNC_PROD, MatexParser.FUNC_LOG, MatexParser.FUNC_LN, MatexParser.FUNC_SIN, MatexParser.FUNC_COS, MatexParser.FUNC_TAN, MatexParser.FUNC_CSC, MatexParser.FUNC_SEC, MatexParser.FUNC_COT, MatexParser.FUNC_ARCSIN, MatexParser.FUNC_ARCCOS, MatexParser.FUNC_ARCTAN, MatexParser.FUNC_ARCCSC, MatexParser.FUNC_ARCSEC, MatexParser.FUNC_ARCCOT, MatexParser.FUNC_SINH, MatexParser.FUNC_COSH, MatexParser.FUNC_TANH, MatexParser.FUNC_ARCSINH, MatexParser.FUNC_ARCCOSH, MatexParser.FUNC_ARCTANH, MatexParser.FUNC_ECOS, MatexParser.FUNC_ESIN, MatexParser.FUNC_EDELTAAMPLITUDE, MatexParser.FUNC_ARCECOS, MatexParser.FUNC_ARCESIN, MatexParser.FUNC_ARCEDELTAAMPLITUDE, MatexParser.FUNC_SQRT, MatexParser.CMD_FRAC, MatexParser.NUMBER, MatexParser.DERIVATIVE, MatexParser.VARIABLE, MatexParser.MIXNUMBER, MatexParser.WORD, MatexParser.INFINITY, MatexParser.GREEKLETTER, MatexParser.GREEKFUNCTIONBRACE, MatexParser.GREEKFUNCTIONPAREN]:
+            if token in [MatexParser.MINUS, MatexParser.L_PAREN, MatexParser.L_BRACKET, MatexParser.BAR, MatexParser.FUNC_INT, MatexParser.FUNC_SUM, MatexParser.FUNC_PROD, MatexParser.FUNC_LOG, MatexParser.FUNC_LN, MatexParser.FUNC_SIN, MatexParser.FUNC_COS, MatexParser.FUNC_TAN, MatexParser.FUNC_CSC, MatexParser.FUNC_SEC, MatexParser.FUNC_COT, MatexParser.FUNC_ARCSIN, MatexParser.FUNC_ARCCOS, MatexParser.FUNC_ARCTAN, MatexParser.FUNC_ARCCSC, MatexParser.FUNC_ARCSEC, MatexParser.FUNC_ARCCOT, MatexParser.FUNC_SINH, MatexParser.FUNC_COSH, MatexParser.FUNC_TANH, MatexParser.FUNC_ARCSINH, MatexParser.FUNC_ARCCOSH, MatexParser.FUNC_ARCTANH, MatexParser.FUNC_ECOS, MatexParser.FUNC_ESIN, MatexParser.FUNC_EDELTAAMPLITUDE, MatexParser.FUNC_ARCECOS, MatexParser.FUNC_ARCESIN, MatexParser.FUNC_ARCEDELTAAMPLITUDE, MatexParser.FUNC_SQRT, MatexParser.FUNC_BINOMIAL, MatexParser.CMD_FRAC, MatexParser.NUMBER, MatexParser.DERIVATIVE, MatexParser.VARIABLE, MatexParser.MIXNUMBER, MatexParser.WORD, MatexParser.INFINITY, MatexParser.GREEKLETTER, MatexParser.GREEKFUNCTIONBRACE, MatexParser.GREEKFUNCTIONPAREN]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 147
+                self.state = 151
                 self.expr()
                 pass
             elif token in [MatexParser.L_BRACE]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 148
+                self.state = 152
                 self.bracedExpr()
                 pass
             else:
@@ -948,9 +959,9 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_funcParams)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 151
+            self.state = 155
             self.subeq()
-            self.state = 152
+            self.state = 156
             self.supexpr()
         except RecognitionException as re:
             localctx.exception = re
@@ -999,12 +1010,12 @@ class MatexParser ( Parser ):
         self.enterRecursionRule(localctx, 18, self.RULE_implicitMultiplicationExpr, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 155
+            self.state = 159
             self.subtractionExpr(0)
-            self.state = 156
+            self.state = 160
             self.subtractionExpr(0)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 162
+            self.state = 166
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1014,13 +1025,13 @@ class MatexParser ( Parser ):
                     _prevctx = localctx
                     localctx = MatexParser.ImplicitMultiplicationExprContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_implicitMultiplicationExpr)
-                    self.state = 158
+                    self.state = 162
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 159
+                    self.state = 163
                     self.subtractionExpr(0) 
-                self.state = 164
+                self.state = 168
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
 
@@ -1071,10 +1082,10 @@ class MatexParser ( Parser ):
         self.enterRecursionRule(localctx, 20, self.RULE_subtractionExpr, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 166
+            self.state = 170
             self.additionExpr(0)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 173
+            self.state = 177
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1084,15 +1095,15 @@ class MatexParser ( Parser ):
                     _prevctx = localctx
                     localctx = MatexParser.SubtractionExprContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_subtractionExpr)
-                    self.state = 168
+                    self.state = 172
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 169
+                    self.state = 173
                     self.match(MatexParser.MINUS)
-                    self.state = 170
+                    self.state = 174
                     self.additionExpr(0) 
-                self.state = 175
+                self.state = 179
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
 
@@ -1143,10 +1154,10 @@ class MatexParser ( Parser ):
         self.enterRecursionRule(localctx, 22, self.RULE_additionExpr, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 177
+            self.state = 181
             self.divisionExpr(0)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 184
+            self.state = 188
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1156,15 +1167,15 @@ class MatexParser ( Parser ):
                     _prevctx = localctx
                     localctx = MatexParser.AdditionExprContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_additionExpr)
-                    self.state = 179
+                    self.state = 183
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 180
+                    self.state = 184
                     self.match(MatexParser.PLUS)
-                    self.state = 181
+                    self.state = 185
                     self.divisionExpr(0) 
-                self.state = 186
+                self.state = 190
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
 
@@ -1219,10 +1230,10 @@ class MatexParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 188
+            self.state = 192
             self.multiplicationExpr(0)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 195
+            self.state = 199
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1232,20 +1243,20 @@ class MatexParser ( Parser ):
                     _prevctx = localctx
                     localctx = MatexParser.DivisionExprContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_divisionExpr)
-                    self.state = 190
+                    self.state = 194
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 191
+                    self.state = 195
                     _la = self._input.LA(1)
                     if not(_la==MatexParser.DIV or _la==MatexParser.CMD_DIV):
                         self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
                         self.consume()
-                    self.state = 192
+                    self.state = 196
                     self.multiplicationExpr(0) 
-                self.state = 197
+                self.state = 201
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
 
@@ -1303,10 +1314,10 @@ class MatexParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 199
+            self.state = 203
             self.powExpr()
             self._ctx.stop = self._input.LT(-1)
-            self.state = 206
+            self.state = 210
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1316,20 +1327,20 @@ class MatexParser ( Parser ):
                     _prevctx = localctx
                     localctx = MatexParser.MultiplicationExprContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_multiplicationExpr)
-                    self.state = 201
+                    self.state = 205
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 202
+                    self.state = 206
                     _la = self._input.LA(1)
                     if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MatexParser.MUL) | (1 << MatexParser.CMD_TIMES) | (1 << MatexParser.CMD_CDOT))) != 0)):
                         self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
                         self.consume()
-                    self.state = 203
+                    self.state = 207
                     self.powExpr() 
-                self.state = 208
+                self.state = 212
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
 
@@ -1377,11 +1388,11 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_fracExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 209
+            self.state = 213
             self.match(MatexParser.CMD_FRAC)
-            self.state = 210
+            self.state = 214
             self.bracedExpr()
-            self.state = 211
+            self.state = 215
             self.bracedExpr()
         except RecognitionException as re:
             localctx.exception = re
@@ -1428,24 +1439,24 @@ class MatexParser ( Parser ):
         localctx = MatexParser.PowExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_powExpr)
         try:
-            self.state = 216
+            self.state = 220
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 213
+                self.state = 217
                 self.signedAtom()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 214
+                self.state = 218
                 self.fracExpr()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 215
+                self.state = 219
                 self.exponentiationExpr()
                 pass
 
@@ -1502,34 +1513,34 @@ class MatexParser ( Parser ):
         localctx = MatexParser.ExponentiationExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_exponentiationExpr)
         try:
-            self.state = 229
+            self.state = 233
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,16,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 218
-                self.signedAtom()
-                self.state = 219
-                self.match(MatexParser.CARET)
-                self.state = 220
-                self.number()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
                 self.state = 222
                 self.signedAtom()
                 self.state = 223
                 self.match(MatexParser.CARET)
                 self.state = 224
+                self.number()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 226
+                self.signedAtom()
+                self.state = 227
+                self.match(MatexParser.CARET)
+                self.state = 228
                 self.variable()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 226
+                self.state = 230
                 self.signedAtom()
-                self.state = 227
+                self.state = 231
                 self.supexpr()
                 pass
 
@@ -1583,27 +1594,27 @@ class MatexParser ( Parser ):
         localctx = MatexParser.SignedAtomContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_signedAtom)
         try:
-            self.state = 235
+            self.state = 239
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [MatexParser.MINUS]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 231
+                self.state = 235
                 self.negateAtom()
                 pass
             elif token in [MatexParser.DERIVATIVE, MatexParser.MIXNUMBER, MatexParser.WORD]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 232
+                self.state = 236
                 self.localMultiplication()
                 pass
             elif token in [MatexParser.FUNC_LOG, MatexParser.FUNC_LN, MatexParser.FUNC_SIN, MatexParser.FUNC_COS, MatexParser.FUNC_TAN, MatexParser.FUNC_CSC, MatexParser.FUNC_SEC, MatexParser.FUNC_COT, MatexParser.FUNC_ARCSIN, MatexParser.FUNC_ARCCOS, MatexParser.FUNC_ARCTAN, MatexParser.FUNC_ARCCSC, MatexParser.FUNC_ARCSEC, MatexParser.FUNC_ARCCOT, MatexParser.FUNC_SINH, MatexParser.FUNC_COSH, MatexParser.FUNC_TANH, MatexParser.FUNC_ARCSINH, MatexParser.FUNC_ARCCOSH, MatexParser.FUNC_ARCTANH, MatexParser.FUNC_ECOS, MatexParser.FUNC_ESIN, MatexParser.FUNC_EDELTAAMPLITUDE, MatexParser.FUNC_ARCECOS, MatexParser.FUNC_ARCESIN, MatexParser.FUNC_ARCEDELTAAMPLITUDE, MatexParser.FUNC_SQRT, MatexParser.GREEKFUNCTIONBRACE, MatexParser.GREEKFUNCTIONPAREN]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 233
+                self.state = 237
                 self.func()
                 pass
-            elif token in [MatexParser.L_PAREN, MatexParser.L_BRACKET, MatexParser.BAR, MatexParser.NUMBER, MatexParser.VARIABLE, MatexParser.INFINITY, MatexParser.GREEKLETTER]:
+            elif token in [MatexParser.L_PAREN, MatexParser.L_BRACKET, MatexParser.BAR, MatexParser.FUNC_BINOMIAL, MatexParser.NUMBER, MatexParser.VARIABLE, MatexParser.INFINITY, MatexParser.GREEKLETTER]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 234
+                self.state = 238
                 self.atom()
                 pass
             else:
@@ -1650,9 +1661,9 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 36, self.RULE_negateAtom)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 237
+            self.state = 241
             self.match(MatexParser.MINUS)
-            self.state = 238
+            self.state = 242
             self.signedAtom()
         except RecognitionException as re:
             localctx.exception = re
@@ -1698,7 +1709,7 @@ class MatexParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 240
+            self.state = 244
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MatexParser.DERIVATIVE) | (1 << MatexParser.MIXNUMBER) | (1 << MatexParser.WORD))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1739,8 +1750,16 @@ class MatexParser ( Parser ):
             return self.getTypedRuleContext(MatexParser.AbsoluteContext,0)
 
 
+        def exactDivision(self):
+            return self.getTypedRuleContext(MatexParser.ExactDivisionContext,0)
+
+
         def factorial(self):
             return self.getTypedRuleContext(MatexParser.FactorialContext,0)
+
+
+        def binomial(self):
+            return self.getTypedRuleContext(MatexParser.BinomialContext,0)
 
 
         def brackExpr(self):
@@ -1770,54 +1789,66 @@ class MatexParser ( Parser ):
         localctx = MatexParser.AtomContext(self, self._ctx, self.state)
         self.enterRule(localctx, 40, self.RULE_atom)
         try:
-            self.state = 250
+            self.state = 256
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 242
+                self.state = 246
                 self.variable()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 243
+                self.state = 247
                 self.indexedVariable()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 244
+                self.state = 248
                 self.constant()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 245
+                self.state = 249
                 self.number()
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 246
+                self.state = 250
                 self.absolute()
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 247
-                self.factorial()
+                self.state = 251
+                self.exactDivision()
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 248
-                self.brackExpr()
+                self.state = 252
+                self.factorial()
                 pass
 
             elif la_ == 8:
                 self.enterOuterAlt(localctx, 8)
-                self.state = 249
+                self.state = 253
+                self.binomial()
+                pass
+
+            elif la_ == 9:
+                self.enterOuterAlt(localctx, 9)
+                self.state = 254
+                self.brackExpr()
+                pass
+
+            elif la_ == 10:
+                self.enterOuterAlt(localctx, 10)
+                self.state = 255
                 self.parenExpr()
                 pass
 
@@ -1863,7 +1894,7 @@ class MatexParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 252
+            self.state = 258
             _la = self._input.LA(1)
             if not(_la==MatexParser.VARIABLE or _la==MatexParser.GREEKLETTER):
                 self._errHandler.recoverInline(self)
@@ -1911,9 +1942,9 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 44, self.RULE_indexedVariable)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 254
+            self.state = 260
             self.match(MatexParser.VARIABLE)
-            self.state = 255
+            self.state = 261
             self.subexpr()
         except RecognitionException as re:
             localctx.exception = re
@@ -1952,7 +1983,7 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 46, self.RULE_constant)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 257
+            self.state = 263
             self.match(MatexParser.INFINITY)
         except RecognitionException as re:
             localctx.exception = re
@@ -1991,7 +2022,7 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 48, self.RULE_number)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 259
+            self.state = 265
             self.match(MatexParser.NUMBER)
         except RecognitionException as re:
             localctx.exception = re
@@ -2037,12 +2068,61 @@ class MatexParser ( Parser ):
         self.enterRule(localctx, 50, self.RULE_absolute)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 261
+            self.state = 267
             self.match(MatexParser.BAR)
-            self.state = 262
+            self.state = 268
             self.expr()
-            self.state = 263
+            self.state = 269
             self.match(MatexParser.BAR)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class ExactDivisionContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def VARIABLE(self, i:int=None):
+            if i is None:
+                return self.getTokens(MatexParser.VARIABLE)
+            else:
+                return self.getToken(MatexParser.VARIABLE, i)
+
+        def BAR(self):
+            return self.getToken(MatexParser.BAR, 0)
+
+        def getRuleIndex(self):
+            return MatexParser.RULE_exactDivision
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExactDivision" ):
+                listener.enterExactDivision(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExactDivision" ):
+                listener.exitExactDivision(self)
+
+
+
+
+    def exactDivision(self):
+
+        localctx = MatexParser.ExactDivisionContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 52, self.RULE_exactDivision)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 271
+            self.match(MatexParser.VARIABLE)
+            self.state = 272
+            self.match(MatexParser.BAR)
+            self.state = 273
+            self.match(MatexParser.VARIABLE)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2089,35 +2169,85 @@ class MatexParser ( Parser ):
     def factorial(self):
 
         localctx = MatexParser.FactorialContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 52, self.RULE_factorial)
+        self.enterRule(localctx, 54, self.RULE_factorial)
         try:
-            self.state = 274
+            self.state = 284
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [MatexParser.L_PAREN]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 265
+                self.state = 275
                 self.parenExpr()
-                self.state = 266
+                self.state = 276
                 self.match(MatexParser.BANG)
                 pass
             elif token in [MatexParser.NUMBER]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 268
+                self.state = 278
                 self.number()
-                self.state = 269
+                self.state = 279
                 self.match(MatexParser.BANG)
                 pass
             elif token in [MatexParser.VARIABLE, MatexParser.GREEKLETTER]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 271
+                self.state = 281
                 self.variable()
-                self.state = 272
+                self.state = 282
                 self.match(MatexParser.BANG)
                 pass
             else:
                 raise NoViableAltException(self)
 
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class BinomialContext(ParserRuleContext):
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def FUNC_BINOMIAL(self):
+            return self.getToken(MatexParser.FUNC_BINOMIAL, 0)
+
+        def bracedExpr(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MatexParser.BracedExprContext)
+            else:
+                return self.getTypedRuleContext(MatexParser.BracedExprContext,i)
+
+
+        def getRuleIndex(self):
+            return MatexParser.RULE_binomial
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBinomial" ):
+                listener.enterBinomial(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBinomial" ):
+                listener.exitBinomial(self)
+
+
+
+
+    def binomial(self):
+
+        localctx = MatexParser.BinomialContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 56, self.RULE_binomial)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 286
+            self.match(MatexParser.FUNC_BINOMIAL)
+            self.state = 287
+            self.bracedExpr()
+            self.state = 288
+            self.bracedExpr()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2147,8 +2277,8 @@ class MatexParser ( Parser ):
         def GREEKFUNCTIONBRACE(self):
             return self.getToken(MatexParser.GREEKFUNCTIONBRACE, 0)
 
-        def expr(self):
-            return self.getTypedRuleContext(MatexParser.ExprContext,0)
+        def multiExpr(self):
+            return self.getTypedRuleContext(MatexParser.MultiExprContext,0)
 
 
         def R_BRACE(self):
@@ -2177,44 +2307,44 @@ class MatexParser ( Parser ):
     def func(self):
 
         localctx = MatexParser.FuncContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 54, self.RULE_func)
+        self.enterRule(localctx, 58, self.RULE_func)
         try:
-            self.state = 290
+            self.state = 304
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,20,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 276
+                self.state = 290
                 self.funcname()
-                self.state = 277
+                self.state = 291
                 self.bracedMultiExpr()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 279
+                self.state = 293
                 self.funcname()
-                self.state = 280
+                self.state = 294
                 self.parenMultiExpr()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 282
+                self.state = 296
                 self.match(MatexParser.GREEKFUNCTIONBRACE)
-                self.state = 283
-                self.expr()
-                self.state = 284
+                self.state = 297
+                self.multiExpr(0)
+                self.state = 298
                 self.match(MatexParser.R_BRACE)
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 286
+                self.state = 300
                 self.match(MatexParser.GREEKFUNCTIONPAREN)
-                self.state = 287
-                self.expr()
-                self.state = 288
+                self.state = 301
+                self.multiExpr(0)
+                self.state = 302
                 self.match(MatexParser.R_PAREN)
                 pass
 
@@ -2331,11 +2461,11 @@ class MatexParser ( Parser ):
     def funcname(self):
 
         localctx = MatexParser.FuncnameContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 56, self.RULE_funcname)
+        self.enterRule(localctx, 60, self.RULE_funcname)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 292
+            self.state = 306
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MatexParser.FUNC_LOG) | (1 << MatexParser.FUNC_LN) | (1 << MatexParser.FUNC_SIN) | (1 << MatexParser.FUNC_COS) | (1 << MatexParser.FUNC_TAN) | (1 << MatexParser.FUNC_CSC) | (1 << MatexParser.FUNC_SEC) | (1 << MatexParser.FUNC_COT) | (1 << MatexParser.FUNC_ARCSIN) | (1 << MatexParser.FUNC_ARCCOS) | (1 << MatexParser.FUNC_ARCTAN) | (1 << MatexParser.FUNC_ARCCSC) | (1 << MatexParser.FUNC_ARCSEC) | (1 << MatexParser.FUNC_ARCCOT) | (1 << MatexParser.FUNC_SINH) | (1 << MatexParser.FUNC_COSH) | (1 << MatexParser.FUNC_TANH) | (1 << MatexParser.FUNC_ARCSINH) | (1 << MatexParser.FUNC_ARCCOSH) | (1 << MatexParser.FUNC_ARCTANH) | (1 << MatexParser.FUNC_ECOS) | (1 << MatexParser.FUNC_ESIN) | (1 << MatexParser.FUNC_EDELTAAMPLITUDE) | (1 << MatexParser.FUNC_ARCECOS) | (1 << MatexParser.FUNC_ARCESIN) | (1 << MatexParser.FUNC_ARCEDELTAAMPLITUDE) | (1 << MatexParser.FUNC_SQRT))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -2383,14 +2513,14 @@ class MatexParser ( Parser ):
     def bracedMultiExpr(self):
 
         localctx = MatexParser.BracedMultiExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 58, self.RULE_bracedMultiExpr)
+        self.enterRule(localctx, 62, self.RULE_bracedMultiExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 294
+            self.state = 308
             self.match(MatexParser.L_BRACE)
-            self.state = 295
+            self.state = 309
             self.multiExpr(0)
-            self.state = 296
+            self.state = 310
             self.match(MatexParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -2433,14 +2563,14 @@ class MatexParser ( Parser ):
     def parenMultiExpr(self):
 
         localctx = MatexParser.ParenMultiExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 60, self.RULE_parenMultiExpr)
+        self.enterRule(localctx, 64, self.RULE_parenMultiExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 298
+            self.state = 312
             self.match(MatexParser.L_PAREN)
-            self.state = 299
+            self.state = 313
             self.multiExpr(0)
-            self.state = 300
+            self.state = 314
             self.match(MatexParser.R_PAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -2485,14 +2615,14 @@ class MatexParser ( Parser ):
         _parentState = self.state
         localctx = MatexParser.MultiExprContext(self, self._ctx, _parentState)
         _prevctx = localctx
-        _startState = 62
-        self.enterRecursionRule(localctx, 62, self.RULE_multiExpr, _p)
+        _startState = 66
+        self.enterRecursionRule(localctx, 66, self.RULE_multiExpr, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 303
+            self.state = 317
             self.expr()
             self._ctx.stop = self._input.LT(-1)
-            self.state = 310
+            self.state = 324
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -2502,15 +2632,15 @@ class MatexParser ( Parser ):
                     _prevctx = localctx
                     localctx = MatexParser.MultiExprContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_multiExpr)
-                    self.state = 305
+                    self.state = 319
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 306
+                    self.state = 320
                     self.match(MatexParser.COMMA)
-                    self.state = 307
+                    self.state = 321
                     self.expr() 
-                self.state = 312
+                self.state = 326
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
 
@@ -2555,14 +2685,14 @@ class MatexParser ( Parser ):
     def bracedExpr(self):
 
         localctx = MatexParser.BracedExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 64, self.RULE_bracedExpr)
+        self.enterRule(localctx, 68, self.RULE_bracedExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 313
+            self.state = 327
             self.match(MatexParser.L_BRACE)
-            self.state = 314
+            self.state = 328
             self.expr()
-            self.state = 315
+            self.state = 329
             self.match(MatexParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -2605,14 +2735,14 @@ class MatexParser ( Parser ):
     def brackExpr(self):
 
         localctx = MatexParser.BrackExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 66, self.RULE_brackExpr)
+        self.enterRule(localctx, 70, self.RULE_brackExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 317
+            self.state = 331
             self.match(MatexParser.L_BRACKET)
-            self.state = 318
+            self.state = 332
             self.expr()
-            self.state = 319
+            self.state = 333
             self.match(MatexParser.R_BRACKET)
         except RecognitionException as re:
             localctx.exception = re
@@ -2655,14 +2785,14 @@ class MatexParser ( Parser ):
     def parenExpr(self):
 
         localctx = MatexParser.ParenExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 68, self.RULE_parenExpr)
+        self.enterRule(localctx, 72, self.RULE_parenExpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 321
+            self.state = 335
             self.match(MatexParser.L_PAREN)
-            self.state = 322
+            self.state = 336
             self.expr()
-            self.state = 323
+            self.state = 337
             self.match(MatexParser.R_PAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -2702,12 +2832,12 @@ class MatexParser ( Parser ):
     def subexpr(self):
 
         localctx = MatexParser.SubexprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 70, self.RULE_subexpr)
+        self.enterRule(localctx, 74, self.RULE_subexpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 325
+            self.state = 339
             self.match(MatexParser.UNDERSCORE)
-            self.state = 326
+            self.state = 340
             self.bracedExpr()
         except RecognitionException as re:
             localctx.exception = re
@@ -2747,12 +2877,12 @@ class MatexParser ( Parser ):
     def supexpr(self):
 
         localctx = MatexParser.SupexprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 72, self.RULE_supexpr)
+        self.enterRule(localctx, 76, self.RULE_supexpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 328
+            self.state = 342
             self.match(MatexParser.CARET)
-            self.state = 329
+            self.state = 343
             self.bracedExpr()
         except RecognitionException as re:
             localctx.exception = re
@@ -2798,16 +2928,16 @@ class MatexParser ( Parser ):
     def subeq(self):
 
         localctx = MatexParser.SubeqContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 74, self.RULE_subeq)
+        self.enterRule(localctx, 78, self.RULE_subeq)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 331
+            self.state = 345
             self.match(MatexParser.UNDERSCORE)
-            self.state = 332
+            self.state = 346
             self.match(MatexParser.L_BRACE)
-            self.state = 333
+            self.state = 347
             self.equality()
-            self.state = 334
+            self.state = 348
             self.match(MatexParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -2851,14 +2981,14 @@ class MatexParser ( Parser ):
     def equality(self):
 
         localctx = MatexParser.EqualityContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 76, self.RULE_equality)
+        self.enterRule(localctx, 80, self.RULE_equality)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 336
+            self.state = 350
             self.variable()
-            self.state = 337
+            self.state = 351
             self.match(MatexParser.EQ)
-            self.state = 338
+            self.state = 352
             self.expr()
         except RecognitionException as re:
             localctx.exception = re
@@ -2906,13 +3036,13 @@ class MatexParser ( Parser ):
     def relop(self):
 
         localctx = MatexParser.RelopContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 78, self.RULE_relop)
+        self.enterRule(localctx, 82, self.RULE_relop)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 340
+            self.state = 354
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MatexParser.EQ) | (1 << MatexParser.LT) | (1 << MatexParser.LTE) | (1 << MatexParser.GT) | (1 << MatexParser.GTE))) != 0)):
+            if not(((((_la - 60)) & ~0x3f) == 0 and ((1 << (_la - 60)) & ((1 << (MatexParser.EQ - 60)) | (1 << (MatexParser.LT - 60)) | (1 << (MatexParser.LTE - 60)) | (1 << (MatexParser.GT - 60)) | (1 << (MatexParser.GTE - 60)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -2936,7 +3066,7 @@ class MatexParser ( Parser ):
         self._predicates[11] = self.additionExpr_sempred
         self._predicates[12] = self.divisionExpr_sempred
         self._predicates[13] = self.multiplicationExpr_sempred
-        self._predicates[31] = self.multiExpr_sempred
+        self._predicates[33] = self.multiExpr_sempred
         pred = self._predicates.get(ruleIndex, None)
         if pred is None:
             raise Exception("No predicate with index:" + str(ruleIndex))
