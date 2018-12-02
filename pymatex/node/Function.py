@@ -9,6 +9,9 @@ class Func(Enum):
     ACOSH = auto()
     ACOT = auto()
     ACSC = auto()
+    AECOS = auto()
+    AEDELTAAMPLITUDE = auto()
+    AESIN = auto()
     ASEC = auto()
     ASIN = auto()
     ASINH = auto()
@@ -18,6 +21,9 @@ class Func(Enum):
     COSH = auto()
     COT = auto()
     CSC = auto()
+    ECOS = auto()
+    EDELTAAMPLITUDE = auto()
+    ESIN = auto()
     FACTORIAL = auto()
     LN = auto()
     LOG = auto()
@@ -31,64 +37,83 @@ class Func(Enum):
 
 
 class Function(Node):
-    def __init__(self, func: Func, expression):
+    def __init__(self, func: Func, *arguments):
         super().__init__()
 
         self.func = func
-        self.expression = expression
+        self.arguments = arguments
+        
+    def argument(self, i):
+        assert i < self.number_of_arguments()
+        return self.arguments[i]
+        
+    def number_of_arguments(self):
+        return len(self.arguments)
 
     def __eq__(self, other):
-        return self.func == other.func and self.expression == other.expression
+        return self.func == other.func and self.arguments == other.arguments
 
     def __str__(self):
         if self.func == Func.ABS:
-            return '|{}|'.format(self.expression)
+            return '|{}|'.format(self.argument(0))
         elif self.func == Func.ACSC:
-            return '\\arccsc{{{}}}'.format(self.expression)
+            return '\\arccsc{{{}}}'.format(self.argument(0))
         elif self.func == Func.ACOS:
-            return '\\arccos{{{}}}'.format(self.expression)
+            return '\\arccos{{{}}}'.format(self.argument(0))
         elif self.func == Func.ACOSH:
-            return '\\arccosh{{{}}}'.format(self.expression)
+            return '\\arccosh{{{}}}'.format(self.argument(0))
         elif self.func == Func.ACOT:
-            return '\\arccot{{{}}}'.format(self.expression)
+            return '\\arccot{{{}}}'.format(self.argument(0))
+        elif self.func == Func.AECOS:
+            return '\\arccn{{{}, {}}}'.format(self.argument(0), self.argument(1))
+        elif self.func == Func.AEDELTAAMPLITUDE:
+            return '\\arcdn{{{}}}'.format(self.argument(0), self.argument(1))
+        elif self.func == Func.AESIN:
+            return '\\arcsn{{{}}}'.format(self.argument(0), self.argument(1))
         elif self.func == Func.ASEC:
-            return '\\arcsec{{{}}}'.format(self.expression)
+            return '\\arcsec{{{}}}'.format(self.argument(0))
         elif self.func == Func.ASIN:
-            return '\\arcsin{{{}}}'.format(self.expression)
+            return '\\arcsin{{{}}}'.format(self.argument(0))
         elif self.func == Func.ASINH:
-            return '\\arcsinh{{{}}}'.format(self.expression)
+            return '\\arcsinh{{{}}}'.format(self.argument(0))
         elif self.func == Func.ATAN:
-            return '\\arctan{{{}}}'.format(self.expression)
+            return '\\arctan{{{}}}'.format(self.argument(0))
         elif self.func == Func.ATANH:
-            return '\\arctanh{{{}}}'.format(self.expression)
+            return '\\arctanh{{{}}}'.format(self.argument(0))
         elif self.func == Func.COS:
-            return '\\cos{{{}}}'.format(self.expression)
+            return '\\cos{{{}}}'.format(self.argument(0))
         elif self.func == Func.COSH:
-            return '\\cosh{{{}}}'.format(self.expression)
+            return '\\cosh{{{}}}'.format(self.argument(0))
         elif self.func == Func.COT:
-            return '\\cot{{{}}}'.format(self.expression)
+            return '\\cot{{{}}}'.format(self.argument(0))
         elif self.func == Func.CSC:
-            return '\\csc{{{}}}'.format(self.expression)
+            return '\\csc{{{}}}'.format(self.argument(0))
+        elif self.func == Func.ECOS:
+            return '\\cn{{{}, {}}}'.format(self.argument(0), self.argument(1))
+        elif self.func == Func.EDELTAAMPLITUDE:
+            return '\\dn{{{}}}'.format(self.argument(0), self.argument(1))
+        elif self.func == Func.ESIN:
+            return '\\sn{{{}}}'.format(self.argument(0), self.argument(1))
         elif self.func == Func.FACTORIAL:
-            return '({})!'.format(self.expression)
+            return '({})!'.format(self.argument(0))
         elif self.func == Func.LN:
-            return '\\ln{{{}}}'.format(self.expression)
+            return '\\ln{{{}}}'.format(self.argument(0))
         elif self.func == Func.LOG:
-            return '\\log{{{}}}'.format(self.expression)
+            return '\\log{{{}}}'.format(self.argument(0))
         elif self.func == Func.SEC:
-            return '\\sec{{{}}}'.format(self.expression)
+            return '\\sec{{{}}}'.format(self.argument(0))
         elif self.func == Func.SIN:
-            return '\\sin{{{}}}'.format(self.expression)
+            return '\\sin{{{}}}'.format(self.argument(0))
         elif self.func == Func.SINH:
-            return '\\sinh{{{}}}'.format(self.expression)
+            return '\\sinh{{{}}}'.format(self.argument(0))
         elif self.func == Func.SQRT:
-            return '\\sqrt{{{}}}'.format(self.expression)
+            return '\\sqrt{{{}}}'.format(self.argument(0))
         elif self.func == Func.TAN:
-            return '\\tan{{{}}}'.format(self.expression)
+            return '\\tan{{{}}}'.format(self.argument(0))
         elif self.func == Func.TANH:
-            return '\\tanh{{{}}}'.format(self.expression)
+            return '\\tanh{{{}}}'.format(self.argument(0))
         elif self.func == Func.ZETA:
-            return '\\zeta{{{}}}'.format(self.expression)
+            return '\\zeta{{{}}}'.format(self.argument(0))
         else:
             return 'UNDEFINED FUNCTION'
 

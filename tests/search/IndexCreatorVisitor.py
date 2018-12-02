@@ -38,9 +38,23 @@ class IndexCreatorVisitorTests(BaseTest.BaseTest):
         ast.accept(visitor)
 
         self.assertTrue(self.has(data[0][NodeType.CONSTANT], pk, '0'))
-        self.assertTrue(self.has(data[0][NodeType.VARIABLE], pk, 'i'))
+        self.assertTrue(self.has(data[0][NodeType.BOUNDVARIABLE], pk, 'i'))
         self.assertTrue(self.has(data[0][NodeType.CONSTANT], pk, '\\infty'))
         self.assertTrue(pk in data[1][NodeType.MULTIPLICATION])
+        self.assertTrue(pk in data[2][NodeType.SUMMATION])
+
+    def test_visit_summation_with_free_and_bound_variable(self):
+        ast = self.parse(r'\sum_{i=0}^{\infty} (i + j)')
+        data = {}
+        pk = 1
+        visitor = IndexCreatorVisitor(data, pk)
+        ast.accept(visitor)
+
+        self.assertTrue(self.has(data[0][NodeType.CONSTANT], pk, '0'))
+        self.assertTrue(self.has(data[0][NodeType.BOUNDVARIABLE], pk, 'i'))
+        self.assertTrue(self.has(data[0][NodeType.VARIABLE], pk, 'j'))
+        self.assertTrue(self.has(data[0][NodeType.CONSTANT], pk, '\\infty'))
+        self.assertTrue(pk in data[1][NodeType.ADDITION])
         self.assertTrue(pk in data[2][NodeType.SUMMATION])
 
     def test_visit_exponentiation_and_function(self):

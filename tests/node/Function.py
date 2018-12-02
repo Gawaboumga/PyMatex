@@ -53,3 +53,23 @@ class FunctionTests(BaseTest.BaseTest):
     def test_read_zeta(self):
         ast = self.parse(r'\zeta(x)')
         self.assertEqual(ast, Function(Func.ZETA, Variable('x')))
+
+    def test_read_elliptic_curve(self):
+        ast = self.parse('sn(u, m)')
+        self.assertEqual(ast, Function(Func.ESIN, Variable('u'), Variable('m')))
+
+        ast = self.parse('cn(u, m)')
+        self.assertEqual(ast, Function(Func.ECOS, Variable('u'), Variable('m')))
+
+        ast = self.parse('dn(u, m)')
+        self.assertEqual(ast, Function(Func.EDELTAAMPLITUDE, Variable('u'), Variable('m')))
+
+    def test_read_arc_elliptic_curve(self):
+        ast = self.parse('arcsn(u, m)')
+        self.assertEqual(ast, Function(Func.AESIN, Variable('u'), Variable('m')))
+
+        ast = self.parse('arccn(u, m)')
+        self.assertEqual(ast, Function(Func.AECOS, Variable('u'), Variable('m')))
+
+        ast = self.parse('arcdn(u, m)')
+        self.assertEqual(ast, Function(Func.AEDELTAAMPLITUDE, Variable('u'), Variable('m')))

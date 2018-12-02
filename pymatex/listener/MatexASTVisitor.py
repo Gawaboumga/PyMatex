@@ -18,7 +18,8 @@ class MatexASTVisitor:
         exponentiation_node.rhs.accept(self)
     
     def visit_function(self, function_node: Function):
-        function_node.expression.accept(self)
+        for argument in function_node.arguments:
+            argument.accept(self)
     
     def visit_indexed_variable(self, indexed_variable_node: IndexedVariable):
         indexed_variable_node.index.accept(self)

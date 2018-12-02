@@ -100,8 +100,8 @@ factorial:
     | variable BANG;
 
 func:
-    funcname bracedExpr
-    | funcname parenExpr
+    funcname bracedMultiExpr
+    | funcname parenMultiExpr
     | GREEKFUNCTIONBRACE expr R_BRACE
     | GREEKFUNCTIONPAREN expr R_PAREN;
 
@@ -112,7 +112,16 @@ funcname:
     | FUNC_ARCSIN | FUNC_ARCCOS | FUNC_ARCTAN
     | FUNC_ARCCSC | FUNC_ARCSEC | FUNC_ARCCOT
     | FUNC_SINH | FUNC_COSH | FUNC_TANH
-    | FUNC_ARCSINH | FUNC_ARCCOSH | FUNC_ARCTANH;
+    | FUNC_ARCSINH | FUNC_ARCCOSH | FUNC_ARCTANH
+    | FUNC_ECOS | FUNC_EDELTAAMPLITUDE | FUNC_ESIN
+    | FUNC_ARCECOS | FUNC_ARCEDELTAAMPLITUDE | FUNC_ARCESIN;
+
+
+bracedMultiExpr: L_BRACE multiExpr R_BRACE;
+parenMultiExpr: L_PAREN multiExpr R_PAREN;
+multiExpr:
+    expr
+    | multiExpr COMMA expr;
 
 bracedExpr: L_BRACE expr R_BRACE;
 brackExpr: L_BRACKET expr R_BRACKET;

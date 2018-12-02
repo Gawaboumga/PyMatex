@@ -269,6 +269,33 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#bracedMultiExpr.
+    def enterBracedMultiExpr(self, ctx:MatexParser.BracedMultiExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#bracedMultiExpr.
+    def exitBracedMultiExpr(self, ctx:MatexParser.BracedMultiExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#parenMultiExpr.
+    def enterParenMultiExpr(self, ctx:MatexParser.ParenMultiExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#parenMultiExpr.
+    def exitParenMultiExpr(self, ctx:MatexParser.ParenMultiExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#multiExpr.
+    def enterMultiExpr(self, ctx:MatexParser.MultiExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#multiExpr.
+    def exitMultiExpr(self, ctx:MatexParser.MultiExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#bracedExpr.
     def enterBracedExpr(self, ctx:MatexParser.BracedExprContext):
         pass

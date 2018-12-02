@@ -99,49 +99,61 @@ class MatexAST(MatexParserListener):
                 self.push(Function(Func.ZETA, expression))
             return
 
-        expression = self.pop()
+        argument_0 = self.pop()
         if funcname.FUNC_ARCCOS():
-            self.push(Function(Func.ACOS, expression))
+            self.push(Function(Func.ACOS, argument_0))
         elif funcname.FUNC_ARCCOSH():
-            self.push(Function(Func.ACOSH, expression))
+            self.push(Function(Func.ACOSH, argument_0))
         elif funcname.FUNC_ARCCOT():
-            self.push(Function(Func.ACOST, expression))
+            self.push(Function(Func.ACOST, argument_0))
         elif funcname.FUNC_ARCCSC():
-            self.push(Function(Func.ACSC, expression))
+            self.push(Function(Func.ACSC, argument_0))
         elif funcname.FUNC_ARCSEC():
-            self.push(Function(Func.ASEC, expression))
+            self.push(Function(Func.ASEC, argument_0))
+        elif funcname.FUNC_ARCECOS():
+            self.push(Function(Func.AECOS, self.pop(), argument_0))
+        elif funcname.FUNC_ARCEDELTAAMPLITUDE():
+            self.push(Function(Func.AEDELTAAMPLITUDE, self.pop(), argument_0))
+        elif funcname.FUNC_ARCESIN():
+            self.push(Function(Func.AESIN, self.pop(), argument_0))
         elif funcname.FUNC_ARCSIN():
-            self.push(Function(Func.ASIN, expression))
+            self.push(Function(Func.ASIN, argument_0))
         elif funcname.FUNC_ARCSINH():
-            self.push(Function(Func.ASINH, expression))
+            self.push(Function(Func.ASINH, argument_0))
         elif funcname.FUNC_ARCTAN():
-            self.push(Function(Func.ATAN, expression))
+            self.push(Function(Func.ATAN, argument_0))
         elif funcname.FUNC_ARCTANH():
-            self.push(Function(Func.ATANH, expression))
+            self.push(Function(Func.ATANH, argument_0))
         elif funcname.FUNC_COS():
-            self.push(Function(Func.COS, expression))
+            self.push(Function(Func.COS, argument_0))
         elif funcname.FUNC_COSH():
-            self.push(Function(Func.COSH, expression))
+            self.push(Function(Func.COSH, argument_0))
         elif funcname.FUNC_COT():
-            self.push(Function(Func.COT, expression))
+            self.push(Function(Func.COT, argument_0))
         elif funcname.FUNC_CSC():
-            self.push(Function(Func.CSC, expression))
+            self.push(Function(Func.CSC, argument_0))
+        elif funcname.FUNC_ECOS():
+            self.push(Function(Func.ECOS, self.pop(), argument_0))
+        elif funcname.FUNC_EDELTAAMPLITUDE():
+            self.push(Function(Func.EDELTAAMPLITUDE, self.pop(), argument_0))
+        elif funcname.FUNC_ESIN():
+            self.push(Function(Func.ESIN, self.pop(), argument_0))
         elif funcname.FUNC_LN():
-            self.push(Function(Func.LN, expression))
+            self.push(Function(Func.LN, argument_0))
         elif funcname.FUNC_LOG():
-            self.push(Function(Func.LOG, expression))
+            self.push(Function(Func.LOG, argument_0))
         elif funcname.FUNC_SEC():
-            self.push(Function(Func.SEC, expression))
+            self.push(Function(Func.SEC, argument_0))
         elif funcname.FUNC_SIN():
-            self.push(Function(Func.SIN, expression))
+            self.push(Function(Func.SIN, argument_0))
         elif funcname.FUNC_SINH():
-            self.push(Function(Func.SINH, expression))
+            self.push(Function(Func.SINH, argument_0))
         elif funcname.FUNC_SQRT():
-            self.push(Function(Func.SQRT, expression))
+            self.push(Function(Func.SQRT, argument_0))
         elif funcname.FUNC_TAN():
-            self.push(Function(Func.TAN, expression))
+            self.push(Function(Func.TAN, argument_0))
         elif funcname.FUNC_ARCTAN():
-            self.push(Function(Func.ATAN, expression))
+            self.push(Function(Func.ATAN, argument_0))
 
     def exitIndexedVariable(self, ctx: MatexParser.IndexedVariableContext):
         expression = self.pop()
