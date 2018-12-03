@@ -62,12 +62,30 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#summationInequalityExpr.
+    def enterSummationInequalityExpr(self, ctx:MatexParser.SummationInequalityExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#summationInequalityExpr.
+    def exitSummationInequalityExpr(self, ctx:MatexParser.SummationInequalityExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#productExpr.
     def enterProductExpr(self, ctx:MatexParser.ProductExprContext):
         pass
 
     # Exit a parse tree produced by MatexParser#productExpr.
     def exitProductExpr(self, ctx:MatexParser.ProductExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#productInequalityExpr.
+    def enterProductInequalityExpr(self, ctx:MatexParser.ProductInequalityExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#productInequalityExpr.
+    def exitProductInequalityExpr(self, ctx:MatexParser.ProductInequalityExprContext):
         pass
 
 
@@ -86,6 +104,15 @@ class MatexParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by MatexParser#funcParams.
     def exitFuncParams(self, ctx:MatexParser.FuncParamsContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#funcIneqParams.
+    def enterFuncIneqParams(self, ctx:MatexParser.FuncIneqParamsContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#funcIneqParams.
+    def exitFuncIneqParams(self, ctx:MatexParser.FuncIneqParamsContext):
         pass
 
 
@@ -368,6 +395,15 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#subIneq.
+    def enterSubIneq(self, ctx:MatexParser.SubIneqContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#subIneq.
+    def exitSubIneq(self, ctx:MatexParser.SubIneqContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#equality.
     def enterEquality(self, ctx:MatexParser.EqualityContext):
         pass
@@ -377,12 +413,12 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by MatexParser#relop.
-    def enterRelop(self, ctx:MatexParser.RelopContext):
+    # Enter a parse tree produced by MatexParser#inequality.
+    def enterInequality(self, ctx:MatexParser.InequalityContext):
         pass
 
-    # Exit a parse tree produced by MatexParser#relop.
-    def exitRelop(self, ctx:MatexParser.RelopContext):
+    # Exit a parse tree produced by MatexParser#inequality.
+    def exitInequality(self, ctx:MatexParser.InequalityContext):
         pass
 
 

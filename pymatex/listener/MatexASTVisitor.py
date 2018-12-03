@@ -38,9 +38,11 @@ class MatexASTVisitor:
         negate_node.node.accept(self)
 
     def visit_product(self, product_node: Product):
-        product_node.variable.accept(self)
+        if product_node.variable:
+            product_node.variable.accept(self)
         product_node.start_range.accept(self)
-        product_node.end_range.accept(self)
+        if product_node.end_range:
+            product_node.end_range.accept(self)
         product_node.expression.accept(self)
 
     def visit_subtraction(self, subtraction_node: Subtraction):
@@ -48,9 +50,11 @@ class MatexASTVisitor:
         subtraction_node.rhs.accept(self)
 
     def visit_summation(self, summation_node: Summation):
-        summation_node.variable.accept(self)
+        if summation_node.variable:
+            summation_node.variable.accept(self)
         summation_node.start_range.accept(self)
-        summation_node.end_range.accept(self)
+        if summation_node.end_range:
+            summation_node.end_range.accept(self)
         summation_node.expression.accept(self)
 
     def visit_variable(self, variable_node: Variable):

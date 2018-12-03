@@ -79,10 +79,11 @@ WORD: VARIABLE+;
 INFINITY: '\\infty';
 
 EQ: '=';
-LT: '<';
-LTE: '\\leq';
-GT: '>';
-GTE: '\\geq';
+fragment LT: '<';
+fragment LTE: '\\leq';
+fragment GT: '>';
+fragment GTE: '\\geq';
+INEQUALITIES: LT | LTE | GT | GTE;
 
 BANG: '!';
 

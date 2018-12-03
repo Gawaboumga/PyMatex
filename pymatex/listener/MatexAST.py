@@ -184,6 +184,11 @@ class MatexAST(MatexParserListener):
         expression = self.pop()
         self.push(IndexedVariable(ctx.VARIABLE().getText(), expression))
 
+    def exitInequality(self, ctx: MatexParser.InequalityContext):
+        rhs = self.pop()
+        lhs = self.pop()
+        self.push(Inequality(lhs, rhs, ctx.INEQUALITIES().getText()))
+
     def exitIntegralExpr(self, ctx: MatexParser.IntegralExprContext):
         expression = self.pop()
         end_range = self.pop()
@@ -272,6 +277,15 @@ class MatexAST(MatexParserListener):
         variable = self.pop()
         self.push(Product(variable, start_range, end_range, expression))
 
+    def exitProductInequalityExpr(self, ctx: MatexParser.SummationInequalityExprContext):
+        expression = self.pop()
+        end_range = None
+        if ctx.funcIneqParams().supexpr():
+            end_range = self.pop()
+        start_range = self.pop()
+
+        self.push(InequalityProduct(start_range, end_range, expression))
+
     def exitSubtractionExpr(self, ctx: MatexParser.SubtractionExprContext):
         if ctx.getChildCount() < 2:
             return
@@ -287,6 +301,15 @@ class MatexAST(MatexParserListener):
         variable = self.pop()
 
         self.push(Summation(variable, start_range, end_range, expression))
+
+    def exitSummationInequalityExpr(self, ctx: MatexParser.SummationInequalityExprContext):
+        expression = self.pop()
+        end_range = None
+        if ctx.funcIneqParams().supexpr():
+            end_range = self.pop()
+        start_range = self.pop()
+
+        self.push(InequalitySummation(start_range, end_range, expression))
 
     def exitVariable(self, ctx: MatexParser.VariableContext):
         if ctx.VARIABLE():

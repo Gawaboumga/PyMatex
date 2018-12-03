@@ -14,7 +14,9 @@ megaExpr:
 specialExpr:
     integralExpr
     | summationExpr
-    | productExpr;
+    | summationInequalityExpr
+    | productExpr
+    | productInequalityExpr;
 
 expr:
     subtractionExpr
@@ -24,13 +26,16 @@ expr:
 integralExpr: FUNC_INT subexpr supexpr L_BRACE expr DERIVATIVE R_BRACE
               | FUNC_INT subexpr supexpr expr DERIVATIVE;
 summationExpr: FUNC_SUM funcParams tailExpr;
+summationInequalityExpr: FUNC_SUM funcIneqParams tailExpr;
 productExpr: FUNC_PROD funcParams tailExpr;
+productInequalityExpr: FUNC_PROD funcIneqParams tailExpr;
 
 tailExpr:
     expr
     | bracedExpr;
 
 funcParams: subeq supexpr;
+funcIneqParams: subIneq supexpr?;
 
 implicitMultiplicationExpr:
     subtractionExpr subtractionExpr
@@ -137,11 +142,9 @@ subexpr: UNDERSCORE bracedExpr;
 supexpr: CARET bracedExpr;
 subeq: UNDERSCORE L_BRACE equality R_BRACE;
 
-equality: variable EQ expr;
+subIneq: UNDERSCORE L_BRACE inequality R_BRACE;
 
-relop:
-    EQ
-    | LT
-    | LTE
-    | GT
-    | GTE;
+equality: variable EQ expr;
+inequality:
+    (variable | number) INEQUALITIES (variable | number)
+    | inequality INEQUALITIES (variable | number);

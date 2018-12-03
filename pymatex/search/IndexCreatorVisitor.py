@@ -83,15 +83,20 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         return depth
 
     def visit_product(self, product_node: Product):
-        product_node.variable.accept(self)
+        if product_node.variable:
+            product_node.variable.accept(self)
         product_node.start_range.accept(self)
-        product_node.end_range.accept(self)
-        self.add_bound_variable(product_node.variable)
+        if product_node.end_range:
+            product_node.end_range.accept(self)
+
+        if product_node.variable:
+            self.add_bound_variable(product_node.variable)
         depth_expression = product_node.expression.accept(self)
-        self.remove_bound_variable(product_node.variable)
+        if product_node.variable:
+            self.remove_bound_variable(product_node.variable)
 
         node_depth = depth_expression + 1
-        self.add(node_depth, NodeType.SUMMATION)
+        self.add(node_depth, NodeType.PRODUCT)
         return node_depth
 
     def visit_subtraction(self, subtraction_node: Subtraction):
@@ -103,12 +108,17 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         return node_depth
 
     def visit_summation(self, summation_node: Summation):
-        summation_node.variable.accept(self)
+        if summation_node.variable:
+            summation_node.variable.accept(self)
         summation_node.start_range.accept(self)
-        summation_node.end_range.accept(self)
-        self.add_bound_variable(summation_node.variable)
+        if summation_node.end_range:
+            summation_node.end_range.accept(self)
+
+        if summation_node.variable:
+            self.add_bound_variable(summation_node.variable)
         depth_expression = summation_node.expression.accept(self)
-        self.remove_bound_variable(summation_node.variable)
+        if summation_node.variable:
+            self.remove_bound_variable(summation_node.variable)
 
         node_depth = depth_expression + 1
         self.add(node_depth, NodeType.SUMMATION)
