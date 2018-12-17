@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='pymatex',
-    version='0.0.8',
+    version='0.0.11',
     author='Gawaboumga',
     description='Parser which allows to parse mathematical expressions written in LaTeX',
     long_description=long_description,

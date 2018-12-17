@@ -7,28 +7,24 @@ import operator
 
 class SearchQuery:
 
-    def __init__(self):
-
-        self.data = {}
-        self.number_of_different_nodes = {}
-
     def __init__(self, path: str):
 
         self.data = {}
         self.number_of_different_nodes = {}
 
-        with open(path, 'r') as f:
-            for line in f:
-                tokens = line.split(':')
-                pk = int(tokens[0])
-                latex = tokens[1].strip()
+        if path:
+            with open(path, 'r') as f:
+                for line in f:
+                    tokens = line.split(':')
+                    pk = int(tokens[0])
+                    latex = tokens[1].strip()
 
-                ast = self.__parse(latex)
+                    ast = self.__parse(latex)
 
-                visitor = IndexCreatorVisitor(self.data, pk)
-                ast.accept(visitor)
+                    visitor = IndexCreatorVisitor(self.data, pk)
+                    ast.accept(visitor)
 
-                self.number_of_different_nodes[pk] = visitor.get_number_of_nodes_of_different_nodes()
+                    self.number_of_different_nodes[pk] = visitor.get_number_of_nodes_of_different_nodes()
 
     def add(self, pk: int, latex: str):
         ast = self.__parse(latex)
