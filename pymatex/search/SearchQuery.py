@@ -7,7 +7,7 @@ import operator
 
 class SearchQuery:
 
-    def __init__(self, path: str):
+    def __init__(self, path: str = None):
 
         self.data = {}
         self.number_of_different_nodes = {}
