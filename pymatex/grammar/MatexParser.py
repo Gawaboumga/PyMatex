@@ -1,9 +1,10 @@
-# Generated from .\pymatex\grammar\MatexParser.g4 by ANTLR 4.7.1
+# Generated from .\pymatex\grammar\MatexParser.g4 by ANTLR 4.7.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
 from typing.io import TextIO
 import sys
+
 
 def serializedATN():
     with StringIO() as buf:
@@ -358,9 +359,10 @@ class MatexParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.7.1")
+        self.checkVersion("4.7.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
+
 
 
 
@@ -408,6 +410,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class MegaExprContext(ParserRuleContext):
 
@@ -567,6 +570,7 @@ class MatexParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
+
     class SpecialExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -654,6 +658,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -720,6 +725,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class IntegralExprContext(ParserRuleContext):
 
@@ -814,6 +820,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SummationExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -864,6 +871,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class SummationInequalityExprContext(ParserRuleContext):
 
@@ -916,6 +924,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ProductExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -967,6 +976,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ProductInequalityExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1017,6 +1027,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class TailExprContext(ParserRuleContext):
 
@@ -1075,6 +1086,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FuncParamsContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1120,6 +1132,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class FuncIneqParamsContext(ParserRuleContext):
 
@@ -1173,6 +1186,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class ImplicitMultiplicationExprContext(ParserRuleContext):
 
@@ -1246,6 +1260,7 @@ class MatexParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
+
     class SubtractionExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1318,6 +1333,7 @@ class MatexParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
+
     class AdditionExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1389,6 +1405,7 @@ class MatexParser ( Parser ):
         finally:
             self.unrollRecursionContexts(_parentctx)
         return localctx
+
 
     class DivisionExprContext(ParserRuleContext):
 
@@ -1470,6 +1487,7 @@ class MatexParser ( Parser ):
         finally:
             self.unrollRecursionContexts(_parentctx)
         return localctx
+
 
     class MultiplicationExprContext(ParserRuleContext):
 
@@ -1555,6 +1573,7 @@ class MatexParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
+
     class FracExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1604,6 +1623,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class PowExprContext(ParserRuleContext):
 
@@ -1671,6 +1691,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class ExponentiationExprContext(ParserRuleContext):
 
@@ -1756,6 +1777,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SignedAtomContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1831,6 +1853,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NegateAtomContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1875,6 +1898,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class LocalMultiplicationContext(ParserRuleContext):
 
@@ -1926,6 +1950,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class AtomContext(ParserRuleContext):
 
@@ -2064,6 +2089,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class VariableContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2112,6 +2138,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class IndexedVariableContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2157,6 +2184,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ConstantContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2196,6 +2224,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NumberContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2234,6 +2263,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class AbsoluteContext(ParserRuleContext):
 
@@ -2285,6 +2315,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ExactDivisionContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2333,6 +2364,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class FactorialContext(ParserRuleContext):
 
@@ -2409,6 +2441,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BinomialContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2458,6 +2491,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class FuncContext(ParserRuleContext):
 
@@ -2576,6 +2610,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class FuncnameContext(ParserRuleContext):
 
@@ -2700,6 +2735,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BracedMultiExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2750,6 +2786,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ParenMultiExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2799,6 +2836,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class MultiExprContext(ParserRuleContext):
 
@@ -2872,6 +2910,7 @@ class MatexParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
+
     class BracedExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2921,6 +2960,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class BrackExprContext(ParserRuleContext):
 
@@ -2972,6 +3012,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ParenExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3022,6 +3063,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SubexprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3067,6 +3109,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SupexprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3111,6 +3154,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class SubeqContext(ParserRuleContext):
 
@@ -3167,6 +3211,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SubIneqContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3222,6 +3267,7 @@ class MatexParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class EqualityContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3272,6 +3318,7 @@ class MatexParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class InequalityContext(ParserRuleContext):
 
