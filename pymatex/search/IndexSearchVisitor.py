@@ -44,7 +44,10 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         return node_depth
 
     def visit_function(self, function_node: Function):
-        depth = function_node.expression.accept(self)
+        first_argument = function_node.argument(0)
+        depth = first_argument.accept(self)
+        for i in range(1, function_node.number_of_arguments()):
+            depth = min(depth, function_node.argument(i).accept(self))
 
         node_depth = depth + 1
         self.search(node_depth, NodeType.FUNCTION)
