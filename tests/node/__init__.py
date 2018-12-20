@@ -7,6 +7,7 @@ from tests.node.Invalid import *
 from tests.node.IterativeFunction import *
 from tests.node.Function import *
 from tests.node.Multiplicative import *
+from tests.node.Set import *
 from tests.node.TaylorMaclaurin import *
 from tests.node.Variable import *
 

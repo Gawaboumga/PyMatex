@@ -79,6 +79,15 @@ class MatexAST(MatexParserListener):
 
         self.push(InequalityFraction(start_range, end_range, expression))
 
+    def exitContinuedFactionSetExpr(self, ctx: MatexParser.ContinuedFactionSetExprContext):
+        expression = self.pop()
+        end_range = None
+        if ctx.funcSetParams().supexpr():
+            end_range = self.pop()
+        start_range = self.pop()
+
+        self.push(InequalityFraction(start_range, end_range, expression))
+
     def exitDivisionExpr(self, ctx: MatexParser.DivisionExprContext):
         if ctx.getChildCount() < 2:
             return
@@ -302,6 +311,27 @@ class MatexAST(MatexParserListener):
 
         self.push(InequalityProduct(start_range, end_range, expression))
 
+    def exitProductSetExpr(self, ctx: MatexParser.ProductSetExprContext):
+        expression = self.pop()
+        end_range = None
+        if ctx.funcSetParams().supexpr():
+            end_range = self.pop()
+        start_range = self.pop()
+
+        self.push(SetProduct(start_range, end_range, expression))
+
+    def exitSetDifferenceExpr(self, ctx: MatexParser.SetDifferenceExprContext):
+        rhs = self.pop()
+        lhs = self.pop()
+
+        self.push(SetDifference(lhs, rhs))
+
+    def exitSetExpr(self, ctx: MatexParser.SetExprContext):
+        rhs = self.pop()
+        lhs = self.pop()
+
+        self.push(Set(lhs, rhs))
+
     def exitSubtractionExpr(self, ctx: MatexParser.SubtractionExprContext):
         if ctx.getChildCount() < 2:
             return
@@ -326,6 +356,15 @@ class MatexAST(MatexParserListener):
         start_range = self.pop()
 
         self.push(InequalitySummation(start_range, end_range, expression))
+
+    def exitSummationSetExpr(self, ctx: MatexParser.SummationSetExprContext):
+        expression = self.pop()
+        end_range = None
+        if ctx.funcSetParams().supexpr():
+            end_range = self.pop()
+        start_range = self.pop()
+
+        self.push(SetSummation(start_range, end_range, expression))
 
     def exitVariable(self, ctx: MatexParser.VariableContext):
         if ctx.VARIABLE():

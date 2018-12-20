@@ -16,10 +16,13 @@ specialExpr:
     integralExpr
     | continuedFactionExpr
     | continuedFactionInequalityExpr
+    | continuedFactionSetExpr
     | summationExpr
     | summationInequalityExpr
+    | summationSetExpr
     | productExpr
-    | productInequalityExpr;
+    | productInequalityExpr
+    | productSetExpr;
 
 expr:
     subtractionExpr
@@ -30,10 +33,13 @@ integralExpr: FUNC_INT subexpr supexpr L_BRACE expr DERIVATIVE R_BRACE
               | FUNC_INT subexpr supexpr expr DERIVATIVE;
 continuedFactionExpr: FUNC_FRAC funcParams tailExpr;
 continuedFactionInequalityExpr: FUNC_FRAC funcIneqParams tailExpr;
+continuedFactionSetExpr: FUNC_FRAC funcSetParams tailExpr;
 summationExpr: FUNC_SUM funcParams tailExpr;
 summationInequalityExpr: FUNC_SUM funcIneqParams tailExpr;
+summationSetExpr: FUNC_SUM funcSetParams tailExpr;
 productExpr: FUNC_PROD funcParams tailExpr;
 productInequalityExpr: FUNC_PROD funcIneqParams tailExpr;
+productSetExpr: FUNC_PROD funcSetParams tailExpr;
 
 tailExpr:
     expr
@@ -41,6 +47,7 @@ tailExpr:
 
 funcParams: subeq supexpr;
 funcIneqParams: subIneq supexpr?;
+funcSetParams: subSet supexpr?;
 
 implicitMultiplicationExpr:
     subtractionExpr subtractionExpr
@@ -137,7 +144,7 @@ bracedMultiExpr: L_BRACE multiExpr R_BRACE;
 parenMultiExpr: L_PAREN multiExpr R_PAREN;
 multiExpr:
     expr
-    | multiExpr COMMA expr;
+    | multiExpr (COMMA | SEMICOLON) expr;
 
 bracedExpr: L_BRACE expr R_BRACE;
 brackExpr: L_BRACKET expr R_BRACKET;
@@ -148,8 +155,13 @@ supexpr: CARET bracedExpr;
 subeq: UNDERSCORE L_BRACE equality R_BRACE;
 
 subIneq: UNDERSCORE L_BRACE inequality R_BRACE;
+subSet: UNDERSCORE L_BRACE setExpr R_BRACE;
 
 equality: variable EQ expr;
 inequality:
     (variable | number) INEQUALITIES (variable | number)
     | inequality INEQUALITIES (variable | number);
+setExpr:
+    variable SET_IN variable
+    | variable SET_IN setDifferenceExpr;
+setDifferenceExpr: variable (SET_DIFFERENCE L_BRACE (number | variable) R_BRACE);

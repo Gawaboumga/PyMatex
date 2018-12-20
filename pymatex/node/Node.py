@@ -15,6 +15,8 @@ class NodeType(Enum):
     MULTIPLICATION = auto()
     NEGATE = auto()
     PRODUCT = auto()
+    SET = auto()
+    SET_DIFFERENCE = auto()
     SUBTRACTION = auto()
     SUMMATION = auto()
     VARIABLE = auto()

@@ -53,6 +53,14 @@ class MatexASTVisitor:
             product_node.end_range.accept(self)
         product_node.expression.accept(self)
 
+    def visit_set(self, set_node: Set):
+        set_node.lhs.accept(self)
+        set_node.rhs.accept(self)
+
+    def visit_set_difference(self, set_difference: SetDifference):
+        set_difference.lhs.accept(self)
+        set_difference.rhs.accept(self)
+
     def visit_subtraction(self, subtraction_node: Subtraction):
         subtraction_node.lhs.accept(self)
         subtraction_node.rhs.accept(self)

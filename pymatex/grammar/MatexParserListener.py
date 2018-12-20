@@ -71,6 +71,15 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#continuedFactionSetExpr.
+    def enterContinuedFactionSetExpr(self, ctx:MatexParser.ContinuedFactionSetExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#continuedFactionSetExpr.
+    def exitContinuedFactionSetExpr(self, ctx:MatexParser.ContinuedFactionSetExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#summationExpr.
     def enterSummationExpr(self, ctx:MatexParser.SummationExprContext):
         pass
@@ -89,6 +98,15 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#summationSetExpr.
+    def enterSummationSetExpr(self, ctx:MatexParser.SummationSetExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#summationSetExpr.
+    def exitSummationSetExpr(self, ctx:MatexParser.SummationSetExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#productExpr.
     def enterProductExpr(self, ctx:MatexParser.ProductExprContext):
         pass
@@ -104,6 +122,15 @@ class MatexParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by MatexParser#productInequalityExpr.
     def exitProductInequalityExpr(self, ctx:MatexParser.ProductInequalityExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#productSetExpr.
+    def enterProductSetExpr(self, ctx:MatexParser.ProductSetExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#productSetExpr.
+    def exitProductSetExpr(self, ctx:MatexParser.ProductSetExprContext):
         pass
 
 
@@ -131,6 +158,15 @@ class MatexParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by MatexParser#funcIneqParams.
     def exitFuncIneqParams(self, ctx:MatexParser.FuncIneqParamsContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#funcSetParams.
+    def enterFuncSetParams(self, ctx:MatexParser.FuncSetParamsContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#funcSetParams.
+    def exitFuncSetParams(self, ctx:MatexParser.FuncSetParamsContext):
         pass
 
 
@@ -422,6 +458,15 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#subSet.
+    def enterSubSet(self, ctx:MatexParser.SubSetContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#subSet.
+    def exitSubSet(self, ctx:MatexParser.SubSetContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#equality.
     def enterEquality(self, ctx:MatexParser.EqualityContext):
         pass
@@ -437,6 +482,24 @@ class MatexParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by MatexParser#inequality.
     def exitInequality(self, ctx:MatexParser.InequalityContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#setExpr.
+    def enterSetExpr(self, ctx:MatexParser.SetExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#setExpr.
+    def exitSetExpr(self, ctx:MatexParser.SetExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#setDifferenceExpr.
+    def enterSetDifferenceExpr(self, ctx:MatexParser.SetDifferenceExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#setDifferenceExpr.
+    def exitSetDifferenceExpr(self, ctx:MatexParser.SetDifferenceExprContext):
         pass
 
 

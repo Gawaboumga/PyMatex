@@ -100,6 +100,22 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         self.search(depth + 1, NodeType.NEGATE)
         return depth
 
+    def visit_set(self, set_node: Set):
+        depth_lhs = set_node.lhs.accept(self)
+        depth_rhs = set_node.rhs.accept(self)
+
+        node_depth = max(depth_lhs, depth_rhs) + 1
+        self.search(node_depth, NodeType.SET)
+        return node_depth
+
+    def visit_set_difference(self, set_difference: SetDifference):
+        depth_lhs = set_difference.lhs.accept(self)
+        depth_rhs = set_difference.rhs.accept(self)
+
+        node_depth = max(depth_lhs, depth_rhs) + 1
+        self.search(node_depth, NodeType.SET_DIFFERENCE)
+        return node_depth
+
     def visit_product(self, product_node: Product):
         if product_node.variable:
             product_node.variable.accept(self)
@@ -181,9 +197,9 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         associated = objects.get(external_data, None)
         if associated:
             self.__add(associated, 100)
-        else:
-            for mathematical_objects in objects.values():
-                self.__add(mathematical_objects, 70)
+
+        for mathematical_objects in objects.values():
+            self.__add(mathematical_objects, 70)
 
         free_variables = nodes.get(node_type, None)
         if objects is None:
@@ -203,9 +219,9 @@ class IndexSearchVisitor(MatexASTVisitor.MatexASTVisitor):
         associated = objects.get(external_data, None)
         if associated:
             self.__add(associated, 100)
-        else:
-            for mathematical_objects in objects.values():
-                self.__add(mathematical_objects, 70)
+
+        for mathematical_objects in objects.values():
+            self.__add(mathematical_objects, 70)
 
     def __add(self, items, value):
         for item in items:

@@ -119,6 +119,22 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         self.add(node_depth, NodeType.PRODUCT)
         return node_depth
 
+    def visit_set(self, set_node: Set):
+        depth_lhs = set_node.lhs.accept(self)
+        depth_rhs = set_node.rhs.accept(self)
+
+        node_depth = max(depth_lhs, depth_rhs) + 1
+        self.add(node_depth, NodeType.SET)
+        return node_depth
+
+    def visit_set_difference(self, set_difference: SetDifference):
+        depth_lhs = set_difference.lhs.accept(self)
+        depth_rhs = set_difference.rhs.accept(self)
+
+        node_depth = max(depth_lhs, depth_rhs) + 1
+        self.add(node_depth, NodeType.SET_DIFFERENCE)
+        return node_depth
+
     def visit_subtraction(self, subtraction_node: Subtraction):
         depth_lhs = subtraction_node.lhs.accept(self)
         depth_rhs = subtraction_node.rhs.accept(self)

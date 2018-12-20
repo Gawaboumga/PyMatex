@@ -12,6 +12,7 @@ from pymatex.node.Multiplication import *
 from pymatex.node.Negate import *
 from pymatex.node.Node import *
 from pymatex.node.Product import *
+from pymatex.node.Set import *
 from pymatex.node.Subtraction import *
 from pymatex.node.Summation import *
 from pymatex.node.Variable import *
