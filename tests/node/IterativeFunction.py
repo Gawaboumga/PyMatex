@@ -65,3 +65,7 @@ class IterativeFunctionTests(BaseTest.BaseTest):
         two_n = Multiplication(Constant('2'), Variable('n'))
         self.assertEqual(ast, Summation(Variable('n'), Constant('0'), Constant('\\infty'), Multiplication(Function(Func.ZETA, two_n), Exponentiation(Variable('x'), two_n))))
 
+    def test_read_simple_continued_fraction(self):
+        ast = self.parse(r'1 + (2 K_{k=1}^{\infty} \frac{1}{1})')
+        one = Constant('1')
+        self.assertEqual(ast, Addition(one, Multiplication(Constant('2'), Fraction(Variable('k'), one, Constant('\\infty'), Division(one, one)))))

@@ -42,6 +42,23 @@ class IndexCreatorVisitor(MatexASTVisitor.MatexASTVisitor):
         self.add(node_depth, NodeType.EXPONENTIATION)
         return node_depth
 
+    def visit_fraction(self, fraction_node: Fraction):
+        if fraction_node.variable:
+            fraction_node.variable.accept(self)
+        fraction_node.start_range.accept(self)
+        if fraction_node.end_range:
+            fraction_node.end_range.accept(self)
+
+        if fraction_node.variable:
+            self.add_bound_variable(fraction_node.variable)
+        depth_expression = fraction_node.expression.accept(self)
+        if fraction_node.variable:
+            self.remove_bound_variable(fraction_node.variable)
+
+        node_depth = depth_expression + 1
+        self.add(node_depth, NodeType.FRACTION)
+        return node_depth
+
     def visit_function(self, function_node: Function):
         first_argument = function_node.argument(0)
         depth = first_argument.accept(self)

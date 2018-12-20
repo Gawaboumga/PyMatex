@@ -3,6 +3,7 @@ from pymatex.node.Addition import *
 from pymatex.node.Constant import *
 from pymatex.node.Division import *
 from pymatex.node.Exponentiation import *
+from pymatex.node.Fraction import *
 from pymatex.node.Function import *
 from pymatex.node.IndexedVariable import *
 from pymatex.node.Inequality import *

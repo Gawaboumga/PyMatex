@@ -5,14 +5,17 @@ options {tokenVocab = MatexLexer;}
 math: expr EOF;
 
 megaExpr:
-    (subtractionExpr MUL?)? specialExpr
-    | (implicitMultiplicationExpr MUL?) specialExpr
+    subtractionExpr MUL? specialExpr
+    | implicitMultiplicationExpr MUL? specialExpr
     | megaExpr PLUS specialExpr
     | megaExpr MINUS specialExpr
-    | megaExpr MUL specialExpr;
+    | megaExpr MUL specialExpr
+    | specialExpr;
 
 specialExpr:
     integralExpr
+    | continuedFactionExpr
+    | continuedFactionInequalityExpr
     | summationExpr
     | summationInequalityExpr
     | productExpr
@@ -25,6 +28,8 @@ expr:
 
 integralExpr: FUNC_INT subexpr supexpr L_BRACE expr DERIVATIVE R_BRACE
               | FUNC_INT subexpr supexpr expr DERIVATIVE;
+continuedFactionExpr: FUNC_FRAC funcParams tailExpr;
+continuedFactionInequalityExpr: FUNC_FRAC funcIneqParams tailExpr;
 summationExpr: FUNC_SUM funcParams tailExpr;
 summationInequalityExpr: FUNC_SUM funcIneqParams tailExpr;
 productExpr: FUNC_PROD funcParams tailExpr;

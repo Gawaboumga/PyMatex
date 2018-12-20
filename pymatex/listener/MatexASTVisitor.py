@@ -16,6 +16,14 @@ class MatexASTVisitor:
     def visit_exponentiation(self, exponentiation_node: Exponentiation):
         exponentiation_node.lhs.accept(self)
         exponentiation_node.rhs.accept(self)
+
+    def visit_fraction(self, fraction_node: Fraction):
+        if fraction_node.variable:
+            fraction_node.variable.accept(self)
+        fraction_node.start_range.accept(self)
+        if fraction_node.end_range:
+            fraction_node.end_range.accept(self)
+        fraction_node.expression.accept(self)
     
     def visit_function(self, function_node: Function):
         for argument in function_node.arguments:

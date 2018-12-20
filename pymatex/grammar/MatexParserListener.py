@@ -53,6 +53,24 @@ class MatexParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MatexParser#continuedFactionExpr.
+    def enterContinuedFactionExpr(self, ctx:MatexParser.ContinuedFactionExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#continuedFactionExpr.
+    def exitContinuedFactionExpr(self, ctx:MatexParser.ContinuedFactionExprContext):
+        pass
+
+
+    # Enter a parse tree produced by MatexParser#continuedFactionInequalityExpr.
+    def enterContinuedFactionInequalityExpr(self, ctx:MatexParser.ContinuedFactionInequalityExprContext):
+        pass
+
+    # Exit a parse tree produced by MatexParser#continuedFactionInequalityExpr.
+    def exitContinuedFactionInequalityExpr(self, ctx:MatexParser.ContinuedFactionInequalityExprContext):
+        pass
+
+
     # Enter a parse tree produced by MatexParser#summationExpr.
     def enterSummationExpr(self, ctx:MatexParser.SummationExprContext):
         pass

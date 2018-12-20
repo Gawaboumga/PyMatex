@@ -25,6 +25,12 @@ class SearchQueryTests(BaseTest.BaseTest):
 
         self.assertListEqual(list(map(lambda x: x[0], results)), [2, 1])
 
+    def test_search_weird_summation_and_fraction(self):
+        s = SearchQuery(path='tests/search/resources/search-content-weird-summation-tests.txt')
+        results = s.search(r'\sum_{k=0}^{\infty} k')
+
+        self.assertListEqual(list(map(lambda x: x[0], results)), [1, 2])
+
     def test_remove(self):
         s = SearchQuery(path='tests/search/resources/search-content-simple-tests.txt')
         results = s.search(r'(ky+o) * (uy^{2} + vy + n)')

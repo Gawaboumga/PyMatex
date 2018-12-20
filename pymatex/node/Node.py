@@ -8,6 +8,7 @@ class NodeType(Enum):
     CONSTANT = auto()
     DIVISION = auto()
     EXPONENTIATION = auto()
+    FRACTION = auto()
     FUNCTION = auto()
     INDEXEDVARIABLE = auto()
     INTEGRAL = auto()

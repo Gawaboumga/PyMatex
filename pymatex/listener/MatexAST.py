@@ -63,6 +63,22 @@ class MatexAST(MatexParserListener):
         if ctx.INFINITY():
             self.push(Constant(ctx.INFINITY().getText()))
 
+    def exitContinuedFactionExpr(self, ctx: MatexParser.ContinuedFactionExprContext):
+        expression = self.pop()
+        end_range = self.pop()
+        start_range = self.pop()
+        variable = self.pop()
+        self.push(Fraction(variable, start_range, end_range, expression))
+
+    def exitContinuedFactionInequalityExpr(self, ctx: MatexParser.ContinuedFactionInequalityExprContext):
+        expression = self.pop()
+        end_range = None
+        if ctx.funcIneqParams().supexpr():
+            end_range = self.pop()
+        start_range = self.pop()
+
+        self.push(InequalityFraction(start_range, end_range, expression))
+
     def exitDivisionExpr(self, ctx: MatexParser.DivisionExprContext):
         if ctx.getChildCount() < 2:
             return

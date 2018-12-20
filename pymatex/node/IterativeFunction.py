@@ -3,6 +3,7 @@ from pymatex.node.Node import Node
 
 
 class IterativeType(Enum):
+    FRACTION = auto()
     INTEGRAL = auto()
     PRODUCT = auto()
     SUM = auto()
